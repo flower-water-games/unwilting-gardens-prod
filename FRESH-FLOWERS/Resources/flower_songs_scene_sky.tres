@@ -1,0 +1,50 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://chtxyiji1i281"]
+
+[ext_resource type="Material" uid="uid://burcllk35etfp" path="res://FRESH-FLOWERS/Resources/sky_shader_material.tres" id="1_p42ob"]
+
+[sub_resource type="Sky" id="Sky_6xcgc"]
+sky_material = ExtResource("1_p42ob")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_6xcgc")
+ambient_light_source = 3
+ambient_light_color = Color(0.589569, 0.640299, 0.6379, 1)
+ambient_light_energy = 0.73
+tonemap_mode = 2
+tonemap_exposure = 0.27
+tonemap_white = 1.21
+ssao_detail = 1.41
+ssao_horizon = 0.16
+ssao_light_affect = 1.0
+ssao_ao_channel_affect = 0.25
+ssil_radius = 1.31
+ssil_intensity = 0.0
+ssil_sharpness = 0.0
+ssil_normal_rejection = 0.11
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 0.0
+glow_blend_mode = 1
+glow_hdr_threshold = 2.5
+glow_hdr_scale = 2.54
+glow_hdr_luminance_cap = 33.05
+glow_map_strength = 1.0
+fog_light_color = Color(0.139232, 0.195357, 0.585977, 1)
+fog_light_energy = 4.14
+fog_sun_scatter = 0.25
+fog_density = 0.0
+fog_aerial_perspective = 0.322
+fog_sky_affect = 0.0
+fog_height = 612.05
+fog_height_density = 0.001
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0144
+volumetric_fog_emission = Color(0.979131, 0.971788, 0.993699, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_gi_inject = 1.17
+volumetric_fog_anisotropy = -0.8
+volumetric_fog_length = 23.94
+volumetric_fog_ambient_inject = 1.85
+volumetric_fog_sky_affect = 0.136
+volumetric_fog_temporal_reprojection_amount = 0.99
+adjustment_brightness = 1.15

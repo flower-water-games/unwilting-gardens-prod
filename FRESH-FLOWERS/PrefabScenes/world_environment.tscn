@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://blygiqdb50c45"]
+
+[ext_resource type="Environment" uid="uid://chtxyiji1i281" path="res://FRESH-FLOWERS/Resources/flower_songs_scene_sky.tres" id="1_42o3y"]
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = ExtResource("1_42o3y")

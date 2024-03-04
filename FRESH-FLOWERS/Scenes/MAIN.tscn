@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhatmddsmnj2v"]
+
+[ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/music_manager.gd" id="1_yj68b"]
+[ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek35x"]
+albedo_color = Color(1, 0.776471, 0.819608, 1)
+
+[node name="Main" type="Node3D"]
+
+[node name="LEVEL" type="Node3D" parent="."]
+
+[node name="GardenMusicManager" type="Node3D" parent="LEVEL"]
+script = ExtResource("1_yj68b")
+
+[node name="Environment" type="Node3D" parent="LEVEL"]
+
+[node name="WorldEnvironment" parent="LEVEL/Environment" instance=ExtResource("2_u1ghk")]
+
+[node name="TutorialSkyIsland" type="Node3D" parent="LEVEL"]
+
+[node name="Level1" type="Node3D" parent="LEVEL"]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="LEVEL/Level1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.8991)
+radius = 4.0
+
+[node name="Level2" type="Node3D" parent="LEVEL"]
+
+[node name="Stage3" type="Node3D" parent="LEVEL"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LEVEL"]
+visible = false
+use_collision = true
+size = Vector3(1000, 0.1, 1000)
+material = SubResource("StandardMaterial3D_ek35x")
+
+[node name="PLAYER" parent="." node_paths=PackedStringArray("wieldable") instance=ExtResource("1_sxd3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 8.47128, 2.08165e-12)
+wieldable = NodePath("Head/Camera/Container/watering_can")

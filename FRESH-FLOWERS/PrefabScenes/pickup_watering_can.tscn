@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvylr50ht5dpa"]
+
+[ext_resource type="Script" path="res://COGITO/Scripts/Cogito_Object.gd" id="1_iw4u4"]
+[ext_resource type="PackedScene" uid="uid://qeg82g0l3iks" path="res://FRESH-FLOWERS/Assets/PB/watering_can.glb" id="2_0b3hc"]
+[ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://COGITO/Components/PickupComponent.tscn" id="3_8c0ly"]
+[ext_resource type="Resource" uid="uid://cmqs55rmw7a35" path="res://FRESH-FLOWERS/Inventory/Watering_Can.tres" id="4_ms6e8"]
+[ext_resource type="Script" path="res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_klhiw"]
+[ext_resource type="PackedScene" uid="uid://cio4x05ipvslu" path="res://COGITO/Components/CarryableComponent.tscn" id="6_hsxon"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_amy1d"]
+size = Vector3(0.439306, 0.368719, 0.270923)
+
+[sub_resource type="Resource" id="Resource_ytsqt"]
+script = ExtResource("5_klhiw")
+inventory_item = ExtResource("4_ms6e8")
+quantity = 1
+
+[node name="pickup_watering_can" type="RigidBody3D"]
+collision_layer = 3
+script = ExtResource("1_iw4u4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.13, 0, 0, 0, 2.13, 0, 0, 0, 2.13, 0.010732, 0.177845, -0.00766547)
+shape = SubResource("BoxShape3D_amy1d")
+
+[node name="watering_can_mesh" parent="CollisionShape3D" instance=ExtResource("2_0b3hc")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="pistol_mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.00433487, 0.733729, 0)
+skeleton = NodePath("")
+
+[node name="PickupComponent" parent="." instance=ExtResource("3_8c0ly")]
+slot_data = SubResource("Resource_ytsqt")
+
+[node name="CarryableComponent" parent="." instance=ExtResource("6_hsxon")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

@@ -1,0 +1,62 @@
+[gd_resource type="ShaderMaterial" load_steps=9 format=3 uid="uid://burcllk35etfp"]
+
+[ext_resource type="Shader" uid="uid://bmy0jgh743jl5" path="res://FRESH-FLOWERS/Resources/unique_skybox.tres" id="1_mn0rx"]
+[ext_resource type="Texture2D" uid="uid://i3shhj6qhgbn" path="res://FRESH-FLOWERS/Assets/192.jpg" id="2_ba77h"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nyksj"]
+noise_type = 3
+frequency = 0.0053
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nsfja"]
+noise = SubResource("FastNoiseLite_nyksj")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cchv5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cabcx"]
+noise = SubResource("FastNoiseLite_cchv5")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_d5wc4"]
+noise_type = 0
+seed = 390
+frequency = 0.0001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_i080c"]
+seamless = true
+seamless_blend_skirt = 0.531
+noise = SubResource("FastNoiseLite_d5wc4")
+
+[resource]
+shader = ExtResource("1_mn0rx")
+shader_parameter/CloudsCutoffOutside = 0.015
+shader_parameter/CloudsSmoothnessOutside = 0.079
+shader_parameter/CloudsScrollSpeed2 = 0.01
+shader_parameter/CloudsScrollSpeed = 0.16
+shader_parameter/CloudsScale = -0.08
+shader_parameter/CloudsScale2 = -0.3
+shader_parameter/CloudsDistort = 0.13
+shader_parameter/CloudsScale3 = -0.14
+shader_parameter/StarsScale = -0.68
+shader_parameter/NightBottomCol = Color(0.545098, 0.564706, 1, 1)
+shader_parameter/NightTopCol = Color(0.140878, 0.086519, 0.36772, 1)
+shader_parameter/DayBottomCol = Color(0.435294, 0.443137, 1, 1)
+shader_parameter/DayTopCol = Color(0.568627, 0.545098, 0.94902, 1)
+shader_parameter/MoonRadius = -0.5
+shader_parameter/MoonOffset = Vector3(2.7, -3.77, 1.08)
+shader_parameter/MoonIntensity = 0.12
+shader_parameter/SunRadius = 0.17
+shader_parameter/SunIntensity = 1.65
+shader_parameter/HorizonCol = Color(0, 0.87451, 0.866667, 1)
+shader_parameter/CloudsInsideNight = Color(0.27451, 0.0392157, 0.482353, 1)
+shader_parameter/CloudsInsideIntensity = -2.17
+shader_parameter/CloudsEdgeIntensity = 2.72
+shader_parameter/CloudsEdgeNight = Color(0.984314, 0.478431, 0.682353, 1)
+shader_parameter/CloudsCutoffInside = 0.1
+shader_parameter/CloudsSmoothnessInside = 0.005
+shader_parameter/CloudEdgeDay = Color(0.698039, 0.682353, 0.835294, 1)
+shader_parameter/CloudsInsideIntensity2 = 8.74
+shader_parameter/CloudInsideDay = Color(0.921569, 0.576471, 0.00392157, 1)
+shader_parameter/CloudsEdgeIntensity2 = 2.682
+shader_parameter/Noise1 = SubResource("NoiseTexture2D_cabcx")
+shader_parameter/Distort = SubResource("NoiseTexture2D_nsfja")
+shader_parameter/Noise2 = SubResource("NoiseTexture2D_i080c")
+shader_parameter/StarsTex = ExtResource("2_ba77h")

@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://tp71bac306c1"]
+
+[ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="2_45alt"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/fit_to_window.gd" id="3_q1jse"]
+[ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="4_pywf7"]
+[ext_resource type="Texture2D" uid="uid://le1diumix7gn" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_normal.png" id="4_y8ss2"]
+[ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="5_ay4hd"]
+[ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="5_h452s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjg5i"]
+bg_color = Color(0.360784, 0.639216, 0.780392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x21xl"]
+font_size = 24
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_ay4hd")
+
+[node name="FitToWindow" parent="." node_paths=PackedStringArray("set_node") instance=ExtResource("2_45alt")]
+script = ExtResource("3_q1jse")
+set_node = NodePath("../PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sjg5i")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("4_y8ss2")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+dragger_visibility = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="PanelContainer/MarginContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer2"]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer2"]
+layout_mode = 2
+text = "unwilting
+
+godot 4.3-dev4_mono"
+label_settings = SubResource("LabelSettings_x21xl")
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SetSelectedButton" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer" instance=ExtResource("4_pywf7")]
+script = null
+
+[node name="PLAY" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/PLAY" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
+button = NodePath("..")
+
+[node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/CreditsButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
+button = NodePath("..")
+level_path = "res://UserInterface/Credits/Credits.tscn"
+
+[node name="ControlsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controls"
+
+[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/ControlsButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
+button = NodePath("..")
+level_path = "res://UserInterface/Controls/UserControls.tscn"
