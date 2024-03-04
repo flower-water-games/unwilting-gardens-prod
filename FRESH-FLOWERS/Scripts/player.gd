@@ -33,14 +33,18 @@ var tween:Tween
 
 signal health_updated
 
-@onready var camera = $Head/Camera
+@onready var camera:Camera3D = $Head/Camera
 @onready var raycast = $Head/Camera/ShapeCast
-@onready var container = $Head/Camera/Container
+@onready var subviewport_camera = %SubviewportCamera
+# @onready var container = $Head/Camera/Container
 
 # Functions
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _process(delta: float) -> void:
+	subviewport_camera.set_global_transform(camera.get_global_transform())
 
 func _physics_process(delta):
 	

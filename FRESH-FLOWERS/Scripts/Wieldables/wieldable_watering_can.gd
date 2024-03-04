@@ -6,7 +6,7 @@ class_name WateringCan
 var current_water_level: float
 
 @onready var water_stream: GPUParticles3D = %WaterStream
-@onready var interaction_raycast: RayCast3D = %WateringRaycast
+@onready var interaction_raycast: ShapeCast3D = %ShapeCast
 
 @onready var target_rotation_z = rotation_degrees.z + 10
 
@@ -40,7 +40,7 @@ var watering_target;
 
 func check_for_refill():
 	if interaction_raycast.is_colliding():
-		var target = interaction_raycast.get_collider()
+		var target = interaction_raycast.get_collider(0)
 		# scale up target if is colliding
 		if target.has_method("refill"):
 			print("refilling")
@@ -49,7 +49,7 @@ func check_for_refill():
 
 func check_for_waterable_surface():
 	if interaction_raycast.is_colliding():
-		var target = interaction_raycast.get_collider()
+		var target = interaction_raycast.get_collider(0)
 		# scale up target if is colliding
 		if target.has_method("water"):
 			watering_target = target
@@ -72,7 +72,7 @@ func start_watering():
 
 func create_on_complete_destroy_tween():
 	var tween = create_tween()
-	tween.connect("finished", on_tween_complete)
+	# tween.connect("finished", on_tween_complete)
 	return tween
 
 
