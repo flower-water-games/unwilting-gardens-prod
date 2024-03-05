@@ -176,12 +176,12 @@ mesh = SubResource("ArrayMesh_vk6mj")
 skeleton = NodePath("")
 
 [node name="GRASS" type="MultiMeshInstance3D" parent="."]
-transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 2.89982, 0.276496, -12.967)
+transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 2.89982, 0.276496, -14.0759)
 material_override = SubResource("ShaderMaterial_ci11c")
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_qwxf2")
 
 [node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.05845)
-size = Vector3(10, 2, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.05989, -8.12859)
+size = Vector3(10, 2, 22.5695)
 material = SubResource("FogMaterial_076l3")
