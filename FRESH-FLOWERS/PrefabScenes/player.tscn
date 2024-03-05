@@ -8,9 +8,11 @@ radius = 0.3
 height = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lt2mu"]
+size = Vector3(1.06, 0.98, 1.81)
 
 [node name="PLAYER" type="CharacterBody3D" node_paths=PackedStringArray("wieldable")]
 script = ExtResource("1_0hgre")
+jump_strength = 5
 wieldable = NodePath("Head/Camera/Container/WateringCan")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -32,6 +34,7 @@ render_target_update_mode = 4
 
 [node name="SubviewportCamera" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91147, -0.227298)
 cull_mask = 524288
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -48,8 +51,11 @@ fov = 80.7
 
 [node name="ShapeCast" type="ShapeCast3D" parent="Head/Camera"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00472, -1.21883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00472, -1.80379)
 shape = SubResource("BoxShape3D_lt2mu")
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="Container" type="Node3D" parent="Head/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.551, 0, -2.60209e-18)

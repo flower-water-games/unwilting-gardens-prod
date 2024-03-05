@@ -6,8 +6,7 @@ class_name WateringCan
 var current_water_level: float
 
 @onready var water_stream: GPUParticles3D = %WaterStream
-@onready var interaction_raycast: ShapeCast3D = %ShapeCast
-
+@onready var interaction_raycast: ShapeCast3D = get_node("../../../../Head/Camera/ShapeCast")
 @onready var target_rotation_z = rotation_degrees.z + 10
 
 
@@ -31,9 +30,9 @@ func _ready():
 	add_child(watering_timer)
 
 func _process(delta):
-	if is_watering && equipped:
+	if is_watering:
 		check_for_waterable_surface()
-	if current_water_level < water_capacity-1 && equipped:
+	if current_water_level < water_capacity-1 :
 		check_for_refill()
 		
 var watering_target;
@@ -113,22 +112,3 @@ func use_water():
 	else:
 		print("Watering Can: Can is empty.")
 		stop_watering()
-
-var equipped = false;
-# Function called when wieldable is unequipped.
-# func equip(_player_interaction_component: PlayerInteractionComponent):
-# 	equipped = true
-# 	wieldable_mesh.show()
-# 	player_interaction_component = _player_interaction_component
-# 	print("Wieldable equipped")
-# 	pass
-
-
-# Function called when wieldable is unequipped.
-func unequip():
-	equipped = false
-	wieldable_mesh.hide()
-	if is_watering:
-		stop_watering()
-	print("Wieldable unequipped")
-	pass

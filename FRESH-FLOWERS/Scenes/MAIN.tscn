@@ -2,41 +2,32 @@
 
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek35x"]
-albedo_color = Color(1, 0.776471, 0.819608, 1)
+[ext_resource type="PackedScene" uid="uid://cro0vww3oijjx" path="res://FRESH-FLOWERS/Scenes/Levels/tutorial_sky_island.tscn" id="2_vpoja"]
 
 [node name="Main" type="Node3D"]
 
-[node name="WorldEnvironment" parent="." instance=ExtResource("2_u1ghk")]
+[node name="DoNotUnload" type="Node3D" parent="."]
 
-[node name="LEVEL" type="Node3D" parent="."]
-
-[node name="TutorialSkyIsland" type="Node3D" parent="LEVEL"]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="LEVEL/TutorialSkyIsland"]
-use_collision = true
-size = Vector3(3, 0.1, 3)
-material = SubResource("StandardMaterial3D_ek35x")
-
-[node name="Level1" type="Node3D" parent="LEVEL"]
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="LEVEL/Level1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.8991)
-radius = 4.0
-
-[node name="Level2" type="Node3D" parent="LEVEL"]
-
-[node name="Stage3" type="Node3D" parent="LEVEL"]
-
-[node name="PLAYER" parent="." node_paths=PackedStringArray("wieldable") instance=ExtResource("1_sxd3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 8.47128, 2.08165e-12)
+[node name="PLAYER" parent="DoNotUnload" node_paths=PackedStringArray("wieldable") instance=ExtResource("1_sxd3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 100, 2.08165e-12)
 wieldable = NodePath("Head/Camera/Container/WateringCan")
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="WorldEnvironment" parent="DoNotUnload" instance=ExtResource("2_u1ghk")]
 
-[node name="Control" type="Control" parent="HUD"]
+[node name="HUD" type="CanvasLayer" parent="DoNotUnload"]
+
+[node name="Control" type="Control" parent="DoNotUnload/HUD"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="LEVEL" type="Node3D" parent="."]
+
+[node name="TutorialSkyIsland" parent="LEVEL" instance=ExtResource("2_vpoja")]
+
+[node name="Level1" type="Node3D" parent="LEVEL"]
+
+[node name="Level2" type="Node3D" parent="LEVEL"]
+
+[node name="Stage3" type="Node3D" parent="LEVEL"]

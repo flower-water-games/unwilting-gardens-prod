@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cro0vww3oijjx"]
+
+[ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/flower_cube.tscn" id="1_orwpc"]
+[ext_resource type="Material" uid="uid://bct5kchviw2gr" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_happy.tres" id="2_ldsft"]
+[ext_resource type="Material" uid="uid://fc0yjkvu0twc" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_sad.tres" id="3_v44jd"]
+[ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="4_n75dp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek35x"]
+albedo_color = Color(1, 0.776471, 0.819608, 1)
+
+[node name="TutorialSkyIsland" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.0019)
+use_collision = true
+size = Vector3(3, 0.1, 25.123)
+material = SubResource("StandardMaterial3D_ek35x")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.0160738, 0.999871, 0, -0.999871, -0.0160738, 0, 0, 0, 1, -1.55963, 0, -4.44629)
+visible = false
+use_collision = true
+size = Vector3(3, 0.1, 105.593)
+material = SubResource("StandardMaterial3D_ek35x")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.0160738, 0.999871, 0, -0.999871, -0.0160738, 0, 0, 0, 1, 1.56728, 0, -4.44107)
+visible = false
+use_collision = true
+size = Vector3(3, 0.1, 105.593)
+material = SubResource("StandardMaterial3D_ek35x")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(9.53784e-06, -0.000593391, 1, -0.999871, -0.0160738, -1.56884e-17, 0.0160738, -0.999871, -0.000593467, 0.0989234, 0, 1.51605)
+visible = false
+use_collision = true
+size = Vector3(3, 0.1, 3.733)
+material = SubResource("StandardMaterial3D_ek35x")
+
+[node name="FlowerCube" parent="." instance=ExtResource("1_orwpc")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.274887, -5.85422)
+my_happy_material = ExtResource("2_ldsft")
+my_sad_material = ExtResource("3_v44jd")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("4_n75dp")]

@@ -199,7 +199,6 @@ skeleton = NodePath("")
 [node name="WaterStream" type="GPUParticles3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(-0.971259, 0.238025, 1.91319e-08, 0.238025, 0.971259, 8.82457e-07, 1.91465e-07, 8.61648e-07, -1, -0.672128, 0.156144, -2.44379e-06)
-layers = 524288
 emitting = false
 amount = 255
 lifetime = 2.0

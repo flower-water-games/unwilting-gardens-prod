@@ -8,6 +8,15 @@ var moisture_level = 0.0
 @export var threshold = 3.0
 @onready var initial_scale = scale
 
+@onready var flower_cube_mesh:MeshInstance3D = %FlowerCubeMesh
+
+@export var my_happy_material:StandardMaterial3D = null
+@export var my_sad_material:StandardMaterial3D = null
+
+func _ready():
+	# Implement logic to initialize the visual representation of the moisture level here
+	flower_cube_mesh.material_override = my_sad_material
+
 func water(amount):
 	moisture_level += amount
 	scale_up_tween()
@@ -35,4 +44,5 @@ func update_moisture_level():
 
 func _on_threshold_reached():
 	# Implement logic to trigger growth here
+	flower_cube_mesh.material_override = my_happy_material
 	print('warning: not implemented -> threshold reached')
