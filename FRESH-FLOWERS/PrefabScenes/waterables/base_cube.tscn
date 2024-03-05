@@ -1,20 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://5pjvp6vhf3n5"]
+[gd_scene load_steps=6 format=3 uid="uid://5pjvp6vhf3n5"]
 
-[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/waterable/flower_cube.gd" id="1_75nx1"]
-[ext_resource type="ArrayMesh" uid="uid://cfj3thtuhkb56" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj" id="3_an74d"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/waterable/waterable.gd" id="1_df6j1"]
+[ext_resource type="Material" uid="uid://bct5kchviw2gr" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_happy.tres" id="2_2ws1a"]
+[ext_resource type="ArrayMesh" uid="uid://cfj3thtuhkb56" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj" id="2_d1hjd"]
+[ext_resource type="Material" uid="uid://fc0yjkvu0twc" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_sad.tres" id="3_rfatg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vcjnl"]
 
-[node name="FlowerCube" type="Area3D"]
+[node name="BaseCube" type="Area3D"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.40733, 0)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_75nx1")
+script = ExtResource("1_df6j1")
+my_happy_material = ExtResource("2_2ws1a")
+my_sad_material = ExtResource("3_rfatg")
 
 [node name="FlowerCubeMesh" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.139221, 0)
-mesh = ExtResource("3_an74d")
+mesh = ExtResource("2_d1hjd")
 skeleton = NodePath("../RigidBody3D/CollisionShape3D")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]

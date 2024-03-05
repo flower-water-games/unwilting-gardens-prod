@@ -25,6 +25,7 @@ offset_bottom = 40.0
 [node name="LEVEL" type="Node3D" parent="."]
 
 [node name="TutorialSkyIsland" parent="LEVEL" instance=ExtResource("2_vpoja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 100, 2.08165e-12)
 
 [node name="Level1" type="Node3D" parent="LEVEL"]
 

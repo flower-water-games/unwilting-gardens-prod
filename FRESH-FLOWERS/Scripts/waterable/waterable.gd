@@ -45,4 +45,4 @@ func update_moisture_level():
 func _on_threshold_reached():
 	# Implement logic to trigger growth here
 	flower_cube_mesh.material_override = my_happy_material
-	print('warning: not implemented -> threshold reached')
+	# print('warning: not implemented -> threshold reached')

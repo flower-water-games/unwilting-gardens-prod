@@ -1,15 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cro0vww3oijjx"]
+[gd_scene load_steps=5 format=3 uid="uid://cro0vww3oijjx"]
 
-[ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/flower_cube.tscn" id="1_orwpc"]
-[ext_resource type="Material" uid="uid://bct5kchviw2gr" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_happy.tres" id="2_ldsft"]
-[ext_resource type="Material" uid="uid://fc0yjkvu0twc" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_sad.tres" id="3_v44jd"]
-[ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="4_n75dp"]
+[ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_orwpc"]
+[ext_resource type="PackedScene" uid="uid://ckt0iiu7qn6d" path="res://FRESH-FLOWERS/PrefabScenes/waterables/bird_cube.tscn" id="3_5rxwc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek35x"]
 albedo_color = Color(1, 0.776471, 0.819608, 1)
 
+[sub_resource type="Curve3D" id="Curve3D_ffx66"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.08165e-12, 2.08165e-12, 2.08165e-12, 0, 0, 0, 0, 0, 0, 2.08165e-12, 1.39427, -12.9133),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [node name="TutorialSkyIsland" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.0019)
@@ -40,7 +45,12 @@ material = SubResource("StandardMaterial3D_ek35x")
 
 [node name="FlowerCube" parent="." instance=ExtResource("1_orwpc")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.274887, -5.85422)
-my_happy_material = ExtResource("2_ldsft")
-my_sad_material = ExtResource("3_v44jd")
 
-[node name="WorldEnvironment" parent="." instance=ExtResource("4_n75dp")]
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.0854)
+curve = SubResource("Curve3D_ffx66")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.999997, 0, 0, 0, 0.994215, -0.107347, 0, 0.107347, 0.994215, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="BirdCube" parent="Path3D/PathFollow3D" instance=ExtResource("3_5rxwc")]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckt0iiu7qn6d"]
+
+[ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_20o7n"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/waterable/bird_cube.gd" id="2_j4u4v"]
+
+[node name="BirdCube" instance=ExtResource("1_20o7n")]
+script = ExtResource("2_j4u4v")

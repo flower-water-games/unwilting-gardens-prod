@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c36d2u5ykulxg"]
+
+[ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_5haow"]
+
+[node name="FlowerCube" instance=ExtResource("1_5haow")]
