@@ -127,3 +127,7 @@ weapon_toggle={
 [layer_names]
 
 3d_render/layer_1="layer1"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
