@@ -13,36 +13,47 @@ var moisture_level = 0.0
 @export var my_happy_material:StandardMaterial3D = null
 @export var my_sad_material:StandardMaterial3D = null
 
+var watering_sfx_instance:PooledAudioStreamPlayer
+
 func _ready():
 	# Implement logic to initialize the visual representation of the moisture level here
 	flower_cube_mesh.material_override = my_sad_material
+
+	SoundManager.connect("loaded", on_sound_manager_load)
+
+func on_sound_manager_load():
+	watering_sfx_instance = SoundManager.instance("player", "watering")
+
 
 func water(amount):
 	moisture_level += amount
 	scale_up_tween()
 	print('watering')
-	update_moisture_level()
+	if not watering_sfx_instance.playing:
+		watering_sfx_instance.trigger()
+
+	if moisture_level > threshold:
+		_on_threshold_reached()
+	
 	if moisture_level >= max_moisture_level:
 		moisture_level = max_moisture_level
+		watering_sfx_instance.stop()
+
     # Implement additional logic here (e.g., visual feedback, triggering growth
 
 var scale_up_factor = .2
 func scale_up_tween():
 	var normalized_moisture_level = moisture_level / max_moisture_level
 	var new_scale = Vector3(initial_scale.x, initial_scale.y, initial_scale.z) + Vector3(scale_up_factor, scale_up_factor, scale_up_factor) * normalized_moisture_level
+	scale = new_scale
 	# TODO tween the scale 
-	var tween = create_tween()
-	tween.tween_property(self, "scale", new_scale, .5)
+	# var tween = create_tween()
+	# tween.tween_property(self, "scale", new_scale, .5)
 	# set an ease that bounces on complete
-	tween.set_ease( Tween.EASE_OUT)
-
-func update_moisture_level():
-	# Implement logic to update the visual representation of the moisture level here
-	if moisture_level > threshold:
-		# swap cube texture
-		_on_threshold_reached()
+	# tween.set_ease( Tween.EASE_OUT)
 
 func _on_threshold_reached():
 	# Implement logic to trigger growth here
 	flower_cube_mesh.material_override = my_happy_material
+	SoundManager.play("player", "complete")
 	# print('warning: not implemented -> threshold reached')

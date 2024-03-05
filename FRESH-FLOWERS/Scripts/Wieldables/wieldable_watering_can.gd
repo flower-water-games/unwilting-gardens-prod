@@ -35,7 +35,7 @@ func _process(delta):
 	if current_water_level < water_capacity-1 :
 		check_for_refill()
 		
-var watering_target;
+var watering_target : Waterable
 
 func check_for_refill():
 	if interaction_raycast.is_colliding():
@@ -54,6 +54,8 @@ func check_for_waterable_surface():
 			watering_target = target
 			# target.water(1.0)
 		else:
+			if (watering_target):
+				watering_target.watering_sfx_instance.stop()
 			watering_target = null
 			
 
@@ -91,6 +93,7 @@ func on_tween_complete(tween):
 func stop_watering():
 	if is_watering:
 		is_watering = false
+		watering_target.watering_sfx_instance.stop()
 		tween_up()
 		water_stream.emitting = false
 		watering_timer.stop()
@@ -98,6 +101,8 @@ func stop_watering():
 
 func _on_watering_timer_timeout():
 	use_water()
+
+var watering_sfx_instance : PooledAudioStreamPlayer;
 
 func use_water():
 	if current_water_level > 0:

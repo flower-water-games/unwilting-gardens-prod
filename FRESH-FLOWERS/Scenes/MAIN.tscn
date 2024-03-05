@@ -1,9 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhatmddsmnj2v"]
+[gd_scene load_steps=18 format=3 uid="uid://dhatmddsmnj2v"]
 
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
 [ext_resource type="PackedScene" uid="uid://cro0vww3oijjx" path="res://FRESH-FLOWERS/Scenes/Levels/tutorial_sky_island.tscn" id="2_vpoja"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="3_1m4ba"]
+[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="4_t7o6m"]
 [ext_resource type="PackedScene" uid="uid://cpxbbx0eydsyl" path="res://FRESH-FLOWERS/Assets/chrisdome/Dome.glb" id="4_tr6o6"]
+[ext_resource type="AudioStream" uid="uid://b24pcwhf2an63" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/watering_unwilt.ogg" id="5_dcjwd"]
+[ext_resource type="Resource" uid="uid://wa0jawp4obka" path="res://FRESH-FLOWERS/Resources/stage1.tres" id="5_hdg4c"]
+[ext_resource type="AudioStream" uid="uid://d1v2a7w8d8ry3" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/watering threshold reached_unwilt.ogg" id="6_3fsdn"]
+[ext_resource type="Resource" uid="uid://mjr65n7vu26e" path="res://FRESH-FLOWERS/Resources/stage_2.tres" id="6_yq7km"]
+[ext_resource type="Resource" uid="uid://buowkejaijh1" path="res://FRESH-FLOWERS/Resources/stage_3.tres" id="7_geqx2"]
+[ext_resource type="AudioStream" uid="uid://dk4c3vrbatp8v" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Flowercube grow_unwilt.ogg" id="7_hjhgm"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/music_manager.gd" id="8_05bny"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_jkygg"]
+
+[sub_resource type="Resource" id="Resource_rxla4"]
+script = ExtResource("4_t7o6m")
+name = "watering"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("5_dcjwd")])
+
+[sub_resource type="Resource" id="Resource_a88or"]
+script = ExtResource("4_t7o6m")
+name = "watered"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("6_3fsdn")])
+
+[sub_resource type="Resource" id="Resource_xr3dh"]
+script = ExtResource("4_t7o6m")
+name = "complete"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("7_hjhgm")])
 
 [node name="Main" type="Node3D"]
 
@@ -22,6 +56,20 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="GardenMusicManager" type="Node3D" parent="CORE"]
+script = ExtResource("8_05bny")
+
+[node name="MusicBank" type="Node" parent="CORE/GardenMusicManager"]
+script = ExtResource("9_jkygg")
+label = "Music"
+bus = "Music"
+tracks = Array[Resource("res://addons/resonate/music_manager/music_track_resource.gd")]([ExtResource("5_hdg4c"), ExtResource("6_yq7km"), ExtResource("7_geqx2")])
+
+[node name="SoundBank" type="Node" parent="CORE/GardenMusicManager"]
+script = ExtResource("3_1m4ba")
+label = "player"
+events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResource("Resource_a88or"), SubResource("Resource_xr3dh")])
 
 [node name="LEVEL" type="Node3D" parent="."]
 

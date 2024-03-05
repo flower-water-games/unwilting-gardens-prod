@@ -5,7 +5,6 @@ class_name GardenMusicManager
 # two area 3ds, one for stage 1 music, stage 2 music, 
 @export var stage1_area : Area3D
 @export var stage2_area : Area3D
-@export var party_cube : Node3D
 
 # when entered / exits, triggers stage 1 vs stage 2 respectively
 func _ready():
