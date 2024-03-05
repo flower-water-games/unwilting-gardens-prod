@@ -6,17 +6,17 @@
 
 [node name="Main" type="Node3D"]
 
-[node name="DoNotUnload" type="Node3D" parent="."]
+[node name="CORE" type="Node3D" parent="."]
 
-[node name="PLAYER" parent="DoNotUnload" node_paths=PackedStringArray("wieldable") instance=ExtResource("1_sxd3a")]
+[node name="PLAYER" parent="CORE" node_paths=PackedStringArray("wieldable") instance=ExtResource("1_sxd3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 100, 2.08165e-12)
 wieldable = NodePath("Head/Camera/Container/WateringCan")
 
-[node name="WorldEnvironment" parent="DoNotUnload" instance=ExtResource("2_u1ghk")]
+[node name="WorldEnvironment" parent="CORE" instance=ExtResource("2_u1ghk")]
 
-[node name="HUD" type="CanvasLayer" parent="DoNotUnload"]
+[node name="HUD" type="CanvasLayer" parent="CORE"]
 
-[node name="Control" type="Control" parent="DoNotUnload/HUD"]
+[node name="Control" type="Control" parent="CORE/HUD"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
