@@ -31,12 +31,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 100, 24.4883)
 [node name="Level1" type="Node3D" parent="LEVEL"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="LEVEL/Level1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.57022, 0)
 use_collision = true
 size = Vector3(10, 1, 10)
 
-[node name="Dome" parent="LEVEL/Level1/CSGBox3D" instance=ExtResource("4_tr6o6")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.7299, 0)
+[node name="Dome" parent="LEVEL/Level1" instance=ExtResource("4_tr6o6")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.611797, 0)
 
 [node name="Level2" type="Node3D" parent="LEVEL"]
 
 [node name="Stage3" type="Node3D" parent="LEVEL"]
+
+[editable path="LEVEL/Level1/Dome"]
