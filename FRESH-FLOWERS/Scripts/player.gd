@@ -34,7 +34,6 @@ var tween:Tween
 signal health_updated
 
 @onready var camera:Camera3D = $Head/Camera
-@onready var raycast = $Head/Camera/ShapeCast
 @onready var subviewport_camera = %SubviewportCamera
 # @onready var container = $Head/Camera/Container
 
@@ -174,6 +173,6 @@ func action_jump():
 func action_shoot():
 	
 	if Input.is_action_pressed("shoot"):
-		wieldable.action_primary()
+		wieldable.start_watering()
 	else:
-		wieldable.action_primary_release()
+		wieldable.stop_watering()

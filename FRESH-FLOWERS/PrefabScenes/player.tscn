@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv1sl0ejnwbfm"]
+[gd_scene load_steps=4 format=3 uid="uid://cv1sl0ejnwbfm"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/player.gd" id="1_0hgre"]
 [ext_resource type="PackedScene" uid="uid://dt6brf8pfl28d" path="res://FRESH-FLOWERS/PrefabScenes/Wieldables/watering_can.tscn" id="2_nmbek"]
@@ -6,9 +6,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xk3yy"]
 radius = 0.3
 height = 1.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lt2mu"]
-size = Vector3(1.06, 0.98, 1)
 
 [node name="PLAYER" type="CharacterBody3D" node_paths=PackedStringArray("wieldable")]
 script = ExtResource("1_0hgre")
@@ -48,14 +45,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 cull_mask = 524287
 current = true
 fov = 80.7
-
-[node name="ShapeCast" type="ShapeCast3D" parent="Head/Camera"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00472, -1.52525)
-shape = SubResource("BoxShape3D_lt2mu")
-collision_mask = 2
-collide_with_areas = true
-collide_with_bodies = false
 
 [node name="Container" type="Node3D" parent="Head/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.551, 0, -2.60209e-18)

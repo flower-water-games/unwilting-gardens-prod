@@ -25,6 +25,8 @@ func on_sound_manager_load():
 	watering_sfx_instance = SoundManager.instance("player", "watering")
 
 
+var threshold_reached = false
+
 func water(amount):
 	moisture_level += amount
 	scale_up_tween()
@@ -32,7 +34,7 @@ func water(amount):
 	if not watering_sfx_instance.playing:
 		watering_sfx_instance.trigger()
 
-	if moisture_level > threshold:
+	if moisture_level >= threshold and not threshold_reached:
 		_on_threshold_reached()
 	
 	if moisture_level >= max_moisture_level:
@@ -54,6 +56,8 @@ func scale_up_tween():
 
 func _on_threshold_reached():
 	# Implement logic to trigger growth here
+	threshold_reached = true
+	watering_sfx_instance.stop()
 	flower_cube_mesh.material_override = my_happy_material
 	SoundManager.play("player", "complete")
 	# print('warning: not implemented -> threshold reached')

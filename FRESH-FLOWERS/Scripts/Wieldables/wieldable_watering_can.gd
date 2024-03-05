@@ -3,119 +3,109 @@ class_name WateringCan
 
 @export var water_capacity: float = 16.0
 @export var drainage_rate: float = 1.0
-var current_water_level: float
+var current_water_level: float = water_capacity
 
-@onready var water_stream: GPUParticles3D = %WaterStream
-#todi fix nightmare get_node path
-@onready var interaction_raycast: ShapeCast3D = get_node("../../../../Head/Camera/ShapeCast")
-@onready var target_rotation_z = rotation_degrees.z + 10
-
-
-
-func action_primary_release():
-	stop_watering()
-
-func action_primary():
-	start_watering()
+@onready var water_stream: GPUParticles3D = $WaterStream
+@onready var interaction_raycast: ShapeCast3D = $ShapeCast3D
+@onready var original_rotation: Vector3 = rotation_degrees
+@onready var target_rotation_z: float = rotation_degrees.z + 10
 
 var is_watering: bool = false
-var watering_timer: Timer
+var watering_timer: Timer = Timer.new()
+
+var watering_target: Waterable
 
 func _ready():
-	super()
-	current_water_level = water_capacity
-	watering_timer = Timer.new()
-	watering_timer.wait_time = 1.0  # Adjust this to change how often water is used
-	watering_timer.one_shot = false
-	watering_timer.timeout.connect(_on_watering_timer_timeout)
+	super._ready()
 	add_child(watering_timer)
+	setup_watering_timer()
 
-func _process(delta):
+func _process(delta: float) -> void:
 	if is_watering:
 		check_for_waterable_surface()
-	if current_water_level < water_capacity-1 :
-		check_for_refill()
-		
-var watering_target : Waterable
+	update_water_level_based_on_usage()
 
-func check_for_refill():
+func setup_watering_timer() -> void:
+	watering_timer.wait_time = 1.0
+	watering_timer.one_shot = false
+	watering_timer.timeout.connect(_on_watering_timer_timeout)
+
+func check_for_waterable_surface() -> void:
 	if interaction_raycast.is_colliding():
 		var target = interaction_raycast.get_collider(0)
-		# scale up target if is colliding
-		if target.has_method("refill"):
-			print("refilling")
-			current_water_level = water_capacity
-			stop_watering()
-
-func check_for_waterable_surface():
-	if interaction_raycast.is_colliding():
-		var target = interaction_raycast.get_collider(0)
-		# scale up target if is colliding
-		if target.has_method("water"):
-			watering_target = target
-			# target.water(1.0)
+		if target and target is Waterable:
+			process_waterable_target(target)
 		else:
-			if (watering_target):
-				watering_target.watering_sfx_instance.stop()
-			watering_target = null
-			
+			reset_watering_target()
 
-@onready var original_rotation: Vector3 = rotation_degrees
+func check_for_refill() -> void:
+	if interaction_raycast.is_colliding():
+		var target = interaction_raycast.get_collider(0)
+		if target and target.has_method("refill"):
+			refill_water()
 
-func start_watering():
+func refill_water() -> void:
+	current_water_level = water_capacity
+	stop_watering()
+	print("Watering Can: Refilled.")
+
+func process_waterable_target(target: Waterable) -> void:
+	if not is_watering:
+		return
+
+	if target != watering_target:
+		reset_watering_target()
+		watering_target = target
+
+func reset_watering_target() -> void:
+	if watering_target:
+		watering_target.watering_sfx_instance.stop()
+	watering_target = null
+
+func start_watering() -> void:
 	if not is_watering and current_water_level > 0:
 		is_watering = true
 		water_stream.emitting = true
-		# Tween the rotation
-		tween_down()
+		tween_to_target_rotation(target_rotation_z)
 		watering_timer.start()
 		print("Watering Can: Started watering")
 
-
-func create_on_complete_destroy_tween():
-	var tween = create_tween()
-	# tween.connect("finished", on_tween_complete)
-	return tween
-
-
-func tween_down():
-	var tween = create_on_complete_destroy_tween()
-	tween.tween_property(self, "rotation_degrees:z", target_rotation_z, .5)
-
-func tween_up():
-	var tween = create_on_complete_destroy_tween()
-	tween.tween_property(self, "rotation_degrees:z", original_rotation.z, .5)
-	
-
-func on_tween_complete(tween):
-	print("tween complete")
-	tween.queue_free()
-
-func stop_watering():
+func stop_watering() -> void:
 	if is_watering:
 		is_watering = false
-		if watering_target:
-			watering_target.watering_sfx_instance.stop()
-		tween_up()
+		reset_watering_target()
 		water_stream.emitting = false
 		watering_timer.stop()
+		tween_to_original_rotation()
 		print("Watering Can: Stopped watering")
 
-func _on_watering_timer_timeout():
+func tween_to_target_rotation(rotation: float) -> void:
+	var tween = create_tween()
+	tween.tween_property(self, "rotation_degrees:z", rotation, 0.5)
+
+func tween_to_original_rotation() -> void:
+	tween_to_target_rotation(original_rotation.z)
+
+func _on_watering_timer_timeout() -> void:
 	use_water()
 
-var watering_sfx_instance : PooledAudioStreamPlayer;
-
-func use_water():
+func use_water() -> void:
 	if current_water_level > 0:
 		current_water_level -= drainage_rate
-		if watering_target:
-			watering_target.water(drainage_rate)
-		if current_water_level < 0:
+		if current_water_level <= 0:
 			current_water_level = 0
 			stop_watering()
-		print("Watering Can: Used water. Current water level: ", current_water_level)
 
+		if watering_target:
+			watering_target.water(drainage_rate)
+
+		print("Watering Can: Used water. Current water level: ", current_water_level)
 	else:
-		print("Watering Can: Can is empty.")
 		stop_watering()
+		print("Watering Can: Can is empty.")
+
+func update_water_level_based_on_usage() -> void:
+	if is_watering and current_water_level <= 0:
+		stop_watering()
+	elif not is_watering and current_water_level < water_capacity:
+		check_for_refill()
