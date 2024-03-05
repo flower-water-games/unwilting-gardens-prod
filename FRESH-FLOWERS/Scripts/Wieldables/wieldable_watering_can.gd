@@ -6,6 +6,7 @@ class_name WateringCan
 var current_water_level: float
 
 @onready var water_stream: GPUParticles3D = %WaterStream
+#todi fix nightmare get_node path
 @onready var interaction_raycast: ShapeCast3D = get_node("../../../../Head/Camera/ShapeCast")
 @onready var target_rotation_z = rotation_degrees.z + 10
 
@@ -93,7 +94,8 @@ func on_tween_complete(tween):
 func stop_watering():
 	if is_watering:
 		is_watering = false
-		watering_target.watering_sfx_instance.stop()
+		if watering_target:
+			watering_target.watering_sfx_instance.stop()
 		tween_up()
 		water_stream.emitting = false
 		watering_timer.stop()

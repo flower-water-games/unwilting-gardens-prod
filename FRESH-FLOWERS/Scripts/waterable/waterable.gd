@@ -39,7 +39,7 @@ func water(amount):
 		moisture_level = max_moisture_level
 		watering_sfx_instance.stop()
 
-    # Implement additional logic here (e.g., visual feedback, triggering growth
+	# Implement additional logic here (e.g., visual feedback, triggering growth
 
 var scale_up_factor = .2
 func scale_up_tween():

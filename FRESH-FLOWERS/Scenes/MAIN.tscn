@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhatmddsmnj2v"]
+[gd_scene load_steps=19 format=3 uid="uid://dhatmddsmnj2v"]
 
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dk4c3vrbatp8v" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Flowercube grow_unwilt.ogg" id="7_hjhgm"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/music_manager.gd" id="8_05bny"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_jkygg"]
+[ext_resource type="PackedScene" path="res://FRESH-FLOWERS/PrefabScenes/midground/trees_and_water.tscn" id="15_my2j6"]
 
 [sub_resource type="Resource" id="Resource_rxla4"]
 script = ExtResource("4_t7o6m")
@@ -69,6 +70,7 @@ tracks = Array[Resource("res://addons/resonate/music_manager/music_track_resourc
 [node name="SoundBank" type="Node" parent="CORE/GardenMusicManager"]
 script = ExtResource("3_1m4ba")
 label = "player"
+bus = "SFX"
 events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResource("Resource_a88or"), SubResource("Resource_xr3dh")])
 
 [node name="LEVEL" type="Node3D" parent="."]
@@ -89,5 +91,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.611797, 0)
 [node name="Level2" type="Node3D" parent="LEVEL"]
 
 [node name="Stage3" type="Node3D" parent="LEVEL"]
+
+[node name="midground" parent="LEVEL" instance=ExtResource("15_my2j6")]
 
 [editable path="LEVEL/Level1/Dome"]
