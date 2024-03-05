@@ -8,7 +8,7 @@ radius = 0.3
 height = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lt2mu"]
-size = Vector3(1.06, 0.98, 1.81)
+size = Vector3(1.06, 0.98, 1)
 
 [node name="PLAYER" type="CharacterBody3D" node_paths=PackedStringArray("wieldable")]
 script = ExtResource("1_0hgre")
@@ -51,7 +51,7 @@ fov = 80.7
 
 [node name="ShapeCast" type="ShapeCast3D" parent="Head/Camera"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00472, -1.80379)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00472, -1.52525)
 shape = SubResource("BoxShape3D_lt2mu")
 collision_mask = 2
 collide_with_areas = true
