@@ -7,7 +7,7 @@
 radius = 0.3
 height = 1.0
 
-[node name="PLAYER" type="CharacterBody3D" node_paths=PackedStringArray("wieldable")]
+[node name="PLAYER" type="CharacterBody3D" node_paths=PackedStringArray("wieldable") groups=["Player"]]
 script = ExtResource("1_0hgre")
 jump_strength = 5
 wieldable = NodePath("Head/Camera/Container/WateringCan")
@@ -21,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
+metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
 transparent_bg = true

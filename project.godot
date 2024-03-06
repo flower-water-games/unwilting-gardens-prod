@@ -49,6 +49,10 @@ folder_colors={
 "res://FRESH-FLOWERS/": "green"
 }
 
+[global_group]
+
+Player=""
+
 [input]
 
 move_right={

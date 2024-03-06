@@ -10,9 +10,8 @@ class_name GardenMusicManager
 func _ready():
 	pass
 	# connect the area entered signal
-	# party_cube.hide()
-	# stage1_area.connect("body_entered", _stage_1_entered)
-	# stage1_area.connect("body_exited", _on_area_exit)
+	stage1_area.connect("body_entered", _stage_1_entered)
+	stage1_area.connect("body_exited", _on_area_exit)
 
 	# stage2_area.connect("body_entered", _stage_2_entered)
 	# stage2_area.connect("body_exited", _on_area_exit)
