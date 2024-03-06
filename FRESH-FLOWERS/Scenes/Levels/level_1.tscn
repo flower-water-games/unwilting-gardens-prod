@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bn8jq5sn8o5u3"]
+[gd_scene load_steps=9 format=3 uid="uid://bn8jq5sn8o5u3"]
 
 [ext_resource type="PackedScene" uid="uid://cpxbbx0eydsyl" path="res://FRESH-FLOWERS/Assets/chrisdome/Dome.glb" id="1_xdckf"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/refill_watering.gd" id="2_l3lsj"]
 [ext_resource type="PackedScene" uid="uid://c36d2u5ykulxg" path="res://FRESH-FLOWERS/PrefabScenes/waterables/flower_cube.tscn" id="3_i6h22"]
-[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/waterable/waterable.gd" id="4_gglf8"]
-[ext_resource type="Material" uid="uid://bct5kchviw2gr" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_happy.tres" id="5_g8pwx"]
-[ext_resource type="Material" uid="uid://fc0yjkvu0twc" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_sad.tres" id="6_usknq"]
+[ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="3_jgp7a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e8yuq"]
 size = Vector3(1, 5.55, 1)
@@ -98,52 +96,38 @@ hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 0, 1, 1)
 
-[node name="flower_cube" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
+[node name="StemCube" parent="." instance=ExtResource("3_jgp7a")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 7.69831, -3.13501, -6.40164)
+stem_name = "piano"
+
+[node name="StemCube2" parent="." instance=ExtResource("3_jgp7a")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -8.00056, -3.13501, -6.40164)
+stem_name = "dangly"
+
+[node name="StemCube3" parent="." instance=ExtResource("3_jgp7a")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -13.4865, -3.13501, -6.40164)
+stem_name = "flute"
+
+[node name="StemCube4" parent="." instance=ExtResource("3_jgp7a")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -13.4865, -3.13501, -1.34101)
+stem_name = "string"
+
+[node name="flower_cube" parent="." instance=ExtResource("3_i6h22")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0174394, -3.73121, -8.87207)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("4_gglf8")
-my_happy_material = ExtResource("5_g8pwx")
-my_sad_material = ExtResource("6_usknq")
 
-[node name="flower_cube2" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
-transform = Transform3D(0.387317, 0, 0.0999267, 0, 0.4, 0, -0.0999267, 0, 0.387317, 9.17713, -3.29404, -7.86214)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("4_gglf8")
-my_happy_material = ExtResource("5_g8pwx")
-my_sad_material = ExtResource("6_usknq")
+[node name="flower_cube2" parent="." instance=ExtResource("3_i6h22")]
+transform = Transform3D(0.387317, 0, 0.0999267, 0, 0.4, 0, -0.0999267, 0, 0.387317, -1.09977, -3.29404, -7.86214)
 
-[node name="flower_cube3" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
-transform = Transform3D(0.3919, 0, 0.0800893, 0, 0.4, 0, -0.0800893, 0, 0.3919, 10.8335, -3.29404, -6.30062)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("4_gglf8")
-my_happy_material = ExtResource("5_g8pwx")
-my_sad_material = ExtResource("6_usknq")
+[node name="flower_cube3" parent="." instance=ExtResource("3_i6h22")]
+transform = Transform3D(0.3919, 0, 0.0800893, 0, 0.4, 0, -0.0800893, 0, 0.3919, 15.5446, -3.29404, -0.402723)
 
-[node name="flower_cube4" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 11.1273, -3.29404, -8.01185)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("4_gglf8")
-my_happy_material = ExtResource("5_g8pwx")
-my_sad_material = ExtResource("6_usknq")
+[node name="flower_cube4" parent="." instance=ExtResource("3_i6h22")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 13.7591, -3.29404, -6.62814)
 
-[node name="flower_cube5" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 9.13295, -3.29404, -6.31403)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("4_gglf8")
-my_happy_material = ExtResource("5_g8pwx")
-my_sad_material = ExtResource("6_usknq")
+[node name="flower_cube5" parent="." instance=ExtResource("3_i6h22")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 6.35731, -3.29404, 4.58552)
 
-[node name="flower_cube6" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
+[node name="flower_cube6" parent="." instance=ExtResource("3_i6h22")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 11.9287, -3.29404, 4.10902)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("4_gglf8")
-my_happy_material = ExtResource("5_g8pwx")
-my_sad_material = ExtResource("6_usknq")
 
 [editable path="Dome"]

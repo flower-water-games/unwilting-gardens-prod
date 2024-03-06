@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://clhki2jaqqksr"]
+
+[ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_fv5m1"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/waterable/stem_cube.gd" id="2_iyhur"]
+[ext_resource type="Texture2D" uid="uid://ci8bcjlx4i0jb" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/Final Beauty/happy_beauty.png" id="3_2rs2g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6p55"]
+albedo_texture = ExtResource("3_2rs2g")
+
+[node name="StemCube" instance=ExtResource("1_fv5m1")]
+script = ExtResource("2_iyhur")
+stem_name = ""
+my_happy_material = SubResource("StandardMaterial3D_m6p55")
