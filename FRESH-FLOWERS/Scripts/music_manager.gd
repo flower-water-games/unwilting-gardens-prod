@@ -15,8 +15,6 @@ func _ready():
 
 	# stage2_area.connect("body_entered", _stage_2_entered)
 	# stage2_area.connect("body_exited", _on_area_exit)
-	# await get_tree().create_timer(300).timeout
-	# party_cube.show()
 
 func _on_area_exit(node):
 	# if stage 3 is not playing, stop the music
