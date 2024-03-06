@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn8jq5sn8o5u3"]
+[gd_scene load_steps=11 format=3 uid="uid://bn8jq5sn8o5u3"]
 
 [ext_resource type="PackedScene" uid="uid://cpxbbx0eydsyl" path="res://FRESH-FLOWERS/Assets/chrisdome/Dome.glb" id="1_xdckf"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/refill_watering.gd" id="2_l3lsj"]
+[ext_resource type="PackedScene" uid="uid://c36d2u5ykulxg" path="res://FRESH-FLOWERS/PrefabScenes/waterables/flower_cube.tscn" id="3_i6h22"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/waterable/waterable.gd" id="4_gglf8"]
+[ext_resource type="Material" uid="uid://bct5kchviw2gr" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_happy.tres" id="5_g8pwx"]
+[ext_resource type="Material" uid="uid://fc0yjkvu0twc" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_sad.tres" id="6_usknq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e8yuq"]
 size = Vector3(1, 5.55, 1)
@@ -74,6 +78,10 @@ shape = SubResource("BoxShape3D_e8yuq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 10, 2.08165e-12)
 size = Vector3(10, 2, 10)
 
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -4.48364, 2.08165e-12)
+size = Vector3(100, 2, 100)
+
 [node name="WaterStream" type="GPUParticles3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, 1.5774, -2.1404, -0.124254)
 amount = 200
@@ -89,5 +97,53 @@ collision_mask = 2
 hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 0, 1, 1)
+
+[node name="flower_cube" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0174394, -3.73121, -8.87207)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_gglf8")
+my_happy_material = ExtResource("5_g8pwx")
+my_sad_material = ExtResource("6_usknq")
+
+[node name="flower_cube2" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
+transform = Transform3D(0.387317, 0, 0.0999267, 0, 0.4, 0, -0.0999267, 0, 0.387317, 9.17713, -3.29404, -7.86214)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_gglf8")
+my_happy_material = ExtResource("5_g8pwx")
+my_sad_material = ExtResource("6_usknq")
+
+[node name="flower_cube3" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
+transform = Transform3D(0.3919, 0, 0.0800893, 0, 0.4, 0, -0.0800893, 0, 0.3919, 10.8335, -3.29404, -6.30062)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_gglf8")
+my_happy_material = ExtResource("5_g8pwx")
+my_sad_material = ExtResource("6_usknq")
+
+[node name="flower_cube4" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 11.1273, -3.29404, -8.01185)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_gglf8")
+my_happy_material = ExtResource("5_g8pwx")
+my_sad_material = ExtResource("6_usknq")
+
+[node name="flower_cube5" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 9.13295, -3.29404, -6.31403)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_gglf8")
+my_happy_material = ExtResource("5_g8pwx")
+my_sad_material = ExtResource("6_usknq")
+
+[node name="flower_cube6" type="Area3D" parent="." instance=ExtResource("3_i6h22")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 11.9287, -3.29404, 4.10902)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_gglf8")
+my_happy_material = ExtResource("5_g8pwx")
+my_sad_material = ExtResource("6_usknq")
 
 [editable path="Dome"]

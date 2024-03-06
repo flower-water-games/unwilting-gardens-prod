@@ -48,7 +48,7 @@ size = Vector3(40, 17, 20)
 [node name="CORE" type="Node3D" parent="."]
 
 [node name="PLAYER" parent="CORE" node_paths=PackedStringArray("wieldable") instance=ExtResource("1_sxd3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16329e-12, 120, 25.318)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 120, 23)
 wieldable = NodePath("Head/Camera/Container/WateringCan")
 
 [node name="WorldEnvironment" parent="CORE" instance=ExtResource("2_u1ghk")]

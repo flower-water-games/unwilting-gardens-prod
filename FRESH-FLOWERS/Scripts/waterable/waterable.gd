@@ -39,7 +39,7 @@ func water(amount):
 	
 	if moisture_level >= max_moisture_level:
 		moisture_level = max_moisture_level
-		watering_sfx_instance.stop()
+		watering_sfx_instance.release()
 		SoundManager.play("player", "watered")
 
 
