@@ -4,7 +4,7 @@ class_name Waterable
 
 
 var moisture_level = 0.0
-@export var max_moisture_level = 3.1
+@export var max_moisture_level = 9.0
 @export var threshold = 3.0
 @onready var initial_scale = scale
 
@@ -40,6 +40,8 @@ func water(amount):
 	if moisture_level >= max_moisture_level:
 		moisture_level = max_moisture_level
 		watering_sfx_instance.stop()
+		SoundManager.play("player", "watered")
+
 
 	# Implement additional logic here (e.g., visual feedback, triggering growth
 
@@ -57,7 +59,6 @@ func scale_up_tween():
 func _on_threshold_reached():
 	# Implement logic to trigger growth here
 	threshold_reached = true
-	watering_sfx_instance.stop()
 	flower_cube_mesh.material_override = my_happy_material
 	SoundManager.play("player", "complete")
 	# print('warning: not implemented -> threshold reached')
