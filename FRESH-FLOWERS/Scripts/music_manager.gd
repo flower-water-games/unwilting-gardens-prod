@@ -89,8 +89,22 @@ func stage3():
 	MusicManager.stop(10)
 	MusicManager.play("Music", "Stage3", 10)
 
+@export var stage1_lock : Node3D
+
+var is_stage_2 = false
+
+func stage2():
+	# unlock stage 3
+	print("stage 1 completed, unlock stage 2")
+	stage1_lock.queue_free()
+	pass
+
 func _process(delta):
 	# if all stems are playing, stop the music
+	if stage1_all_stems_found and not is_stage_2:
+		is_stage_2 = true
+		stage2()
+
 	if stage1_all_stems_found and stage2_all_stems_found:
 		stage1_all_stems_found = false
 		stage3()

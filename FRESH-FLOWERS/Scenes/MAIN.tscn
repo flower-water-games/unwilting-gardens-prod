@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dhatmddsmnj2v"]
+[gd_scene load_steps=22 format=3 uid="uid://dhatmddsmnj2v"]
 
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
@@ -14,7 +14,9 @@
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/music_manager.gd" id="8_05bny"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_jkygg"]
 [ext_resource type="PackedScene" uid="uid://bn8jq5sn8o5u3" path="res://FRESH-FLOWERS/Scenes/Levels/level_1.tscn" id="14_g0aa1"]
+[ext_resource type="PackedScene" uid="uid://b1m2agh5k1xhv" path="res://FRESH-FLOWERS/Scenes/Levels/level_2.tscn" id="15_7tpt6"]
 [ext_resource type="PackedScene" path="res://FRESH-FLOWERS/PrefabScenes/midground/trees_and_water.tscn" id="15_my2j6"]
+[ext_resource type="PackedScene" uid="uid://phxwn6amsqjq" path="res://FRESH-FLOWERS/PrefabScenes/wall.tscn" id="17_jas50"]
 
 [sub_resource type="Resource" id="Resource_rxla4"]
 script = ExtResource("4_t7o6m")
@@ -61,9 +63,11 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area")]
+[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area", "stage2_area", "stage1_lock")]
 script = ExtResource("8_05bny")
 stage1_area = NodePath("../../LEVEL/Level1/Area3D")
+stage2_area = NodePath("../../LEVEL/Level2/Area3D")
+stage1_lock = NodePath("../../LEVEL/LOCKS/WALL4")
 
 [node name="MusicBank" type="Node" parent="CORE/GardenMusicManager"]
 script = ExtResource("9_jkygg")
@@ -90,8 +94,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 120, 24.488)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 0)
 shape = SubResource("BoxShape3D_ti4l8")
 
-[node name="Level2" type="Node3D" parent="LEVEL"]
+[node name="Level2" parent="LEVEL" instance=ExtResource("15_7tpt6")]
+
+[node name="Area3D" type="Area3D" parent="LEVEL/Level2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.1155)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 0)
+shape = SubResource("BoxShape3D_ti4l8")
 
 [node name="Stage3" type="Node3D" parent="LEVEL"]
 
 [node name="midground" parent="LEVEL" instance=ExtResource("15_my2j6")]
+
+[node name="LOCKS" type="Node3D" parent="LEVEL"]
+
+[node name="WALL4" parent="LEVEL/LOCKS" instance=ExtResource("17_jas50")]

@@ -40,12 +40,6 @@ visible = false
 use_collision = true
 size = Vector3(40, 0.1, 8.80725)
 
-[node name="WALL4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.37245e-23, 0.731827, 6.84338)
-visible = false
-use_collision = true
-size = Vector3(40, 0.1, 8.80725)
-
 [node name="WALL2" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, -1.5246e-23, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 20.3123, 0.731826, -0.0179434)
 visible = false
@@ -97,37 +91,37 @@ collide_with_areas = true
 debug_shape_custom_color = Color(0, 0, 1, 1)
 
 [node name="StemCube" parent="." instance=ExtResource("3_jgp7a")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 7.69831, -3.13501, -6.40164)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 7.69831, -3.13501, -6.40164)
 stem_name = "piano"
 
 [node name="StemCube2" parent="." instance=ExtResource("3_jgp7a")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -8.00056, -3.13501, -6.40164)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -8.00056, -3.13501, -6.40164)
 stem_name = "dangly"
 
 [node name="StemCube3" parent="." instance=ExtResource("3_jgp7a")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -13.4865, -3.13501, -6.40164)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -13.4865, -3.13501, -6.40164)
 stem_name = "flute"
 
 [node name="StemCube4" parent="." instance=ExtResource("3_jgp7a")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -13.4865, -3.13501, -1.34101)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -13.4865, -3.13501, -1.34101)
 stem_name = "string"
 
 [node name="flower_cube" parent="." instance=ExtResource("3_i6h22")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0174394, -3.73121, -8.87207)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.0174394, -3.73121, -7.52575)
 
 [node name="flower_cube2" parent="." instance=ExtResource("3_i6h22")]
-transform = Transform3D(0.387317, 0, 0.0999267, 0, 0.4, 0, -0.0999267, 0, 0.387317, -1.09977, -3.29404, -7.86214)
+transform = Transform3D(0.242073, 0, 0.0624542, 0, 0.25, 0, -0.0624542, 0, 0.242073, -1.09977, -3.29404, -6.51582)
 
 [node name="flower_cube3" parent="." instance=ExtResource("3_i6h22")]
-transform = Transform3D(0.3919, 0, 0.0800893, 0, 0.4, 0, -0.0800893, 0, 0.3919, 15.5446, -3.29404, -0.402723)
+transform = Transform3D(0.244938, 0, 0.0500558, 0, 0.25, 0, -0.0500558, 0, 0.244938, 15.5446, -3.29404, 0.943602)
 
 [node name="flower_cube4" parent="." instance=ExtResource("3_i6h22")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 13.7591, -3.29404, -6.62814)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 13.7591, -3.29404, -5.28182)
 
 [node name="flower_cube5" parent="." instance=ExtResource("3_i6h22")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 6.35731, -3.29404, 4.58552)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 6.35731, -3.29404, 5.93184)
 
 [node name="flower_cube6" parent="." instance=ExtResource("3_i6h22")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 11.9287, -3.29404, 4.10902)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 11.9287, -3.29404, 5.45535)
 
 [editable path="Dome"]

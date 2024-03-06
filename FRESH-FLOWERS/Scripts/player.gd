@@ -93,6 +93,7 @@ func _physics_process(delta):
 	if position.y < -10:
 		get_tree().reload_current_scene()
 
+
 # Mouse movement
 
 func _input(event):
