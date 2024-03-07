@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cgotyr2bvj2cr"]
+
+[node name="CSGBox3D" type="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.48892, 0)
+use_collision = true
+size = Vector3(40, 0.1, 20)

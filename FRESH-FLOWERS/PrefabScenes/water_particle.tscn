@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhfus2f8yr0h1"]
+
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/water_particle.gd" id="1_073wx"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bbu05"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svcyr"]
+albedo_color = Color(0, 0.823459, 0.760311, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uinpv"]
+radius = 0.05
+
+[node name="water_particle" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_073wx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("SphereMesh_bbu05")
+surface_material_override/0 = SubResource("StandardMaterial3D_svcyr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_uinpv")

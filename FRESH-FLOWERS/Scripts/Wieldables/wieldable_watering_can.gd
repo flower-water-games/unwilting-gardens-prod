@@ -67,10 +67,30 @@ func reset_watering_target() -> void:
 func start_watering() -> void:
 	if not is_watering and current_water_level > 0:
 		is_watering = true
-		water_stream.emitting = true
+		# water_stream.emitting = true
 		tween_to_target_rotation(target_rotation_z)
 		watering_timer.start()
 		print("Watering Can: Started watering")
+
+
+@export var water_particle: PackedScene
+@export var node_to_spawn_under: Node3D
+
+func spawn_particles(num : int) -> void:
+	for i in range(num):
+		# await get tree timer timeout 1 second
+		await get_tree().create_timer(1 / num).timeout
+		_create_water_particle()
+
+func _create_water_particle():
+	var w = water_particle.instantiate() as CharacterBody3D
+	get_tree().get_root().add_child(w)
+	w.global_position = node_to_spawn_under.global_position
+	w.global_rotation = global_rotation
+	# add 90 degrees to y rotation
+	# w.rotation_degrees += Vector3(0, 90, 0)
+	w.set_start_velocity()
+
 
 func stop_watering() -> void:
 	if is_watering:
@@ -89,11 +109,13 @@ func tween_to_original_rotation() -> void:
 	tween_to_target_rotation(original_rotation.z)
 
 func _on_watering_timer_timeout() -> void:
+
 	use_water()
 
 func use_water() -> void:
 	if current_water_level > 0:
 		current_water_level -= drainage_rate
+		spawn_particles(50)
 		if current_water_level <= 0:
 			current_water_level = 0
 			stop_watering()
