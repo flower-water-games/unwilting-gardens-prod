@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dt6brf8pfl28d"]
+[gd_scene load_steps=39 format=3 uid="uid://dt6brf8pfl28d"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/Wieldables/wieldable_watering_can.gd" id="1_ttr6a"]
 [ext_resource type="Texture2D" uid="uid://bjs40jntrm8so" path="res://FRESH-FLOWERS/Assets/PB/textures/body_normal.001.png" id="2_5b5sc"]
@@ -318,6 +318,9 @@ material = SubResource("StandardMaterial3D_svcyr")
 radius = 0.05
 height = 0.1
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qdx7y"]
+size = Vector3(2.18, 1, 1)
+
 [node name="watering_can" type="Node3D" node_paths=PackedStringArray("watering_indicator_sphere", "node_to_spawn_under", "wieldable_mesh")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 0, 0)
 script = ExtResource("1_ttr6a")
@@ -378,3 +381,10 @@ process_material = SubResource("ParticleProcessMaterial_1vode")
 draw_pass_1 = SubResource("SphereMesh_yn73a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -4.15925e-24, 0, -4.15925e-24, 1, -1.11798, 1.49295, -1.33318e-08)
+shape = SubResource("BoxShape3D_qdx7y")
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false

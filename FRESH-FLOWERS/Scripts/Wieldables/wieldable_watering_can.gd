@@ -6,7 +6,7 @@ class_name WateringCan
 var current_water_level: float = water_capacity
 
 @onready var water_stream: GPUParticles3D = $WaterStream
-# @onready var interaction_raycast: ShapeCast3D = $ShapeCast3D
+@onready var interaction_raycast: ShapeCast3D = $ShapeCast3D
 @onready var original_rotation: Vector3 = rotation_degrees
 @onready var target_rotation_z: float = rotation_degrees.x - 10
 
@@ -67,7 +67,7 @@ func reset_watering_target() -> void:
 func start_watering() -> void:
 	if not is_watering and current_water_level > 0:
 		is_watering = true
-		# water_stream.emitting = true
+		water_stream.emitting = true
 		tween_to_target_rotation(target_rotation_z)
 		watering_timer.start()
 		print("Watering Can: Started watering")
