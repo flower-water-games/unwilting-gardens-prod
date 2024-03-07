@@ -6,9 +6,9 @@ class_name WateringCan
 var current_water_level: float = water_capacity
 
 @onready var water_stream: GPUParticles3D = $WaterStream
-@onready var interaction_raycast: ShapeCast3D = $ShapeCast3D
+# @onready var interaction_raycast: ShapeCast3D = $ShapeCast3D
 @onready var original_rotation: Vector3 = rotation_degrees
-@onready var target_rotation_z: float = rotation_degrees.z + 10
+@onready var target_rotation_z: float = rotation_degrees.x - 10
 
 @export var watering_indicator_sphere : Node3D
 
@@ -84,6 +84,12 @@ func spawn_particles(num : int) -> void:
 
 func _create_water_particle():
 	var w = water_particle.instantiate() as CharacterBody3D
+
+	var t: Timer = Timer.new()
+	t.wait_time = 2.0
+	t.one_shot = true
+	t.timeout.connect(w.queue_free)	
+
 	get_tree().get_root().add_child(w)
 	w.global_position = node_to_spawn_under.global_position
 	w.global_rotation = global_rotation
@@ -103,10 +109,10 @@ func stop_watering() -> void:
 
 func tween_to_target_rotation(rotation: float) -> void:
 	var tween = create_tween()
-	tween.tween_property(self, "rotation_degrees:z", rotation, 0.5)
+	tween.tween_property(self, "rotation_degrees:x", rotation, 0.1)
 
 func tween_to_original_rotation() -> void:
-	tween_to_target_rotation(original_rotation.z)
+	tween_to_target_rotation(original_rotation.x)
 
 func _on_watering_timer_timeout() -> void:
 
