@@ -10,6 +10,8 @@ var current_water_level: float = water_capacity
 @onready var original_rotation: Vector3 = rotation_degrees
 @onready var target_rotation_z: float = rotation_degrees.z + 10
 
+@export var watering_indicator_sphere : Node3D
+
 var is_watering: bool = false
 var watering_timer: Timer = Timer.new()
 
@@ -104,7 +106,15 @@ func use_water() -> void:
 		stop_watering()
 		print("Watering Can: Can is empty.")
 
+var position_when_water_empty = -0.32
+var position_when_water_full = 0.15
+
 func update_water_level_based_on_usage() -> void:
+	var water_level = lerp(position_when_water_empty, position_when_water_full, current_water_level / water_capacity)
+
+	var tween = create_tween()
+	tween.tween_property(watering_indicator_sphere, "position:y", water_level, 1.0)
+
 	if is_watering and current_water_level <= 0:
 		stop_watering()
 	elif not is_watering and current_water_level < water_capacity:
