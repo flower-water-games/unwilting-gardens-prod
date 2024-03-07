@@ -1,7 +1,34 @@
-[gd_scene format=3 uid="uid://b1m2agh5k1xhv"]
+[gd_scene load_steps=2 format=3 uid="uid://b1m2agh5k1xhv"]
+
+[ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="1_hltdr"]
 
 [node name="Level2" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.50563, 21.876)
+use_collision = true
 size = Vector3(20, 0.1, 20)
+
+[node name="StemCube" parent="." instance=ExtResource("1_hltdr")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.62449, -3.07628, 29.4109)
+stem_name = "pianosmart"
+
+[node name="StemCube2" parent="." instance=ExtResource("1_hltdr")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.596981, -3.07628, 29.4109)
+stem_name = "guira"
+
+[node name="StemCube3" parent="." instance=ExtResource("1_hltdr")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.80617, -3.07628, 29.4109)
+stem_name = "gabechords"
+
+[node name="StemCube4" parent="." instance=ExtResource("1_hltdr")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.80617, -3.07628, 25.129)
+stem_name = "flute"
+
+[node name="StemCube5" parent="." instance=ExtResource("1_hltdr")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.80617, -3.07628, 20.4981)
+stem_name = "drone"
+
+[node name="StemCube6" parent="." instance=ExtResource("1_hltdr")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.80617, -3.07628, 16.1883)
+stem_name = "4-drumrack"

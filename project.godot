@@ -19,11 +19,11 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="res://FRESH-FLOWERS/Resources/water_bus_layout.tres"
 manager/sound/bus="Sound"
-manager/sound/pool_1D_size=16
 manager/sound/pool_2D_size=16
 manager/sound/pool_3D_size=16
 manager/sound/max_polyphony=32
 manager/music/bus="Music"
+manager/sound/pool_1D_size=64
 
 [autoload]
 

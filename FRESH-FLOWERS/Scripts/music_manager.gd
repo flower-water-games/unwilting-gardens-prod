@@ -13,8 +13,8 @@ func _ready():
 	stage1_area.connect("body_entered", _stage_1_entered)
 	stage1_area.connect("body_exited", _on_area_exit)
 
-	# stage2_area.connect("body_entered", _stage_2_entered)
-	# stage2_area.connect("body_exited", _on_area_exit)
+	stage2_area.connect("body_entered", _stage_2_entered)
+	stage2_area.connect("body_exited", _on_area_exit)
 
 func _on_area_exit(node):
 	# if stage 3 is not playing, stop the music
@@ -26,6 +26,8 @@ func _on_area_exit(node):
 func _stage_1_entered(node):
 	# play stage 1 music
 	# if the body is in the group "player"
+	if (is_stage_3):
+		return
 	if node.is_in_group("Player"):
 		# enable all stems for stage 1 that are playing already
 
@@ -36,6 +38,8 @@ func _stage_1_entered(node):
 
 
 func _stage_2_entered(node):
+	if (is_stage_3):
+		return
 	# play stage 2 music if player entered
 	if node.is_in_group("Player"):
 		MusicManager.play("Music", "Stage2", .1)
