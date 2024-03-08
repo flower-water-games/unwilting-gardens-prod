@@ -1,11 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://b5iivmi4hqlws"]
+[gd_scene load_steps=24 format=3 uid="uid://b5iivmi4hqlws"]
 
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_pkp2k"]
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_q6g3r"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_jmfx4"]
 [ext_resource type="PackedScene" uid="uid://ckt0iiu7qn6d" path="res://FRESH-FLOWERS/PrefabScenes/waterables/bird_cube.tscn" id="2_n44rl"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="3_smlsn"]
-[ext_resource type="Texture2D" uid="uid://dmar4kivivxxn" path="res://FRESH-FLOWERS/Assets/PB/textures/FX_CloudAlpha04-bright.png" id="6_rnxo3"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Assets/PB/Cloud_spawner.gd" id="6_04tix"]
+[ext_resource type="Texture2D" uid="uid://dll3o7drokr6w" path="res://FRESH-FLOWERS/Assets/PB/FX_CloudAlpha04-bright copy.png" id="6_rnxo3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek35x"]
 albedo_color = Color(1, 0.776471, 0.819608, 1)
@@ -98,11 +99,14 @@ gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40jjo"]
 transparency = 1
+blend_mode = 1
+cull_mode = 2
 shading_mode = 0
 albedo_texture = ExtResource("6_rnxo3")
 billboard_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_1sgp7"]
+lightmap_size_hint = Vector2i(27, 27)
 material = SubResource("StandardMaterial3D_40jjo")
 size = Vector2(5, 5)
 
@@ -212,12 +216,14 @@ multimesh = SubResource("MultiMesh_qwxf2")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.27647, -8.12859)
+visible = false
 size = Vector3(10, 2, 22.5695)
 material = SubResource("FogMaterial_076l3")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Cloud" type="Node3D" parent="."]
+script = ExtResource("6_04tix")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Node3D"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Cloud"]
 amount = 50
 lifetime = 30.0
 explosiveness = 0.98
