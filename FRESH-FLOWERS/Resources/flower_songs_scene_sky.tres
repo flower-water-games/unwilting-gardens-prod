@@ -1,5 +1,7 @@
 [gd_resource type="Environment" load_steps=160 format=3 uid="uid://chtxyiji1i281"]
 
+[ext_resource type="Texture2D" uid="uid://bdg7ujccsgedf" path="res://FRESH-FLOWERS/Assets/192.jpg" id="1_ws8oh"]
+
 [sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_tnq3l"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_uy53c"]
@@ -1444,9 +1446,11 @@ nodes/sky/connections = PackedInt32Array(2, 0, 4, 0, 4, 0, 6, 0, 7, 0, 6, 1, 13,
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_3d0il"]
 noise_type = 3
-frequency = 0.0053
+seed = -20
+frequency = 0.0066
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dn1td"]
+seamless = true
 noise = SubResource("FastNoiseLite_3d0il")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_j3swq"]
@@ -1464,14 +1468,11 @@ seamless = true
 seamless_blend_skirt = 0.531
 noise = SubResource("FastNoiseLite_sfeoy")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_66ofr"]
-load_path = "res://.godot/imported/192.jpg-3791fcd4379421817278afed11397aaa.s3tc.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nwpkt"]
 resource_local_to_scene = true
 shader = SubResource("VisualShader_4oelb")
 shader_parameter/CloudsCutoffOutside = 0.015
-shader_parameter/CloudsSmoothnessOutside = 0.079
+shader_parameter/CloudsSmoothnessOutside = 0.109
 shader_parameter/CloudsScrollSpeed2 = 0.01
 shader_parameter/CloudsScrollSpeed = 0.16
 shader_parameter/CloudsScale = -0.08
@@ -1492,7 +1493,7 @@ shader_parameter/HorizonCol = Color(0, 0.87451, 0.866667, 1)
 shader_parameter/CloudsInsideNight = Color(0.27451, 0.0392157, 0.482353, 1)
 shader_parameter/CloudsInsideIntensity = -2.17
 shader_parameter/CloudsEdgeIntensity = 2.72
-shader_parameter/CloudsEdgeNight = Color(0.984314, 0.478431, 0.682353, 1)
+shader_parameter/CloudsEdgeNight = Color(0.682345, 0.42303, 0.707374, 1)
 shader_parameter/CloudsCutoffInside = 0.1
 shader_parameter/CloudsSmoothnessInside = 0.005
 shader_parameter/CloudEdgeDay = Color(0.698039, 0.682353, 0.835294, 1)
@@ -1502,7 +1503,7 @@ shader_parameter/CloudsEdgeIntensity2 = 2.682
 shader_parameter/Noise1 = SubResource("NoiseTexture2D_a0jfa")
 shader_parameter/Distort = SubResource("NoiseTexture2D_dn1td")
 shader_parameter/Noise2 = SubResource("NoiseTexture2D_jsg4d")
-shader_parameter/StarsTex = SubResource("CompressedTexture2D_66ofr")
+shader_parameter/StarsTex = ExtResource("1_ws8oh")
 
 [sub_resource type="Sky" id="Sky_0k6cr"]
 resource_local_to_scene = true
@@ -1532,22 +1533,24 @@ glow_hdr_threshold = 2.5
 glow_hdr_scale = 2.54
 glow_hdr_luminance_cap = 33.05
 glow_map_strength = 1.0
-fog_light_color = Color(0.139232, 0.195357, 0.585977, 1)
-fog_light_energy = 4.14
-fog_sun_scatter = 0.25
-fog_density = 0.0
-fog_aerial_perspective = 0.322
-fog_sky_affect = 0.0
-fog_height = 612.05
-fog_height_density = 0.001
+fog_light_color = Color(0.698675, 0.771005, 0.983466, 1)
+fog_light_energy = 1.74
+fog_sun_scatter = 0.46
+fog_density = 0.044
+fog_aerial_perspective = 0.112
+fog_sky_affect = 0.061
+fog_height = -21.86
+fog_height_density = 1.6337
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0211
+volumetric_fog_density = 0.0007
 volumetric_fog_emission = Color(0.979131, 0.971788, 0.993699, 1)
-volumetric_fog_emission_energy = 0.0
-volumetric_fog_gi_inject = 1.17
-volumetric_fog_anisotropy = -0.8
+volumetric_fog_emission_energy = 200.36
+volumetric_fog_gi_inject = 1.54
+volumetric_fog_anisotropy = -0.73
 volumetric_fog_length = 23.94
-volumetric_fog_ambient_inject = 1.85
-volumetric_fog_sky_affect = 0.136
+volumetric_fog_detail_spread = 4.24264
+volumetric_fog_ambient_inject = 1.11
+volumetric_fog_sky_affect = 0.456
+volumetric_fog_temporal_reprojection_enabled = false
 volumetric_fog_temporal_reprojection_amount = 0.99
 adjustment_brightness = 1.15
