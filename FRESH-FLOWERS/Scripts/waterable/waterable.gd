@@ -44,9 +44,6 @@ func water():
 		if not moisture_level > max_moisture_level:
 			on_water()
 		print("Watering")
-	else:
-		# watering_timer.stop()
-		print("not allowed to water for 1s")
 
 func on_water():
 	moisture_level += 1
