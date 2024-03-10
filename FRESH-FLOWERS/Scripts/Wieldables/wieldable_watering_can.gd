@@ -7,8 +7,6 @@ var current_water_level: float = water_capacity
 
 @onready var water_stream: GPUParticles3D = $WaterStream
 @onready var interaction_raycast: ShapeCast3D = $ShapeCast3D
-@onready var original_rotation: Vector3 = rotation_degrees
-@onready var target_rotation_z: float = rotation_degrees.x - 10
 
 @export var watering_indicator_sphere : Node3D
 
@@ -23,8 +21,7 @@ func _ready():
 	setup_watering_timer()
 
 func _process(delta: float) -> void:
-	# if is_watering:
-	# 	check_for_waterable_surface()
+
 	update_water_level_based_on_usage()
 
 func setup_watering_timer() -> void:
@@ -32,13 +29,7 @@ func setup_watering_timer() -> void:
 	watering_timer.one_shot = false
 	watering_timer.timeout.connect(use_water)
 	watering_timer.stop()
-# func check_for_waterable_surface() -> void:
-# 	if interaction_raycast.is_colliding():
-# 		var target = interaction_raycast.get_collider(0)
-# 		if target and target is Waterable:
-# 			process_waterable_target(target)
-# 		else:
-# 			reset_watering_target()
+
 
 func check_for_refill() -> void:
 	if interaction_raycast.is_colliding():
@@ -68,7 +59,7 @@ func start_watering() -> void:
 	if not is_watering and current_water_level > 0:
 		is_watering = true
 		water_stream.emitting = true
-		tween_to_target_rotation(target_rotation_z)
+
 		use_water()
 		watering_timer.start()
 		# use_water()
@@ -95,8 +86,6 @@ func _create_water_particle():
 	get_tree().get_root().add_child(w)
 	w.global_position = node_to_spawn_under.global_position
 	w.global_rotation = global_rotation
-	# add 90 degrees to y rotation
-	# w.rotation_degrees += Vector3(0, 90, 0)
 	w.set_start_velocity()
 
 
@@ -105,16 +94,9 @@ func stop_watering() -> void:
 		is_watering = false
 		reset_watering_target()
 		water_stream.emitting = false
-		tween_to_original_rotation()
 		watering_timer.stop()
 		print("Watering Can: Stopped watering")
 
-func tween_to_target_rotation(rotation: float) -> void:
-	var tween = create_tween()
-	tween.tween_property(self, "rotation_degrees:x", rotation, 0.1)
-
-func tween_to_original_rotation() -> void:
-	tween_to_target_rotation(original_rotation.x)
 
 func use_water() -> void:
 	if current_water_level > 0:
