@@ -17,9 +17,13 @@ var watering_sfx_instance:PooledAudioStreamPlayer
 @onready var watering_timer = Timer.new()
 
 func setup_watering_timer() -> void:
+	add_child(watering_timer)
 	watering_timer.wait_time = 1.0
 	watering_timer.one_shot = true
-	# watering_timer.timeout.connect()
+	watering_timer.timeout.connect(_on_watering_timer_timeout)
+
+func _on_watering_timer_timeout():
+	is_being_watered = false
 
 func _ready():
 	flower_cube_mesh.material_override = my_sad_material
@@ -31,18 +35,22 @@ func on_sound_manager_load():
 
 var threshold_reached = false
 
+var is_being_watered = false
+
 func water():
-	if watering_timer.is_stopped():
+	if not is_being_watered:
 		watering_timer.start()
-		on_water()
+		is_being_watered = true
+		if not moisture_level > max_moisture_level:
+			on_water()
 		print("Watering")
 	else:
 		# watering_timer.stop()
-		print("Stopped watering")
+		print("not allowed to water for 1s")
 
 func on_water():
 	moisture_level += 1
-	scale_up_tween()
+	# scale_up_tween()
 	if not watering_sfx_instance.playing:
 		watering_sfx_instance.trigger()
 

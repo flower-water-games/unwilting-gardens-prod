@@ -11,7 +11,7 @@ func set_start_velocity():
 func _physics_process(delta: float) -> void:
 	velocity.y -= gravity * delta
 
-	look_at(position + velocity)
+	# look_at(position + velocity)
 
 	move_and_slide()
 

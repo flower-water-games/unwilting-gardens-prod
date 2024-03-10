@@ -67,7 +67,7 @@ func reset_watering_target() -> void:
 func start_watering() -> void:
 	if not is_watering and current_water_level > 0:
 		is_watering = true
-		# water_stream.emitting = true
+		water_stream.emitting = true
 		tween_to_target_rotation(target_rotation_z)
 		use_water()
 		print("Watering Can: Started watering")
