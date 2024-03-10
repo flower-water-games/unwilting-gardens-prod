@@ -8,6 +8,8 @@ var moisture_level = 0.0
 @onready var initial_scale = scale
 
 @onready var flower_cube_mesh:MeshInstance3D = %FlowerCubeMesh
+@onready var animation_player:AnimationPlayer = %AnimationPlayer
+@export var animation_name = "growing"
 
 @export var my_happy_material:StandardMaterial3D = null
 @export var my_sad_material:StandardMaterial3D = null
@@ -40,6 +42,7 @@ var is_being_watered = false
 func water():
 	if not is_being_watered:
 		watering_timer.start()
+		animation_player.play(animation_name)
 		is_being_watered = true
 		if not moisture_level > max_moisture_level:
 			on_water()
