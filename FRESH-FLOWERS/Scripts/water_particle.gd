@@ -8,7 +8,14 @@ func set_start_velocity():
 	velocity = (global_transform.basis * Vector3.FORWARD).normalized() * speed
 
 
+var time = 0.0
+# after 3 seconds, the bullet will be destroyed
 func _physics_process(delta: float) -> void:
+	time+=delta
+	# check if its been 3 seconds since been instantiated
+	if time > 3:
+		queue_free()
+		return
 	velocity.y -= gravity * delta
 
 	# look_at(position + velocity)

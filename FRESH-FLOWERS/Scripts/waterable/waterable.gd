@@ -47,16 +47,17 @@ func water():
 
 func on_water():
 	moisture_level += 1
-	# scale_up_tween()
-	if not watering_sfx_instance.playing:
+	if not watering_sfx_instance.is_playing():
 		watering_sfx_instance.trigger()
 
 	if moisture_level >= threshold and not threshold_reached:
+		watering_sfx_instance.release()
 		_on_threshold_reached()
 	
 	if moisture_level >= max_moisture_level:
 		moisture_level = max_moisture_level
 		watering_sfx_instance.release()
+		watering_timer.queue_free()
 		SoundManager.play("player", "watered")
 
 var scale_up_factor = .2
