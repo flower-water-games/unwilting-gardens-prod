@@ -332,7 +332,7 @@ wieldable_mesh = NodePath("vessel")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [node name="vessel" type="Node3D" parent="."]
-transform = Transform3D(-0.0626001, 0.00382879, 0.596713, 0.0366291, 0.598881, -2.09272e-16, -0.5956, 0.0364285, -0.0627171, 0.122912, -4.21023e-16, -1.08419)
+transform = Transform3D(-0.0473628, 0.00289683, 0.598121, 0.0366291, 0.598881, 2.70515e-10, -0.597005, 0.0365144, -0.0474513, 0.195002, -0.090332, -1.19002)
 
 [node name="squarebody_001" type="MeshInstance3D" parent="vessel"]
 transform = Transform3D(0.371468, 0.000795839, 0.0219401, -0.000460231, 0.286141, -0.00976625, -0.0219405, 0.00747193, 0.371666, 0.0138305, 0.00334981, 0.00701762)
