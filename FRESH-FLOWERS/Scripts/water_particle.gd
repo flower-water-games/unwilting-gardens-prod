@@ -16,8 +16,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if get_slide_collision_count() > 0:
+		print("colliding")
 		for i in range(0, get_slide_collision_count()):
 			var collision = get_slide_collision(i)
 			if collision.has_method("water"):
+				collision.water()
 				collision.collider.queue_free()
 				print("watering the cube")

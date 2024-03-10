@@ -7,8 +7,8 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vcjnl"]
 
-[node name="BaseCube" type="Area3D"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.40733, 0)
+[node name="BaseCube" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40733, 0)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_df6j1")
@@ -20,15 +20,6 @@ unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.139221, 0)
 mesh = ExtResource("2_d1hjd")
 skeleton = NodePath("")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139221, 0)
-shape = SubResource("BoxShape3D_vcjnl")
-disabled = true
-
-[node name="Node" type="Node" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139221, 0)
