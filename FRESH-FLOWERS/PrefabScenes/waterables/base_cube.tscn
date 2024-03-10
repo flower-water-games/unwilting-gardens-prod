@@ -7,7 +7,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vcjnl"]
 
-[node name="BaseCube" type="RigidBody3D"]
+[node name="BaseCube" type="RigidBody3D" groups=["Cube"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40733, 0)
 collision_layer = 2
 collision_mask = 2
@@ -21,6 +21,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.139221, 0)
 mesh = ExtResource("2_d1hjd")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Cube"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139221, 0)
 shape = SubResource("BoxShape3D_vcjnl")

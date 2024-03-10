@@ -18,7 +18,7 @@ var watering_sfx_instance:PooledAudioStreamPlayer
 
 func setup_watering_timer() -> void:
 	watering_timer.wait_time = 1.0
-	watering_timer.one_shot = true
+	# watering_timer.one_shot = true
 	watering_timer.timeout.connect(_on_watering_timer_timeout)
 
 func _ready():
