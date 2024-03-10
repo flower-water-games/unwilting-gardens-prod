@@ -8,9 +8,13 @@ var moisture_level = 0.0
 @onready var initial_scale = scale
 
 @onready var flower_cube_mesh:MeshInstance3D = %FlowerCubeMesh
+
+@export_category("Animation")
 @onready var animation_player:AnimationPlayer = %AnimationPlayer
 @export var animation_name = "growing"
 
+
+@export_category("Materials")
 @export var my_happy_material:StandardMaterial3D = null
 @export var my_sad_material:StandardMaterial3D = null
 
@@ -64,14 +68,17 @@ func on_water():
 		watering_timer.queue_free()
 		SoundManager.play("player", "watered")
 
-var scale_up_factor = .2
+# var scale_up_factor = .2
 
-func scale_up_tween():
-	var normalized_moisture_level = moisture_level / max_moisture_level
-	var new_scale = Vector3(initial_scale.x, initial_scale.y, initial_scale.z) + Vector3(scale_up_factor, scale_up_factor, scale_up_factor) * normalized_moisture_level
-	scale = new_scale
+# func scale_up_tween():
+# 	var normalized_moisture_level = moisture_level / max_moisture_level
+# 	var new_scale = Vector3(initial_scale.x, initial_scale.y, initial_scale.z) + Vector3(scale_up_factor, scale_up_factor, scale_up_factor) * normalized_moisture_level
+# 	scale = new_scale
 
 func _on_threshold_reached():
 	threshold_reached = true
 	flower_cube_mesh.material_override = my_happy_material
 	SoundManager.play("player", "complete")
+
+# This class, Waterable, represents an object that can be watered in a 3D environment.
+# The object can be watered, and when it reaches a certain moisture level, it changes its appearance and plays a sound effect.
