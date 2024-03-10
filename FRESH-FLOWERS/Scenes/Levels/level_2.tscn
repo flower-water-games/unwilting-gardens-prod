@@ -7,6 +7,8 @@
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.50563, 21.876)
 use_collision = true
+collision_layer = 7
+collision_mask = 7
 size = Vector3(20, 0.1, 20)
 
 [node name="StemCube" parent="." instance=ExtResource("1_hltdr")]

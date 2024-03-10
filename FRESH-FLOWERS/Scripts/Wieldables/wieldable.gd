@@ -3,8 +3,6 @@ extends Node3D
 class_name Wieldable
 
 @export_group("General Wieldable Settings")
-## Item resource that this wieldable refers to.
-# @export var item_reference : WieldableItemPD
 ## Visible parts of the wieldable. Used to hide/show on equip/unequip.
 @export var wieldable_mesh : Node3D
 
@@ -17,9 +15,6 @@ class_name Wieldable
 func _ready():
 	# wieldable_mesh.hide()
 	pass
-
-# func action_primary(_passed_item_reference:InventoryItemPD, is_released: bool):
-# 	pass
 
 func action_primary():
 	pass

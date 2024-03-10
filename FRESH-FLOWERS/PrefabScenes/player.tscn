@@ -32,8 +32,9 @@ render_target_update_mode = 4
 
 [node name="SubviewportCamera" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91147, -0.227298)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91147, 2.02656)
 cull_mask = 524288
+fov = 40.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.55, 2.08165e-12)

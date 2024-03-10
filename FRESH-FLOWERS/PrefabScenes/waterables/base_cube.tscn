@@ -1,35 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://5pjvp6vhf3n5"]
+[gd_scene load_steps=8 format=3 uid="uid://5pjvp6vhf3n5"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/waterable/waterable.gd" id="1_df6j1"]
 [ext_resource type="Material" uid="uid://bct5kchviw2gr" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_happy.tres" id="2_2ws1a"]
 [ext_resource type="ArrayMesh" uid="uid://cfj3thtuhkb56" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj" id="2_d1hjd"]
 [ext_resource type="Material" uid="uid://fc0yjkvu0twc" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_sad.tres" id="3_rfatg"]
 
+[sub_resource type="Animation" id="Animation_6mywi"]
+resource_name = "growing"
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = PackedFloat32Array(0, 1, 0.7, 0.7, 0.7, 0.2, 1, 0.9, 0.9, 0.9, 0.4, 1, 0.6, 0.8, 0.6, 1, 1, 0.7, 0.7, 0.7)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_axp1d"]
+_data = {
+"growing": SubResource("Animation_6mywi")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_vcjnl"]
 
-[node name="BaseCube" type="Area3D"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.40733, 0)
+[node name="BaseCube" type="RigidBody3D" groups=["Cube"]]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.40733, 0)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_df6j1")
 my_happy_material = ExtResource("2_2ws1a")
 my_sad_material = ExtResource("3_rfatg")
 
-[node name="FlowerCubeMesh" type="MeshInstance3D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.139221, 0)
+libraries = {
+"": SubResource("AnimationLibrary_axp1d")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Cube"]]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.139221, 0)
+rotation_edit_mode = 1
+shape = SubResource("BoxShape3D_vcjnl")
+
+[node name="FlowerCubeMesh" type="MeshInstance3D" parent="CollisionShape3D"]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+rotation_edit_mode = 1
 mesh = ExtResource("2_d1hjd")
-skeleton = NodePath("")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139221, 0)
-shape = SubResource("BoxShape3D_vcjnl")
-disabled = true
-
-[node name="Node" type="Node" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139221, 0)
-shape = SubResource("BoxShape3D_vcjnl")

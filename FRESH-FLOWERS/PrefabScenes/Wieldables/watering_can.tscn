@@ -332,47 +332,53 @@ wieldable_mesh = NodePath("vessel")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [node name="vessel" type="Node3D" parent="."]
-transform = Transform3D(-2.62268e-08, 2.09272e-16, 0.6, 2.09272e-16, 0.6, -2.09272e-16, -0.6, 2.09272e-16, -2.62268e-08, 0, 0, 0)
+transform = Transform3D(-0.0473628, 0.00289683, 0.598121, 0.0366291, 0.598881, 2.70515e-10, -0.597005, 0.0365144, -0.0474513, 0.195002, -0.090332, -1.19002)
 
 [node name="squarebody_001" type="MeshInstance3D" parent="vessel"]
 transform = Transform3D(0.371468, 0.000795839, 0.0219401, -0.000460231, 0.286141, -0.00976625, -0.0219405, 0.00747193, 0.371666, 0.0138305, 0.00334981, 0.00701762)
+layers = 524288
 material_override = SubResource("StandardMaterial3D_j6hcm")
 mesh = SubResource("ArrayMesh_omjcj")
 skeleton = NodePath("")
 
 [node name="spout_001" type="MeshInstance3D" parent="vessel"]
 transform = Transform3D(0.252074, 0.033032, 0.00609985, 0.19366, -0.0431499, -0.00265332, -0.00984319, -0.00303804, 0.104008, 0.584031, 0.100023, -0.0298001)
+layers = 524288
 material_override = SubResource("StandardMaterial3D_sup24")
 mesh = SubResource("ArrayMesh_sauui")
 skeleton = NodePath("")
 
 [node name="watering_001" type="MeshInstance3D" parent="vessel"]
 transform = Transform3D(0.196101, 0.518598, 0.0327182, -0.519017, 0.197178, -0.0145639, -0.0252144, -0.0254326, 0.554245, 1.27867, 0.368491, -0.0610301)
+layers = 524288
 material_override = SubResource("StandardMaterial3D_3jhtx")
 mesh = SubResource("ArrayMesh_ywslk")
 skeleton = NodePath("")
 
 [node name="water sphere_001" type="MeshInstance3D" parent="vessel"]
 transform = Transform3D(0.218219, -0.00923921, 0.0144566, 0.00956092, 0.218635, -0.00458978, -0.0142459, 0.0052071, 0.218366, -0.02, 0.15, 0.004)
+layers = 524288
 material_override = SubResource("StandardMaterial3D_n58hx")
 mesh = SubResource("ArrayMesh_bynxu")
 skeleton = NodePath("")
 
 [node name="ui_001" type="MeshInstance3D" parent="vessel"]
 transform = Transform3D(1.17555, 0.171395, 0.0702314, -0.169843, 1.17748, -0.0306427, -0.0739018, 0.020246, 1.18759, -0.039032, -0.116142, 0.00292781)
+layers = 524288
 material_override = SubResource("StandardMaterial3D_ecwqv")
 mesh = SubResource("ArrayMesh_gn4u5")
 skeleton = NodePath("")
 
 [node name="handle_001" type="MeshInstance3D" parent="vessel"]
 transform = Transform3D(0.11165, 0, 0, 0, 0.0385307, 0, 0, 0, 0.161918, -0.33331, -0.0985606, 0.0410196)
+layers = 524288
 material_override = SubResource("StandardMaterial3D_qiv2v")
 mesh = SubResource("ArrayMesh_ermm2")
 skeleton = NodePath("")
 
 [node name="WaterStream" type="GPUParticles3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(-4.24496e-08, 1.04266e-08, 1, 0.238533, 0.971134, -3.48787e-16, -0.971134, 0.238533, -4.37114e-08, -0.0021705, 0.150094, -0.698478)
+transform = Transform3D(-4.24496e-08, 1.04266e-08, 1, 0.238533, 0.971134, -3.48787e-16, -0.971134, 0.238533, -4.37114e-08, -0.0021705, 0.150094, -0.25499)
 emitting = false
 amount = 255
 lifetime = 2.0
