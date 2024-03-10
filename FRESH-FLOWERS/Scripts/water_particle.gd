@@ -24,3 +24,6 @@ func _physics_process(delta: float) -> void:
 			if collision.has_method("water"):
 				collision.water()
 				queue_free()
+			else:
+				# print("collided with something else")
+				queue_free()

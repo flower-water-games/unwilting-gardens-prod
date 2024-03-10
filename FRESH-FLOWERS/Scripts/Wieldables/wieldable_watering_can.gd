@@ -13,25 +13,25 @@ var current_water_level: float = water_capacity
 @export var watering_indicator_sphere : Node3D
 
 var is_watering: bool = false
-# var watering_timer: Timer = Timer.new()
+var watering_timer: Timer = Timer.new()
 
 var watering_target: Waterable
 
-# func _ready():
-# 	super()
-	# add_child(watering_timer)
-	# setup_watering_timer()
+func _ready():
+	super()
+	add_child(watering_timer)
+	setup_watering_timer()
 
 func _process(delta: float) -> void:
 	# if is_watering:
 	# 	check_for_waterable_surface()
 	update_water_level_based_on_usage()
 
-# func setup_watering_timer() -> void:
-# 	watering_timer.wait_time = 1.0
-# 	watering_timer.one_shot = false
-# 	watering_timer.timeout.connect(_on_watering_timer_timeout)
-
+func setup_watering_timer() -> void:
+	watering_timer.wait_time = 1.0
+	watering_timer.one_shot = false
+	watering_timer.timeout.connect(use_water)
+	watering_timer.stop()
 # func check_for_waterable_surface() -> void:
 # 	if interaction_raycast.is_colliding():
 # 		var target = interaction_raycast.get_collider(0)
@@ -70,6 +70,8 @@ func start_watering() -> void:
 		water_stream.emitting = true
 		tween_to_target_rotation(target_rotation_z)
 		use_water()
+		watering_timer.start()
+		# use_water()
 		print("Watering Can: Started watering")
 
 
@@ -104,6 +106,7 @@ func stop_watering() -> void:
 		reset_watering_target()
 		water_stream.emitting = false
 		tween_to_original_rotation()
+		watering_timer.stop()
 		print("Watering Can: Stopped watering")
 
 func tween_to_target_rotation(rotation: float) -> void:
