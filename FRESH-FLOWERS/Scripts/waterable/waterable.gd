@@ -42,6 +42,7 @@ var is_being_watered = false
 func water():
 	if not is_being_watered:
 		watering_timer.start()
+		# add animation to cube when watered
 		animation_player.play(animation_name)
 		is_being_watered = true
 		if not moisture_level > max_moisture_level:
