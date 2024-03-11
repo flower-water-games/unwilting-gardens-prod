@@ -117,28 +117,23 @@ visible = false
 mesh = SubResource("PlaneMesh_vtbvp")
 skeleton = NodePath("../../GRASS")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="LEFTWALL" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.0160738, 0.999871, 0, -0.999871, -0.0160738, 0, 0, 0, 1, -1.55963, 0, -4.44629)
 visible = false
 use_collision = true
 size = Vector3(3, 0.1, 105.593)
 material = SubResource("StandardMaterial3D_ek35x")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+[node name="RIGHTWALL" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.0160738, 0.999871, 0, -0.999871, -0.0160738, 0, 0, 0, 1, 1.56728, 0, -4.44107)
 visible = false
 use_collision = true
 size = Vector3(3, 0.1, 105.593)
 material = SubResource("StandardMaterial3D_ek35x")
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.999954, -0.00959898, 2.60716e-08, -4.37114e-08, 1.91069e-15, -0.596475, 0.00959898, -0.999954, -2.50273e-10, -0.376657, -79.9519, -23.4692)
-use_collision = true
-size = Vector3(3, 0.1, 105.593)
-material = SubResource("StandardMaterial3D_ek35x")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+[node name="BACKWALL" type="CSGBox3D" parent="."]
 transform = Transform3D(9.53784e-06, -0.000593391, 1, -0.999871, -0.0160738, -1.56884e-17, 0.0160738, -0.999871, -0.000593467, 0.0989234, 0, 1.51605)
+visible = false
 use_collision = true
 size = Vector3(3, 0.1, 3.733)
 material = SubResource("StandardMaterial3D_ek35x")
@@ -269,6 +264,13 @@ process_material = ExtResource("6_wq7uj")
 draw_pass_1 = ExtResource("7_xocsq")
 
 [node name="funnel" type="Node" parent="."]
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="funnel"]
+transform = Transform3D(-0.999954, -0.00959898, 2.60716e-08, -4.37114e-08, 1.91069e-15, -0.596475, 0.00959898, -0.999954, -2.50273e-10, -0.376657, -79.9519, -23.4692)
+visible = false
+use_collision = true
+size = Vector3(3, 0.1, 105.593)
+material = SubResource("StandardMaterial3D_ek35x")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="funnel"]
 transform = Transform3D(1.31134e-07, 1, -3.82137e-15, -4.37114e-08, 1.91069e-15, -1, -1, 1.31134e-07, 4.37114e-08, 1.56728, -48.6864, -25.0313)
