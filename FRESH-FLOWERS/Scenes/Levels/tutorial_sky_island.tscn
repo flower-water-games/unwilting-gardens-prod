@@ -177,7 +177,7 @@ material = SubResource("FogMaterial_076l3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29285, -2.56445, -10.8242)
 
 [node name="Cloud" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.8552)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.3971)
 size = Vector3(4, 0.1, 23)
 material = SubResource("StandardMaterial3D_rllor")
 script = ExtResource("5_blvpx")
@@ -192,8 +192,8 @@ process_material = ExtResource("6_wq7uj")
 draw_pass_1 = ExtResource("7_xocsq")
 
 [node name="CENTER CLOUD" type="GPUParticles3D" parent="Cloud"]
-transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -1.165, -9.43569, -10.352)
-amount = 50
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -1.165, -7.02691, -21.3606)
+amount = 200
 lifetime = 30.0
 explosiveness = 0.98
 trail_lifetime = 0.93
