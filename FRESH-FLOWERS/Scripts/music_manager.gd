@@ -129,6 +129,9 @@ func stage3():
 @export var player : Player
 @export var level_1 : Node3D
 @export var level_2 : Node3D
+@export var dome : Node3D
+
+@onready var dome_animation_player : AnimationPlayer = dome.get_node("%DomeAnimationPlayer")
 
 @export_subgroup("Dance Party")
 @export var time_to_music_start : float = 10.0
@@ -142,6 +145,10 @@ func stage2():
 	# unlock stage 3
 	print("stage 1 completed, unlock stage 2")
 	stage1_lock.queue_free()
+	dome_animation_player.play("Dissapear")
+	dome_animation_player.play("Dissapear_001")
+	# dome has a child animation player and needs to play 2 animations named: 
+		# "Dissapear" and "Disappear_001"
 	pass
 
 func _process(delta):
