@@ -17,6 +17,7 @@ textures = [[ExtResource("6_5wxb3")], [ExtResource("7_n6tm4")]]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70645, -3.50563, 21.9391)
+visible = false
 use_collision = true
 collision_layer = 7
 collision_mask = 7
@@ -40,6 +41,7 @@ stem_name = "4-drumrack"
 
 [node name="WALL" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2795, -1.78631, 38.4109)
+visible = false
 use_collision = true
 collision_layer = 7
 collision_mask = 7
@@ -47,6 +49,7 @@ size = Vector3(0.1, 18.5864, 58.052)
 
 [node name="WALL2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6313, -1.78631, 36.0738)
+visible = false
 use_collision = true
 collision_layer = 7
 collision_mask = 7
@@ -54,6 +57,7 @@ size = Vector3(0.1, 18.5864, 50.335)
 
 [node name="WALL4" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.00315908, 0, 0.999995, 0, 1, 0, -0.999995, 0, -0.00315908, -11.6485, -1.78631, 11.2425)
+visible = false
 use_collision = true
 collision_layer = 7
 collision_mask = 7
@@ -61,6 +65,7 @@ size = Vector3(0.1, 18.5864, 21.8422)
 
 [node name="WALL5" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.00315908, 0, 0.999995, 0, 1, 0, -0.999995, 0, -0.00315908, 18.8981, -1.78631, 11.2425)
+visible = false
 use_collision = true
 collision_layer = 7
 collision_mask = 7
@@ -68,6 +73,7 @@ size = Vector3(0.1, 18.5864, 21.8422)
 
 [node name="WALL3" type="CSGBox3D" parent="."]
 transform = Transform3D(0.00127406, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.00127406, 2.53748, -1.78631, 61.2001)
+visible = false
 use_collision = true
 collision_layer = 7
 collision_mask = 7
