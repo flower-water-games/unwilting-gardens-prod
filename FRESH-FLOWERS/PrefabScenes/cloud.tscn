@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://0ljc5m5p5j8w"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Assets/PB/Cloud_spawner.gd" id="1_nmemf"]
-[ext_resource type="Material" path="res://FRESH-FLOWERS/Scenes/TestScenes/core_cloud.tres" id="2_680vx"]
+[ext_resource type="Material" uid="uid://dbj7ucb03mgph" path="res://FRESH-FLOWERS/Scenes/TestScenes/core_cloud.tres" id="2_680vx"]
 [ext_resource type="QuadMesh" uid="uid://coogw3vxajngi" path="res://FRESH-FLOWERS/Scenes/TestScenes/cloud1.tres" id="3_ymqld"]
 [ext_resource type="QuadMesh" uid="uid://bmgp8v7gufcl" path="res://FRESH-FLOWERS/Scenes/TestScenes/cloud2.tres" id="4_q5qcx"]
 

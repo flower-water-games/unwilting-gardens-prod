@@ -101,10 +101,26 @@ func stage3():
 	if (is_stage_3):
 		return
 	is_stage_3 = true
-	await get_tree().create_timer(10).timeout 
-	print("stage 3 party time")
+
+
+	## THREE PHASES IN STAGE 3
+
+	# 1. 10 seconds to prepare to dance (time_to_party) 
+	# 2. 10 seconds for lights to come down, and music track begins
+	# 3. once player finds all the stem cubes, play final track
+
+	# phase 1: wait 10 seconds and fade out the music
 	MusicManager.stop(10)
-	MusicManager.play("Music", "Stage3", 10)
+	await get_tree().create_timer(time_to_party).timeout 
+	print("stage 3 party time. 10s to prepare to dance.")
+
+	# phase 2: tween down lights, and start music
+	var tween = get_tree().create_tween()
+	tween.tween_property(regular_light, "light_color", color_to_tween, time_to_music_start)
+	tween.tween_property(regular_light, "light_energy", 4.0, time_to_music_start)
+	MusicManager.play("Music", "Stage3", time_to_music_start)
+	# regular_light.hide()
+	# party_light.show()
 
 #subcategory for gameflow locks
 @export_subgroup("Gameflow references")
@@ -113,6 +129,15 @@ func stage3():
 @export var player : Player
 @export var level_1 : Node3D
 @export var level_2 : Node3D
+@export var dome : Node3D
+
+@onready var dome_animation_player : AnimationPlayer = dome.get_node("%DomeAnimationPlayer")
+
+@export_subgroup("Dance Party")
+@export var time_to_music_start : float = 10.0
+@export var time_to_party : float = 10.0
+@export var color_to_tween : Color
+@export var regular_light : DirectionalLight3D
 
 var is_stage_2 = false
 
@@ -120,6 +145,9 @@ func stage2():
 	# unlock stage 3
 	print("stage 1 completed, unlock stage 2")
 	stage1_lock.queue_free()
+	dome_animation_player.play("Dissapear")
+	# dome has a child animation player and needs to play 2 animations named: 
+		# "Dissapear" and "Disappear_001"
 	pass
 
 func _process(delta):
@@ -134,5 +162,5 @@ func _process(delta):
 	# # if I press number 1 on keyboard, activate stage2, for testing
 	# if Input.is_key_pressed(KEY_2):
 	# 	stage2()
-	# if Input.is_key_pressed(KEY_2):
-	# 	stage3()
+	if Input.is_key_pressed(KEY_3):
+		stage3()
