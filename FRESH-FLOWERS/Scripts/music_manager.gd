@@ -8,13 +8,16 @@ class_name GardenMusicManager
 
 # when entered / exits, triggers stage 1 vs stage 2 respectively
 func _ready():
-	pass
+
 	# connect the area entered signal
 	stage1_area.connect("body_entered", _stage_1_entered)
 	stage1_area.connect("body_exited", _on_area_exit)
 
 	stage2_area.connect("body_entered", _stage_2_entered)
-	stage2_area.connect("body_exited", _on_area_exit)
+	stage2_area.connect("body_exited", _on_area_exit)	
+	
+	level_1.hide()
+	level_2.hide()
 
 func _on_area_exit(node):
 	# if stage 3 is not playing, stop the music
@@ -23,14 +26,19 @@ func _on_area_exit(node):
 		print("music stopped")
 
 func _stage_1_entered(node):
+
 	# play stage 1 music
 	# if the body is in the group "player"
-	if (is_stage_3):
-		return
+
 	if node.is_in_group("Player"):
 		# first time enter the level1, destroy the tutorial island
-		if (tutorial_island != null):
+		level_1.show()
+		level_2.hide()
+		if (is_stage_3):
+			return
+		if (!is_stage_2):
 			tutorial_island.queue_free()
+			# PLAYS ONCE LEVEL ONE ENTERS
 			player.wieldable.water_capacity = 16.0
 		
 		MusicManager.play("Music", "Stage1", .1)
@@ -41,10 +49,12 @@ func _stage_1_entered(node):
 
 
 func _stage_2_entered(node):
-	if (is_stage_3):
-		return
 	# play stage 2 music if player entered
-	if node.is_in_group("Player"):
+	if node.is_in_group("Player"):	
+		level_2.show()
+		level_1.hide()
+		if (is_stage_3):
+			return
 		MusicManager.play("Music", "Stage2", .1)
 		for stem in stage2_stems:
 			MusicManager.enable_stem(stem)
@@ -101,6 +111,8 @@ func stage3():
 @export var stage1_lock : Node3D
 @export var tutorial_island: Node3D
 @export var player : Player
+@export var level_1 : Node3D
+@export var level_2 : Node3D
 
 var is_stage_2 = false
 
@@ -119,4 +131,8 @@ func _process(delta):
 	if stage1_all_stems_found and stage2_all_stems_found:
 		stage1_all_stems_found = false
 		stage3()
-	pass
+	# # if I press number 1 on keyboard, activate stage2, for testing
+	# if Input.is_key_pressed(KEY_2):
+	# 	stage2()
+	# if Input.is_key_pressed(KEY_2):
+	# 	stage3()

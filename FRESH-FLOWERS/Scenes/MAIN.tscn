@@ -268,7 +268,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ti4l8"]
-size = Vector3(40, 19.835, 38.5952)
+size = Vector3(40, 19.835, 47.9604)
 
 [node name="Main" type="Node3D"]
 
@@ -291,13 +291,15 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area", "stage2_area", "stage1_lock", "tutorial_island", "player")]
+[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area", "stage2_area", "stage1_lock", "tutorial_island", "player", "level_1", "level_2")]
 script = ExtResource("8_05bny")
 stage1_area = NodePath("../../LEVEL/Level1/Area3D")
 stage2_area = NodePath("../../LEVEL/Level2/Area3D")
 stage1_lock = NodePath("../../LEVEL/LOCKS/WALL4")
 tutorial_island = NodePath("../../LEVEL/TutorialSkyIsland")
 player = NodePath("../PLAYER")
+level_1 = NodePath("../../LEVEL/Level1")
+level_2 = NodePath("../../LEVEL/Level2")
 
 [node name="MusicBank" type="Node" parent="CORE/GardenMusicManager"]
 script = ExtResource("9_jkygg")
@@ -317,6 +319,7 @@ events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResour
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 120, 24.488)
 
 [node name="Level1" parent="LEVEL" instance=ExtResource("14_g0aa1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0188065, -0.0163822, 0.000640869)
 
 [node name="dome_object" type="Node3D" parent="LEVEL/Level1"]
 transform = Transform3D(-2.18557e-07, -1.74393e-15, -5, 1.74393e-15, 5, -1.74393e-15, 5, -1.74393e-15, -2.18557e-07, 0, -2.23398, 12.3766)
@@ -347,12 +350,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76953, -9.29761)
 shape = SubResource("BoxShape3D_ti4l8")
 
 [node name="Level2" parent="LEVEL" instance=ExtResource("15_7tpt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.11205)
 
 [node name="Area3D" type="Area3D" parent="LEVEL/Level2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.1155)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 14.7805)
 shape = SubResource("BoxShape3D_ti4l8")
 
 [node name="Stage3" type="Node3D" parent="LEVEL"]
