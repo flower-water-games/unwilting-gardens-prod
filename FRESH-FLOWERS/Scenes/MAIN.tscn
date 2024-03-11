@@ -140,3 +140,4 @@ shape = SubResource("BoxShape3D_ti4l8")
 [node name="LOCKS" type="Node3D" parent="LEVEL"]
 
 [node name="WALL4" parent="LEVEL/LOCKS" instance=ExtResource("17_jas50")]
+visible = true
