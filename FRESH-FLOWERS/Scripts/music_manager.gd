@@ -119,8 +119,6 @@ func stage3():
 	tween.tween_property(regular_light, "light_color", color_to_tween, time_to_music_start)
 	tween.tween_property(regular_light, "light_energy", 4.0, time_to_music_start)
 	MusicManager.play("Music", "Stage3", time_to_music_start)
-	# regular_light.hide()
-	# party_light.show()
 
 #subcategory for gameflow locks
 @export_subgroup("Gameflow references")
