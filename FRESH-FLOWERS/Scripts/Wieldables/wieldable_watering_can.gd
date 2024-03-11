@@ -1,9 +1,9 @@
 extends Wieldable 
 class_name WateringCan
 
-@export var water_capacity: float = 16.0
+@export var water_capacity: float = 4.0
 @export var drainage_rate: float = 1.0
-var current_water_level: float = water_capacity
+var current_water_level: float = 0
 
 @onready var water_stream: GPUParticles3D = $WaterStream
 @onready var interaction_raycast: ShapeCast3D = $ShapeCast3D
@@ -21,7 +21,6 @@ func _ready():
 	setup_watering_timer()
 
 func _process(delta: float) -> void:
-
 	update_water_level_based_on_usage()
 
 func setup_watering_timer() -> void:

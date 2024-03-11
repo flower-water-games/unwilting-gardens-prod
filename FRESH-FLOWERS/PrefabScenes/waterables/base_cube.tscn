@@ -81,3 +81,7 @@ randomness = 0.2
 visibility_aabb = AABB(-2.3627, -1.95377, -2.43159, 4.72541, 3.90754, 4.86319)
 process_material = SubResource("ParticleProcessMaterial_ypv4e")
 draw_pass_1 = SubResource("TextMesh_bjc6x")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135552, 0)
+size = Vector3(0.4, 0.4, 0.4)

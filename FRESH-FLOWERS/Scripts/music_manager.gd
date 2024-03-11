@@ -49,8 +49,8 @@ func _stage_2_entered(node):
 	
 
 # two dictionaries per stage, to remember which stems are playing
-var stage1_total_additional_stems = 4 
-var stage2_total_additional_stems = 6
+var stage1_total_additional_stems = 3 
+var stage2_total_additional_stems = 4
 
 var stage1_all_stems_found = false;
 var stage2_all_stems_found = false;
