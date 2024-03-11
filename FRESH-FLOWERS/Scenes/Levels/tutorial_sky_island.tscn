@@ -200,6 +200,16 @@ trail_lifetime = 0.93
 process_material = ExtResource("6_wq7uj")
 draw_pass_1 = ExtResource("7_xocsq")
 
+[node name="CENTER CLOUD2" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -1.165, -112.871, -31.6812)
+amount = 200
+lifetime = 30.0
+explosiveness = 0.98
+visibility_aabb = AABB(-17.1493, -4, -5.85048, 34.2986, 8, 11.701)
+trail_lifetime = 0.93
+process_material = ExtResource("6_wq7uj")
+draw_pass_1 = ExtResource("7_xocsq")
+
 [node name="CLOUD LEFT" type="GPUParticles3D" parent="Cloud"]
 transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -39.0388, 13.6312, -32.283)
 amount = 30

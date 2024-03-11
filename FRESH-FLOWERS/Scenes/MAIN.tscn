@@ -315,33 +315,33 @@ events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResour
 
 [node name="LEVEL" type="Node3D" parent="."]
 
+[node name="dome_object" type="Node3D" parent="LEVEL"]
+transform = Transform3D(-2.18557e-07, -1.74393e-15, -5, 1.74393e-15, 5, -1.74393e-15, 5, -1.74393e-15, -2.18557e-07, -0.0188065, -2.25036, 12.3772)
+
+[node name="Icosphere" type="MeshInstance3D" parent="LEVEL/dome_object"]
+mesh = SubResource("ArrayMesh_stf26")
+skeleton = NodePath("")
+
+[node name="Icosphere_001" type="MeshInstance3D" parent="LEVEL/dome_object"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.954894, 0.0167265, 0)
+mesh = SubResource("ArrayMesh_grawc")
+skeleton = NodePath("")
+
+[node name="Icosphere_002" type="MeshInstance3D" parent="LEVEL/dome_object"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.971548, 0.00879992, 0)
+mesh = SubResource("ArrayMesh_qpm3m")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LEVEL/dome_object"]
+libraries = {
+"": SubResource("AnimationLibrary_oq74t")
+}
+
 [node name="TutorialSkyIsland" parent="LEVEL" instance=ExtResource("2_vpoja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 120, 24.488)
 
 [node name="Level1" parent="LEVEL" instance=ExtResource("14_g0aa1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0188065, -0.0163822, 0.000640869)
-
-[node name="dome_object" type="Node3D" parent="LEVEL/Level1"]
-transform = Transform3D(-2.18557e-07, -1.74393e-15, -5, 1.74393e-15, 5, -1.74393e-15, 5, -1.74393e-15, -2.18557e-07, 0, -2.23398, 12.3766)
-
-[node name="Icosphere" type="MeshInstance3D" parent="LEVEL/Level1/dome_object"]
-mesh = SubResource("ArrayMesh_stf26")
-skeleton = NodePath("")
-
-[node name="Icosphere_001" type="MeshInstance3D" parent="LEVEL/Level1/dome_object"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.954894, 0.0167265, 0)
-mesh = SubResource("ArrayMesh_grawc")
-skeleton = NodePath("")
-
-[node name="Icosphere_002" type="MeshInstance3D" parent="LEVEL/Level1/dome_object"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.971548, 0.00879992, 0)
-mesh = SubResource("ArrayMesh_qpm3m")
-skeleton = NodePath("")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LEVEL/Level1/dome_object"]
-libraries = {
-"": SubResource("AnimationLibrary_oq74t")
-}
 
 [node name="Area3D" type="Area3D" parent="LEVEL/Level1"]
 
