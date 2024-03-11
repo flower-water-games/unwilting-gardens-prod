@@ -11,7 +11,7 @@ var moisture_level = 0.0
 
 @export_category("Animation")
 @onready var animation_player:AnimationPlayer = %AnimationPlayer
-@export var animation_name = "growing"
+@export var animation_names = ["growing", "growing_1", "growing_2"]
 
 @onready var watering_particles : GPUParticles3D = %GPUParticles3D
 
@@ -36,6 +36,7 @@ func _on_watering_timer_timeout():
 func _ready():
 	flower_cube_mesh.material_override = my_sad_material
 	SoundManager.connect("loaded", on_sound_manager_load)
+	on_sound_manager_load()
 	setup_watering_timer()
 
 func on_sound_manager_load():
@@ -49,6 +50,10 @@ func water():
 	if not is_being_watered:
 		watering_timer.start()
 		# add animation to cube when watered
+		# choose random number of length of animation_names array
+		# choose name of that index
+		var animation_name = animation_names[randi() % animation_names.size()]
+		print("playing animation: " + animation_name)
 		animation_player.play(animation_name)
 		is_being_watered = true
 		if not moisture_level > max_moisture_level:
@@ -57,8 +62,9 @@ func water():
 
 func on_water():
 	moisture_level += 1
-	if not watering_sfx_instance.is_playing():
-		watering_sfx_instance.trigger()
+	if not watering_sfx_instance == null:
+		if not watering_sfx_instance.is_playing():
+			watering_sfx_instance.trigger()
 
 	if moisture_level >= threshold and not threshold_reached:
 		_on_threshold_reached()

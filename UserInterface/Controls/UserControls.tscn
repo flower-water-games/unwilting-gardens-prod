@@ -46,6 +46,7 @@ text = "Controls"
 z_index = 1
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p1tr5")
+current_tab = 0
 
 [node name="Keyboard" type="MarginContainer" parent="ModalWindow/MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/TabContainer"]
 layout_mode = 2
@@ -136,6 +137,7 @@ button = "B"
 description = "to Escape"
 
 [node name="CloseButton" parent="ModalWindow" index="2" node_paths=PackedStringArray("parent_container", "close_window")]
+icon = null
 parent_container = NodePath("../MarginContainer/CenterContainer/PanelContainer")
 close_window = NodePath("../..")
 
