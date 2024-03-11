@@ -101,8 +101,10 @@ func stage3():
 	if (is_stage_3):
 		return
 	is_stage_3 = true
-	await get_tree().create_timer(10).timeout 
+	await get_tree().create_timer(1).timeout 
 	print("stage 3 party time")
+	regular_light.hide()
+	party_light.show()
 	MusicManager.stop(10)
 	MusicManager.play("Music", "Stage3", 10)
 
@@ -113,6 +115,8 @@ func stage3():
 @export var player : Player
 @export var level_1 : Node3D
 @export var level_2 : Node3D
+@export var regular_light : DirectionalLight3D
+@export var party_light : DirectionalLight3D
 
 var is_stage_2 = false
 
@@ -134,5 +138,5 @@ func _process(delta):
 	# # if I press number 1 on keyboard, activate stage2, for testing
 	# if Input.is_key_pressed(KEY_2):
 	# 	stage2()
-	# if Input.is_key_pressed(KEY_2):
-	# 	stage3()
+	if Input.is_key_pressed(KEY_3):
+		stage3()
