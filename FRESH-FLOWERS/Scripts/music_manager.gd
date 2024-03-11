@@ -146,7 +146,6 @@ func stage2():
 	print("stage 1 completed, unlock stage 2")
 	stage1_lock.queue_free()
 	dome_animation_player.play("Dissapear")
-	dome_animation_player.play("Dissapear_001")
 	# dome has a child animation player and needs to play 2 animations named: 
 		# "Dissapear" and "Disappear_001"
 	pass
