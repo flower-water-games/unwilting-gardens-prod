@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bn8jq5sn8o5u3"]
+[gd_scene load_steps=14 format=3 uid="uid://bn8jq5sn8o5u3"]
 
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="1_u4b8x"]
-[ext_resource type="PackedScene" uid="uid://cpxbbx0eydsyl" path="res://FRESH-FLOWERS/Assets/chrisdome/Dome.glb" id="1_xdckf"]
 [ext_resource type="ArrayMesh" uid="uid://cyr567xto6hfw" path="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Stone_Pillar.obj" id="2_s8yw6"]
 [ext_resource type="PackedScene" uid="uid://c36d2u5ykulxg" path="res://FRESH-FLOWERS/PrefabScenes/waterables/flower_cube.tscn" id="3_i6h22"]
 [ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="3_jgp7a"]
@@ -138,9 +137,6 @@ visible = false
 use_collision = true
 size = Vector3(20.0439, 0.1, 8.80725)
 
-[node name="Dome" parent="." instance=ExtResource("1_xdckf")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.29084, -1.56578, 10.7633)
-
 [node name="RefillSpout" parent="." instance=ExtResource("4_u3h0i")]
 
 [node name="STEMCUBES" type="Node" parent="."]
@@ -182,5 +178,3 @@ visible = false
 [node name="flower_cube6" parent="Node2" instance=ExtResource("3_i6h22")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 11.9287, -3.29404, 5.45535)
 visible = false
-
-[editable path="Dome"]
