@@ -83,7 +83,7 @@ func _create_water_particle():
 	t.timeout.connect(w.queue_free)	
 
 	get_tree().get_root().add_child(w)
-	w.global_position = node_to_spawn_under.global_position
+	w.global_position = node_to_spawn_under.global_transform.origin
 	w.global_rotation = global_rotation
 	w.set_start_velocity()
 
@@ -100,7 +100,7 @@ func stop_watering() -> void:
 func use_water() -> void:
 	if current_water_level > 0:
 		current_water_level -= drainage_rate
-		spawn_particles(5)
+		spawn_particles(20)
 		if current_water_level <= 0:
 			current_water_level = 0
 			stop_watering()

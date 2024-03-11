@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dt6brf8pfl28d"]
+[gd_scene load_steps=40 format=3 uid="uid://dt6brf8pfl28d"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/Wieldables/wieldable_watering_can.gd" id="1_ttr6a"]
 [ext_resource type="Texture2D" uid="uid://bjs40jntrm8so" path="res://FRESH-FLOWERS/Assets/PB/textures/body_normal.001.png" id="2_5b5sc"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cs8hwpxbdnova" path="res://FRESH-FLOWERS/Assets/PB/textures/sphererough3.png" id="6_m1xv7"]
 [ext_resource type="Texture2D" uid="uid://ccrtu8kqdfiov" path="res://FRESH-FLOWERS/Assets/PB/textures/srough.png" id="7_i21yn"]
 [ext_resource type="Texture2D" uid="uid://bx6fm6xbyo544" path="res://FRESH-FLOWERS/Assets/PB/textures/handle_normal.png" id="8_km6e1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6wmva"]
+size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6hcm"]
 transparency = 1
@@ -326,10 +329,15 @@ transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-
 script = ExtResource("1_ttr6a")
 watering_indicator_sphere = NodePath("vessel/water sphere_001")
 water_particle = ExtResource("2_dqbid")
-node_to_spawn_under = NodePath("vessel/watering_001")
+node_to_spawn_under = NodePath("MeshInstance3D")
 wieldable_mesh = NodePath("vessel")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 0.0404305, 0.435338, -0.17391)
+visible = false
+mesh = SubResource("BoxMesh_6wmva")
 
 [node name="vessel" type="Node3D" parent="."]
 transform = Transform3D(-0.0473628, 0.00289683, 0.598121, 0.0366291, 0.598881, 2.70515e-10, -0.597005, 0.0365144, -0.0474513, 0.195002, -0.090332, -1.19002)
@@ -380,7 +388,7 @@ skeleton = NodePath("")
 unique_name_in_owner = true
 transform = Transform3D(-4.24496e-08, 1.04266e-08, 1, 0.238533, 0.971134, -3.48787e-16, -0.971134, 0.238533, -4.37114e-08, -0.0021705, 0.150094, -0.25499)
 emitting = false
-amount = 255
+amount = 399
 lifetime = 2.0
 collision_base_size = 1.0
 process_material = SubResource("ParticleProcessMaterial_1vode")
