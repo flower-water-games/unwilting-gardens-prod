@@ -36,6 +36,7 @@ func _on_watering_timer_timeout():
 func _ready():
 	flower_cube_mesh.material_override = my_sad_material
 	SoundManager.connect("loaded", on_sound_manager_load)
+	on_sound_manager_load()
 	setup_watering_timer()
 
 func on_sound_manager_load():
@@ -61,8 +62,9 @@ func water():
 
 func on_water():
 	moisture_level += 1
-	if not watering_sfx_instance.is_playing():
-		watering_sfx_instance.trigger()
+	if not watering_sfx_instance == null:
+		if not watering_sfx_instance.is_playing():
+			watering_sfx_instance.trigger()
 
 	if moisture_level >= threshold and not threshold_reached:
 		_on_threshold_reached()
