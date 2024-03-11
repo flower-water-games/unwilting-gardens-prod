@@ -5,13 +5,13 @@ extends CSGBox3D
 
 var rng = RandomNumberGenerator.new()
 
-func _process(_delta):
-	if Input.is_action_pressed("Spawn"):
-		for n in self.get_children():
-			self.remove_child(n)
-			n.queue_free()
+# func _process(_delta):
+# 	if Input.is_action_pressed("Spawn"):
+# 		for n in self.get_children():
+# 			self.remove_child(n)
+# 			n.queue_free()
 			
-		spawn_clouds()
+# 		spawn_clouds()
 
 func _ready():
 	_cloud = load("res://cloudspawner.tscn")

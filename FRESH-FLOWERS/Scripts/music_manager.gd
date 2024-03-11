@@ -18,10 +18,9 @@ func _ready():
 
 func _on_area_exit(node):
 	# if stage 3 is not playing, stop the music
-	if not is_stage_3:
-		print("stop playing")
+	if node.is_in_group("Player") and not is_stage_3:
 		MusicManager.stop(.1)
-
+		print("music stopped")
 
 func _stage_1_entered(node):
 	# play stage 1 music
@@ -29,9 +28,12 @@ func _stage_1_entered(node):
 	if (is_stage_3):
 		return
 	if node.is_in_group("Player"):
-		# enable all stems for stage 1 that are playing already
-
+		# first time enter the level1, destroy the tutorial island
+		if (tutorial_island != null):
+			tutorial_island.queue_free()
+		
 		MusicManager.play("Music", "Stage1", .1)
+		# enable all stems for stage 1 that are playing already
 		for stem in stage1_stems:
 			MusicManager.enable_stem(stem)
 		print("stage 1 music playing")
@@ -93,7 +95,10 @@ func stage3():
 	MusicManager.stop(10)
 	MusicManager.play("Music", "Stage3", 10)
 
+#subcategory for gameflow locks
+@export_subgroup("Gameflow")
 @export var stage1_lock : Node3D
+@export var tutorial_island: Node3D
 
 var is_stage_2 = false
 
