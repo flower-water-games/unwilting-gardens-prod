@@ -30,18 +30,18 @@ func _update_button():
 	icon.self_modulate = icon_color
 	panel_button.self_modulate = button_color
 	
-	if not current_input_type == input_type:
-		match input_type:
-			InputType.CONTROLLER:
-				icon.texture = load("res://Assets/UIControls/Controller.png")
-			InputType.KEYBOARD:
-				icon.texture = load("res://Assets/UIControls/Keyboard.png")
-			InputType.MOUSE:
-				icon.texture = load("res://Assets/UIControls/Mouse.png")
-			InputType.NONE:
-				icon.texture = null
-		# Set to match
-		current_input_type = input_type
+	# if not current_input_type == input_type:
+	# 	match input_type:
+	# 		InputType.CONTROLLER:
+	# 			icon.texture = load("res://Assets/UIControls/Controller.png")
+	# 		InputType.KEYBOARD:
+	# 			icon.texture = load("res://Assets/UIControls/Keyboard.png")
+	# 		InputType.MOUSE:
+	# 			icon.texture = load("res://Assets/UIControls/Mouse.png")
+	# 		InputType.NONE:
+	# 			icon.texture = null
+	# 	# Set to match
+	# 	current_input_type = input_type
 
 func _process(delta):
 	if Engine.is_editor_hint():

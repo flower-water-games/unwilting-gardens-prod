@@ -80,16 +80,10 @@ text = "PLAY"
 
 [node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/PLAY" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
 button = NodePath("..")
-
-[node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "Credits"
-
-[node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/CreditsButton" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]
-button = NodePath("..")
-level_path = "res://UserInterface/Credits/Credits.tscn"
+level_path = "res://FRESH-FLOWERS/Scenes/MAIN.tscn"
 
 [node name="ControlsButton" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Controls"
 
