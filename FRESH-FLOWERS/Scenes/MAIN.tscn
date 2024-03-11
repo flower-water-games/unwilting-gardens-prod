@@ -291,12 +291,13 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area", "stage2_area", "stage1_lock", "tutorial_island")]
+[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area", "stage2_area", "stage1_lock", "tutorial_island", "player")]
 script = ExtResource("8_05bny")
 stage1_area = NodePath("../../LEVEL/Level1/Area3D")
 stage2_area = NodePath("../../LEVEL/Level2/Area3D")
 stage1_lock = NodePath("../../LEVEL/LOCKS/WALL4")
 tutorial_island = NodePath("../../LEVEL/TutorialSkyIsland")
+player = NodePath("../PLAYER")
 
 [node name="MusicBank" type="Node" parent="CORE/GardenMusicManager"]
 script = ExtResource("9_jkygg")

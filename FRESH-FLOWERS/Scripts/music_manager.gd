@@ -31,6 +31,7 @@ func _stage_1_entered(node):
 		# first time enter the level1, destroy the tutorial island
 		if (tutorial_island != null):
 			tutorial_island.queue_free()
+			player.wieldable.water_capacity = 16.0
 		
 		MusicManager.play("Music", "Stage1", .1)
 		# enable all stems for stage 1 that are playing already
@@ -99,6 +100,7 @@ func stage3():
 @export_subgroup("Gameflow")
 @export var stage1_lock : Node3D
 @export var tutorial_island: Node3D
+@export var player : Player
 
 var is_stage_2 = false
 
