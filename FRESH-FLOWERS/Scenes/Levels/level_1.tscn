@@ -1,10 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://bn8jq5sn8o5u3"]
+[gd_scene load_steps=20 format=3 uid="uid://bn8jq5sn8o5u3"]
 
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="1_u4b8x"]
 [ext_resource type="ArrayMesh" uid="uid://cyr567xto6hfw" path="res://FRESH-FLOWERS/Assets/KenneyHex/Modular Village/Stone_Pillar.obj" id="2_s8yw6"]
 [ext_resource type="PackedScene" uid="uid://c36d2u5ykulxg" path="res://FRESH-FLOWERS/PrefabScenes/waterables/flower_cube.tscn" id="3_i6h22"]
 [ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="3_jgp7a"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="4_f7thr"]
 [ext_resource type="PackedScene" uid="uid://be823dx66y1qn" path="res://FRESH-FLOWERS/PrefabScenes/mar10_refill_spout.tscn" id="4_u3h0i"]
+[ext_resource type="Texture2D" uid="uid://cektqpi1xlqo2" path="res://FRESH-FLOWERS/Resources/grassy.png" id="4_vw5lx"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="6_ha5vt"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="7_3i4kx"]
 [ext_resource type="Resource" path="res://FRESH-FLOWERS/Resources/terrain/data.hterrain" id="7_hrn1u"]
@@ -12,7 +14,7 @@
 [sub_resource type="Resource" id="Resource_sthpl"]
 script = ExtResource("7_3i4kx")
 mode = 0
-textures = [[], []]
+textures = [[ExtResource("4_vw5lx")], [null]]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_a7rhk"]
 seed = 130
@@ -101,6 +103,14 @@ shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
+
+[node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
+script = ExtResource("4_f7thr")
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = null
+shader_params/u_roughness = null
 
 [node name="LEVEL_DESIGN" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -3.5, 2.08165e-12)
