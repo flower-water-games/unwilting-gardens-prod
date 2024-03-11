@@ -11,7 +11,7 @@ var moisture_level = 0.0
 
 @export_category("Animation")
 @onready var animation_player:AnimationPlayer = %AnimationPlayer
-@export var animation_name = "growing"
+@export var animation_names = ["growing", "growing_1", "growing_2"]
 
 @onready var watering_particles : GPUParticles3D = %GPUParticles3D
 
@@ -49,6 +49,10 @@ func water():
 	if not is_being_watered:
 		watering_timer.start()
 		# add animation to cube when watered
+		# choose random number of length of animation_names array
+		# choose name of that index
+		var animation_name = animation_names[randi() % animation_names.size()]
+		print("playing animation: " + animation_name)
 		animation_player.play(animation_name)
 		is_being_watered = true
 		if not moisture_level > max_moisture_level:
