@@ -123,7 +123,7 @@ scale_max = 973.03
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="GROUND" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.0019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.444153, -11.0019)
 visible = false
 use_collision = true
 collision_layer = 3
@@ -194,7 +194,7 @@ size = Vector3(12, 2, 40)
 material = SubResource("FogMaterial_076l3")
 
 [node name="RefillSpout" parent="." instance=ExtResource("4_mrmf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29285, -2.56445, -10.8242)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29285, -3.03763, -10.8242)
 
 [node name="Cloud" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.3971)
@@ -212,7 +212,7 @@ process_material = ExtResource("6_wq7uj")
 draw_pass_1 = ExtResource("7_xocsq")
 
 [node name="CENTER CLOUD" type="GPUParticles3D" parent="Cloud"]
-transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, 0.544991, -6.8751, -21.3606)
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, 0.544991, -5.08327, -21.3606)
 amount = 400
 lifetime = 30.0
 explosiveness = 0.98
