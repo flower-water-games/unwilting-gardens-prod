@@ -33,7 +33,8 @@ func _stage_1_entered(node):
 	if node.is_in_group("Player"):
 		# first time enter the level1, destroy the tutorial island
 		level_1.show()
-		level_2.hide()
+		level_2.show()
+		# level_2.hide()
 		if (is_stage_3):
 			return
 		if (!is_stage_2):
@@ -51,8 +52,7 @@ func _stage_1_entered(node):
 func _stage_2_entered(node):
 	# play stage 2 music if player entered
 	if node.is_in_group("Player"):	
-		level_2.show()
-		level_1.hide()
+		# level_1.hide()
 		if (is_stage_3):
 			return
 		MusicManager.play("Music", "Stage2", .1)
