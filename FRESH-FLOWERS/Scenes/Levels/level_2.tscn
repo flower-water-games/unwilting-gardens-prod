@@ -13,9 +13,6 @@ collision_layer = 7
 collision_mask = 7
 size = Vector3(20, 0.1, 20)
 
-[node name="RefillSpout" parent="CSGBox3D" instance=ExtResource("1_fyeua")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305902, -2.16931, -0.844702)
-
 [node name="StemCube" parent="." instance=ExtResource("1_hltdr")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.62449, -3.07628, 29.4109)
 stem_name = "pianosmart"
@@ -55,3 +52,6 @@ use_collision = true
 collision_layer = 7
 collision_mask = 7
 size = Vector3(0.1, 18.5864, 30)
+
+[node name="RefillSpout" parent="." instance=ExtResource("1_fyeua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305902, -5.67494, 21.0313)
