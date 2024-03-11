@@ -268,7 +268,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ti4l8"]
-size = Vector3(40, 19.835, 20)
+size = Vector3(40, 19.835, 38.5952)
 
 [node name="Main" type="Node3D"]
 
@@ -343,7 +343,7 @@ libraries = {
 [node name="Area3D" type="Area3D" parent="LEVEL/Level1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level1/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76953, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76953, -9.29761)
 shape = SubResource("BoxShape3D_ti4l8")
 
 [node name="Level2" parent="LEVEL" instance=ExtResource("15_7tpt6")]
