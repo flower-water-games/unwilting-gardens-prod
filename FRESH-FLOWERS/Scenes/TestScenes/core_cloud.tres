@@ -1,0 +1,7 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://dbj7ucb03mgph"]
+
+[resource]
+emission_shape_scale = Vector3(3.04, 2, 2)
+emission_shape = 3
+emission_box_extents = Vector3(2, 2, 2)
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
