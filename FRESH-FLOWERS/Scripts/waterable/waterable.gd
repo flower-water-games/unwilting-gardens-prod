@@ -72,7 +72,6 @@ func on_water():
 	if moisture_level >= max_moisture_level:
 		moisture_level = max_moisture_level
 		watering_sfx_instance.release()
-		watering_sfx_instance.queue_free()
 		watering_timer.queue_free()
 		SoundManager.play("player", "watered")
 
