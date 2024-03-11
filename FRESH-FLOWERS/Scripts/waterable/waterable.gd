@@ -13,6 +13,7 @@ var moisture_level = 0.0
 @onready var animation_player:AnimationPlayer = %AnimationPlayer
 @export var animation_name = "growing"
 
+@onready var watering_particles : GPUParticles3D = %GPUParticles3D
 
 @export_category("Materials")
 @export var my_happy_material:StandardMaterial3D = null
@@ -30,6 +31,7 @@ func setup_watering_timer() -> void:
 
 func _on_watering_timer_timeout():
 	is_being_watered = false
+	watering_sfx_instance.stop()
 
 func _ready():
 	flower_cube_mesh.material_override = my_sad_material
@@ -76,6 +78,7 @@ func on_water():
 # 	scale = new_scale
 
 func _on_threshold_reached():
+	watering_particles.emitting = true
 	threshold_reached = true
 	flower_cube_mesh.material_override = my_happy_material
 	SoundManager.play("player", "complete")

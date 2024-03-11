@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://5pjvp6vhf3n5"]
+[gd_scene load_steps=11 format=3 uid="uid://5pjvp6vhf3n5"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/waterable/waterable.gd" id="1_df6j1"]
 [ext_resource type="Material" uid="uid://bct5kchviw2gr" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/default_happy.tres" id="2_2ws1a"]
@@ -21,6 +21,29 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vcjnl"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ypv4e"]
+particle_flag_rotate_y = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+angle_min = 1.07288e-05
+angle_max = 360.0
+inherit_velocity_ratio = 20.0
+direction = Vector3(1, 2, 2.08165e-12)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6x84"]
+albedo_color = Color(0.949758, 0.610842, 0.827143, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_bjc6x"]
+material = SubResource("StandardMaterial3D_t6x84")
+text = "thank you <3"
+font_size = 12
 
 [node name="BaseCube" type="RigidBody3D" groups=["Cube"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.40733, 0)
@@ -46,3 +69,19 @@ unique_name_in_owner = true
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 rotation_edit_mode = 1
 mesh = ExtResource("2_d1hjd")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00212955, 1.48508, -0.0676763)
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 0.73
+randomness = 0.2
+visibility_aabb = AABB(-2.3627, -1.95377, -2.43159, 4.72541, 3.90754, 4.86319)
+process_material = SubResource("ParticleProcessMaterial_ypv4e")
+draw_pass_1 = SubResource("TextMesh_bjc6x")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135552, 0)
+size = Vector3(0.4, 0.4, 0.4)

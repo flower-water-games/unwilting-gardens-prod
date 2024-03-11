@@ -27,7 +27,7 @@ stream = ExtResource("4_y2c2y")
 [sub_resource type="Resource" id="Resource_85h2r"]
 script = ExtResource("2_v52ms")
 name = "drone"
-enabled = false
+enabled = true
 volume = 0.0
 stream = ExtResource("5_de77v")
 
@@ -48,7 +48,7 @@ stream = ExtResource("7_16fmk")
 [sub_resource type="Resource" id="Resource_x3pwt"]
 script = ExtResource("2_v52ms")
 name = "guira"
-enabled = false
+enabled = true
 volume = 0.0
 stream = ExtResource("8_mutji")
 
