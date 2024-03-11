@@ -58,9 +58,22 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer2"]
 layout_mode = 2
-text = "unwilting
+text = "unwilting v34
 
-godot 4.3-dev4_mono"
+Godot Engine 
+v4.3.dev4.mono.official.df78c0636
+
+by cm, paul, jenna, jesse, chris
+
+music by gabriel, william lambert
+
+basic controls
+
+[wasd] to move
+[click] to water
+[space bar] to jump
+
+"
 label_settings = SubResource("LabelSettings_x21xl")
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VSplitContainer"]
