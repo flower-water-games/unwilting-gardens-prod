@@ -313,7 +313,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 120, 24.488)
 [node name="Level1" parent="LEVEL" instance=ExtResource("14_g0aa1")]
 
 [node name="dome_object" type="Node3D" parent="LEVEL/Level1"]
-transform = Transform3D(-2.62268e-07, -2.09272e-15, -6, 2.09272e-15, 6, -2.09272e-15, 6, -2.09272e-15, -2.62268e-07, 0, -1.64825, 13.2276)
+transform = Transform3D(-2.18557e-07, -1.74393e-15, -5, 1.74393e-15, 5, -1.74393e-15, 5, -1.74393e-15, -2.18557e-07, 0, -2.23398, 12.3766)
 
 [node name="Icosphere" type="MeshInstance3D" parent="LEVEL/Level1/dome_object"]
 mesh = SubResource("ArrayMesh_stf26")

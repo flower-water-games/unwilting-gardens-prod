@@ -335,7 +335,7 @@ wieldable_mesh = NodePath("vessel")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 0.0404305, 0.497145, -0.17391)
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 0.0404305, 0.435338, -0.17391)
 visible = false
 mesh = SubResource("BoxMesh_6wmva")
 
