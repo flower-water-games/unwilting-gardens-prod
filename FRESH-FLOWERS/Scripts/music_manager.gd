@@ -97,7 +97,7 @@ func stage3():
 	MusicManager.play("Music", "Stage3", 10)
 
 #subcategory for gameflow locks
-@export_subgroup("Gameflow")
+@export_subgroup("Gameflow references")
 @export var stage1_lock : Node3D
 @export var tutorial_island: Node3D
 @export var player : Player

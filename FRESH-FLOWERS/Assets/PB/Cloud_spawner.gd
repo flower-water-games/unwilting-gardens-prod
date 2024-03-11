@@ -14,7 +14,7 @@ var rng = RandomNumberGenerator.new()
 # 		spawn_clouds()
 
 func _ready():
-	_cloud = load("res://cloudspawner.tscn")
+	# _cloud = load("res://cloudspawner.tscn")
 
 	# Check if the scene loaded successfully
 	if _cloud == null:
