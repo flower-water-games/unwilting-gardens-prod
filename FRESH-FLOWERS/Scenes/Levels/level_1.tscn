@@ -31,10 +31,13 @@ height = 0.1
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.48892, 0)
+visible = false
 use_collision = true
 collision_layer = 3
 collision_mask = 7
 size = Vector3(40, 0.1, 20)
+
+[node name="LEVEL_DESIGN" type="Node3D" parent="."]
 
 [node name="WALL" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.37245e-23, 0.731827, -9.92592)
@@ -54,6 +57,18 @@ visible = false
 use_collision = true
 size = Vector3(20.0439, 0.1, 8.80725)
 
+[node name="WALL4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.879204, 0.01251, -4.3708e-08, -3.84342e-08, 1.91281e-15, -1, -0.0109875, 1.00103, 5.46226e-10, -12.3254, 0.731826, 10.1158)
+visible = false
+use_collision = true
+size = Vector3(20.0439, 0.1, 8.80725)
+
+[node name="WALL5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.879204, 0.01251, -4.3708e-08, -3.84342e-08, 1.91281e-15, -1, -0.0109875, 1.00103, 5.46226e-10, 12.5872, 0.731826, 10.1158)
+visible = false
+use_collision = true
+size = Vector3(20.0439, 0.1, 8.80725)
+
 [node name="Dome" parent="." instance=ExtResource("1_xdckf")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.29084, -1.56578, 10.7633)
 
@@ -69,11 +84,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48975, 0)
 shape = SubResource("BoxShape3D_e8yuq")
 
 [node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 10, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 8.11382, 2.08165e-12)
 size = Vector3(10, 2, 10)
 
 [node name="FogVolume2" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -4.48364, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -6.36982, 2.08165e-12)
 size = Vector3(100, 2, 100)
 
 [node name="WaterStream" type="GPUParticles3D" parent="."]
@@ -92,22 +107,6 @@ hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 0, 1, 1)
 
-[node name="StemCube" parent="." instance=ExtResource("3_jgp7a")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 7.69831, -3.13501, -6.40164)
-stem_name = "piano"
-
-[node name="StemCube2" parent="." instance=ExtResource("3_jgp7a")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -8.00056, -3.13501, -6.40164)
-stem_name = "dangly"
-
-[node name="StemCube3" parent="." instance=ExtResource("3_jgp7a")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -13.4865, -3.13501, -6.40164)
-stem_name = "flute"
-
-[node name="StemCube4" parent="." instance=ExtResource("3_jgp7a")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -13.4865, -3.13501, -1.34101)
-stem_name = "string"
-
 [node name="flower_cube" parent="." instance=ExtResource("3_i6h22")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.0174394, -3.73121, -7.52575)
 
@@ -125,5 +124,23 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 6.35731, -3.29404, 5
 
 [node name="flower_cube6" parent="." instance=ExtResource("3_i6h22")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 11.9287, -3.29404, 5.45535)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="StemCube" parent="Node" instance=ExtResource("3_jgp7a")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 7.69831, -3.13501, -6.40164)
+stem_name = "piano"
+
+[node name="StemCube2" parent="Node" instance=ExtResource("3_jgp7a")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -8.00056, -3.13501, -6.40164)
+stem_name = "dangly"
+
+[node name="StemCube3" parent="Node" instance=ExtResource("3_jgp7a")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -13.4865, -3.13501, -6.40164)
+stem_name = "flute"
+
+[node name="StemCube4" parent="Node" instance=ExtResource("3_jgp7a")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -13.4865, -3.13501, -1.34101)
+stem_name = "string"
 
 [editable path="Dome"]
