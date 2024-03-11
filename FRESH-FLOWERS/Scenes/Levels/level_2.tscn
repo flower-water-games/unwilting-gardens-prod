@@ -1,57 +1,101 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1m2agh5k1xhv"]
+[gd_scene load_steps=7 format=3 uid="uid://b1m2agh5k1xhv"]
 
 [ext_resource type="PackedScene" uid="uid://be823dx66y1qn" path="res://FRESH-FLOWERS/PrefabScenes/mar10_refill_spout.tscn" id="1_fyeua"]
 [ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="1_hltdr"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="3_xcnp4"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="4_4d2nh"]
+[ext_resource type="Resource" path="res://FRESH-FLOWERS/Resources/level2terrain/data.hterrain" id="4_6klxu"]
+
+[sub_resource type="Resource" id="Resource_j2a51"]
+script = ExtResource("4_4d2nh")
+mode = 0
+textures = [[], []]
 
 [node name="Level2" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.50563, 21.876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70645, -3.50563, 36.6953)
 visible = false
 use_collision = true
 collision_layer = 7
 collision_mask = 7
-size = Vector3(20, 0.1, 20)
+size = Vector3(43.6962, 0.1, 49.6387)
 
 [node name="StemCube" parent="." instance=ExtResource("1_hltdr")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.62449, -3.07628, 29.4109)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.62449, -2.05457, 34.9458)
 stem_name = "pianosmart"
 
 [node name="StemCube3" parent="." instance=ExtResource("1_hltdr")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.80617, -3.07628, 29.4109)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 8.00412, -3.07628, 31.0192)
 stem_name = "gabechords"
 
 [node name="StemCube4" parent="." instance=ExtResource("1_hltdr")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.80617, -3.07628, 25.129)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 15.9907, -1.43419, 43.9337)
 stem_name = "flute"
 
 [node name="StemCube6" parent="." instance=ExtResource("1_hltdr")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.80617, -3.07628, 16.1883)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.80617, -3.07628, 27.0097)
 stem_name = "4-drumrack"
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.97584, -1.82233, 22.5375)
+[node name="WALL" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.259, -1.82233, 38.3902)
 visible = false
 use_collision = true
 collision_layer = 7
 collision_mask = 7
-size = Vector3(0.1, 18.5864, 30)
+size = Vector3(0.1, 18.5864, 58.052)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.82418, -1.82233, 22.5375)
+[node name="WALL2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6518, -1.82233, 36.0531)
 visible = false
 use_collision = true
 collision_layer = 7
 collision_mask = 7
-size = Vector3(0.1, 18.5864, 30)
+size = Vector3(0.1, 18.5864, 50.335)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(0.00127406, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.00127406, -0.0281181, -1.82233, 31.8855)
+[node name="WALL4" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.00315908, 0, 0.999995, 0, 1, 0, -0.999995, 0, -0.00315908, -15.1857, -1.82233, 11.2218)
 visible = false
 use_collision = true
 collision_layer = 7
 collision_mask = 7
-size = Vector3(0.1, 18.5864, 30)
+size = Vector3(0.1, 18.5864, 21.8422)
+
+[node name="WALL5" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.00315908, 0, 0.999995, 0, 1, 0, -0.999995, 0, -0.00315908, 15.7683, -1.82233, 11.2218)
+visible = false
+use_collision = true
+collision_layer = 7
+collision_mask = 7
+size = Vector3(0.1, 18.5864, 21.8422)
+
+[node name="WALL3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.00127406, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.00127406, 2.51695, -1.82233, 61.1794)
+visible = false
+use_collision = true
+collision_layer = 7
+collision_mask = 7
+size = Vector3(0.1, 18.5864, 45.4799)
 
 [node name="RefillSpout" parent="." instance=ExtResource("1_fyeua")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305902, -5.67494, 21.0313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.31664, -5.67494, 23.358)
+
+[node name="HTerrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.65, -3.5, 11.16)
+script = ExtResource("3_xcnp4")
+map_scale = Vector3(0.1, 0.1, 0.1)
+_terrain_data = ExtResource("4_6klxu")
+chunk_size = 16
+collision_enabled = true
+collision_layer = 5
+collision_mask = 7
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_j2a51")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null

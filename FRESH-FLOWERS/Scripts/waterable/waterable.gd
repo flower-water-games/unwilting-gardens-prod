@@ -61,21 +61,14 @@ func on_water():
 		watering_sfx_instance.trigger()
 
 	if moisture_level >= threshold and not threshold_reached:
-		watering_sfx_instance.release()
 		_on_threshold_reached()
 	
 	if moisture_level >= max_moisture_level:
 		moisture_level = max_moisture_level
 		watering_sfx_instance.release()
+		watering_sfx_instance.queue_free()
 		watering_timer.queue_free()
 		SoundManager.play("player", "watered")
-
-# var scale_up_factor = .2
-
-# func scale_up_tween():
-# 	var normalized_moisture_level = moisture_level / max_moisture_level
-# 	var new_scale = Vector3(initial_scale.x, initial_scale.y, initial_scale.z) + Vector3(scale_up_factor, scale_up_factor, scale_up_factor) * normalized_moisture_level
-# 	scale = new_scale
 
 func _on_threshold_reached():
 	watering_particles.emitting = true
@@ -83,5 +76,3 @@ func _on_threshold_reached():
 	flower_cube_mesh.material_override = my_happy_material
 	SoundManager.play("player", "complete")
 
-# This class, Waterable, represents an object that can be watered in a 3D environment.
-# The object can be watered, and when it reaches a certain moisture level, it changes its appearance and plays a sound effect.

@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://dhatmddsmnj2v"]
+[gd_scene load_steps=36 format=3 uid="uid://dhatmddsmnj2v"]
 
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
 [ext_resource type="PackedScene" uid="uid://cro0vww3oijjx" path="res://FRESH-FLOWERS/Scenes/Levels/tutorial_sky_island.tscn" id="2_vpoja"]
 [ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="3_1m4ba"]
+[ext_resource type="PackedScene" uid="uid://0ljc5m5p5j8w" path="res://FRESH-FLOWERS/PrefabScenes/cloud.tscn" id="3_mp4mw"]
 [ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="4_t7o6m"]
 [ext_resource type="AudioStream" uid="uid://b24pcwhf2an63" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/watering_unwilt.ogg" id="5_dcjwd"]
 [ext_resource type="Resource" uid="uid://wa0jawp4obka" path="res://FRESH-FLOWERS/Resources/stage1.tres" id="5_hdg4c"]
@@ -44,6 +45,7 @@ streams = Array[AudioStream]([ExtResource("7_hjhgm")])
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ubdsw"]
 resource_name = "Material.004"
+transparency = 1
 cull_mode = 2
 albedo_color = Color(0.523167, 0.788605, 0.906332, 1)
 roughness = 0.5
@@ -205,24 +207,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g2ykh")
 
-[sub_resource type="Animation" id="Animation_bjy7s"]
-resource_name = "IcosphereAction"
-length = 0.0416667
-tracks/0/type = "scale_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("Icosphere_001")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
-tracks/1/type = "scale_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("Icosphere_002")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1)
-
 [sub_resource type="Animation" id="Animation_pljwi"]
 resource_name = "Dissapear"
 length = 1.25
@@ -259,6 +243,24 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 
+[sub_resource type="Animation" id="Animation_bjy7s"]
+resource_name = "IcosphereAction"
+length = 0.0416667
+tracks/0/type = "scale_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icosphere_001")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+tracks/1/type = "scale_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Icosphere_002")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oq74t"]
 _data = {
 "Dissapear": SubResource("Animation_pljwi"),
@@ -267,7 +269,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ti4l8"]
-size = Vector3(40, 17, 20)
+size = Vector3(40, 19.835, 47.9604)
 
 [node name="Main" type="Node3D"]
 
@@ -279,6 +281,9 @@ wieldable = NodePath("Head/Camera/Container/WateringCan")
 
 [node name="WorldEnvironment" parent="CORE" instance=ExtResource("2_u1ghk")]
 
+[node name="Cloud" parent="CORE" instance=ExtResource("3_mp4mw")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -38.1993, 36.9284, -10.8552)
+
 [node name="HUD" type="CanvasLayer" parent="CORE"]
 
 [node name="Control" type="Control" parent="CORE/HUD"]
@@ -287,11 +292,15 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area", "stage2_area", "stage1_lock")]
+[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area", "stage2_area", "stage1_lock", "tutorial_island", "player", "level_1", "level_2")]
 script = ExtResource("8_05bny")
 stage1_area = NodePath("../../LEVEL/Level1/Area3D")
 stage2_area = NodePath("../../LEVEL/Level2/Area3D")
 stage1_lock = NodePath("../../LEVEL/LOCKS/WALL4")
+tutorial_island = NodePath("../../LEVEL/TutorialSkyIsland")
+player = NodePath("../PLAYER")
+level_1 = NodePath("../../LEVEL/Level1")
+level_2 = NodePath("../../LEVEL/Level2")
 
 [node name="MusicBank" type="Node" parent="CORE/GardenMusicManager"]
 script = ExtResource("9_jkygg")
@@ -307,46 +316,48 @@ events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResour
 
 [node name="LEVEL" type="Node3D" parent="."]
 
-[node name="TutorialSkyIsland" parent="LEVEL" instance=ExtResource("2_vpoja")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 120, 24.488)
+[node name="dome_object" type="Node3D" parent="LEVEL"]
+transform = Transform3D(-2.18557e-07, -1.74393e-15, -5, 1.74393e-15, 5, -1.74393e-15, 5, -1.74393e-15, -2.18557e-07, -0.0188065, -2.25036, 12.3772)
 
-[node name="Level1" parent="LEVEL" instance=ExtResource("14_g0aa1")]
-
-[node name="dome_object" type="Node3D" parent="LEVEL/Level1"]
-transform = Transform3D(-2.18557e-07, -1.74393e-15, -5, 1.74393e-15, 5, -1.74393e-15, 5, -1.74393e-15, -2.18557e-07, 0, -2.23398, 12.3766)
-
-[node name="Icosphere" type="MeshInstance3D" parent="LEVEL/Level1/dome_object"]
+[node name="Icosphere" type="MeshInstance3D" parent="LEVEL/dome_object"]
 mesh = SubResource("ArrayMesh_stf26")
 skeleton = NodePath("")
 
-[node name="Icosphere_001" type="MeshInstance3D" parent="LEVEL/Level1/dome_object"]
+[node name="Icosphere_001" type="MeshInstance3D" parent="LEVEL/dome_object"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.954894, 0.0167265, 0)
 mesh = SubResource("ArrayMesh_grawc")
 skeleton = NodePath("")
 
-[node name="Icosphere_002" type="MeshInstance3D" parent="LEVEL/Level1/dome_object"]
+[node name="Icosphere_002" type="MeshInstance3D" parent="LEVEL/dome_object"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.971548, 0.00879992, 0)
 mesh = SubResource("ArrayMesh_qpm3m")
 skeleton = NodePath("")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LEVEL/Level1/dome_object"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LEVEL/dome_object"]
 libraries = {
 "": SubResource("AnimationLibrary_oq74t")
 }
 
+[node name="TutorialSkyIsland" parent="LEVEL" instance=ExtResource("2_vpoja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 120, 24.488)
+
+[node name="Level1" parent="LEVEL" instance=ExtResource("14_g0aa1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0188065, -0.0163822, 0.000640869)
+
 [node name="Area3D" type="Area3D" parent="LEVEL/Level1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level1/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76953, -9.29761)
 shape = SubResource("BoxShape3D_ti4l8")
 
 [node name="Level2" parent="LEVEL" instance=ExtResource("15_7tpt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.11205)
 
 [node name="Area3D" type="Area3D" parent="LEVEL/Level2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.1155)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 14.7805)
 shape = SubResource("BoxShape3D_ti4l8")
 
 [node name="Stage3" type="Node3D" parent="LEVEL"]

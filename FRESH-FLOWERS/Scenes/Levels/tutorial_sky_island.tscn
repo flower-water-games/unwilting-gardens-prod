@@ -1,9 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://cro0vww3oijjx"]
+[gd_scene load_steps=24 format=3 uid="uid://cro0vww3oijjx"]
 
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_orwpc"]
 [ext_resource type="PackedScene" uid="uid://ckt0iiu7qn6d" path="res://FRESH-FLOWERS/PrefabScenes/waterables/bird_cube.tscn" id="3_5rxwc"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="3_r051o"]
 [ext_resource type="PackedScene" uid="uid://be823dx66y1qn" path="res://FRESH-FLOWERS/PrefabScenes/mar10_refill_spout.tscn" id="4_mrmf1"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Assets/PB/Cloud_spawner.gd" id="5_blvpx"]
+[ext_resource type="Material" uid="uid://dbj7ucb03mgph" path="res://FRESH-FLOWERS/Scenes/TestScenes/core_cloud.tres" id="6_wq7uj"]
+[ext_resource type="QuadMesh" uid="uid://coogw3vxajngi" path="res://FRESH-FLOWERS/Scenes/TestScenes/cloud1.tres" id="7_xocsq"]
+[ext_resource type="QuadMesh" uid="uid://bmgp8v7gufcl" path="res://FRESH-FLOWERS/Scenes/TestScenes/cloud2.tres" id="8_yjj20"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek35x"]
 albedo_color = Color(1, 0.776471, 0.819608, 1)
@@ -83,6 +87,18 @@ noise = SubResource("FastNoiseLite_lyrmw")
 density = 4.1373
 density_texture = SubResource("NoiseTexture3D_m2lsv")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rllor"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j35kq"]
+emission_shape_scale = Vector3(3.04, 2, 2)
+emission_shape = 3
+emission_box_extents = Vector3(2, 2, 2)
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+scale_min = 440.25
+scale_max = 973.03
+
 [node name="TutorialSkyIsland" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
@@ -101,56 +117,21 @@ visible = false
 mesh = SubResource("PlaneMesh_vtbvp")
 skeleton = NodePath("../../GRASS")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="LEFTWALL" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.0160738, 0.999871, 0, -0.999871, -0.0160738, 0, 0, 0, 1, -1.55963, 0, -4.44629)
 visible = false
 use_collision = true
 size = Vector3(3, 0.1, 105.593)
 material = SubResource("StandardMaterial3D_ek35x")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+[node name="RIGHTWALL" type="CSGBox3D" parent="."]
 transform = Transform3D(-0.0160738, 0.999871, 0, -0.999871, -0.0160738, 0, 0, 0, 1, 1.56728, 0, -4.44107)
 visible = false
 use_collision = true
 size = Vector3(3, 0.1, 105.593)
 material = SubResource("StandardMaterial3D_ek35x")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(1.31134e-07, 1, -3.82137e-15, -4.37114e-08, 1.91069e-15, -1, -1, 1.31134e-07, 4.37114e-08, 1.56728, -48.6864, -25.0313)
-visible = false
-use_collision = true
-size = Vector3(3, 0.1, 105.593)
-material = SubResource("StandardMaterial3D_ek35x")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(1.31134e-07, 1, -3.82137e-15, -4.37114e-08, 1.91069e-15, -1, -1, 1.31134e-07, 4.37114e-08, -1.55557, -48.6864, -25.0313)
-visible = false
-use_collision = true
-size = Vector3(3, 0.1, 105.593)
-material = SubResource("StandardMaterial3D_ek35x")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.999954, -0.00959898, 4.37094e-08, -4.37114e-08, 1.91069e-15, -1, 0.00959898, -0.999954, -4.19586e-10, -0.376657, -48.6864, -26.1871)
-visible = false
-use_collision = true
-size = Vector3(3, 0.1, 105.593)
-material = SubResource("StandardMaterial3D_ek35x")
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.999954, -0.00959898, 4.37094e-08, -4.37114e-08, 1.91069e-15, -1, 0.00959898, -0.999954, -4.19586e-10, -0.376657, -50.6897, -23.7641)
-visible = false
-use_collision = true
-size = Vector3(3, 0.1, 101.586)
-material = SubResource("StandardMaterial3D_ek35x")
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.999954, -0.00959898, 2.60716e-08, -4.37114e-08, 1.91069e-15, -0.596475, 0.00959898, -0.999954, -2.50273e-10, -0.376657, -79.9519, -23.4692)
-visible = false
-use_collision = true
-size = Vector3(3, 0.1, 105.593)
-material = SubResource("StandardMaterial3D_ek35x")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+[node name="BACKWALL" type="CSGBox3D" parent="."]
 transform = Transform3D(9.53784e-06, -0.000593391, 1, -0.999871, -0.0160738, -1.56884e-17, 0.0160738, -0.999871, -0.000593467, 0.0989234, 0, 1.51605)
 visible = false
 use_collision = true
@@ -188,8 +169,143 @@ multimesh = SubResource("MultiMesh_qwxf2")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.05989, -9.65592)
+visible = false
 size = Vector3(10, 2, 27.1118)
 material = SubResource("FogMaterial_076l3")
 
 [node name="RefillSpout" parent="." instance=ExtResource("4_mrmf1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29285, -2.56445, -10.8242)
+
+[node name="Cloud" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.3971)
+size = Vector3(4, 0.1, 23)
+material = SubResource("StandardMaterial3D_rllor")
+script = ExtResource("5_blvpx")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08946, -5.0381, -9.55321)
+visible = false
+amount = 50
+lifetime = 0.98
+explosiveness = 0.98
+process_material = ExtResource("6_wq7uj")
+draw_pass_1 = ExtResource("7_xocsq")
+
+[node name="CENTER CLOUD" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -1.165, -7.02691, -21.3606)
+amount = 200
+lifetime = 30.0
+explosiveness = 0.98
+trail_lifetime = 0.93
+process_material = ExtResource("6_wq7uj")
+draw_pass_1 = ExtResource("7_xocsq")
+
+[node name="CENTER CLOUD2" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -1.165, -112.871, -31.6812)
+amount = 200
+lifetime = 30.0
+explosiveness = 0.98
+visibility_aabb = AABB(-17.1493, -4, -5.85048, 34.2986, 8, 11.701)
+trail_lifetime = 0.93
+process_material = ExtResource("6_wq7uj")
+draw_pass_1 = ExtResource("7_xocsq")
+
+[node name="CLOUD LEFT" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -39.0388, 13.6312, -32.283)
+amount = 30
+lifetime = 30.0
+explosiveness = 0.98
+trail_lifetime = 0.93
+process_material = ExtResource("6_wq7uj")
+draw_pass_1 = ExtResource("7_xocsq")
+
+[node name="CLOUD LEFT2" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(347.6, 0, 0, 0, 7.75, 0, 0, 0, 588.73, -19.1749, -119.223, -135.549)
+amount = 1090
+lifetime = 30.0
+explosiveness = 0.98
+trail_lifetime = 0.93
+process_material = SubResource("ParticleProcessMaterial_j35kq")
+draw_pass_1 = ExtResource("8_yjj20")
+
+[node name="CLOUD MG" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -4.03053, 41.2942, -123.317)
+amount = 50
+lifetime = 19.0
+explosiveness = 0.98
+trail_lifetime = 0.93
+process_material = ExtResource("6_wq7uj")
+draw_pass_1 = ExtResource("7_xocsq")
+
+[node name="CLOUD MG3" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -55.7213, 58.8099, -123.317)
+amount = 50
+lifetime = 30.0
+explosiveness = 0.98
+trail_lifetime = 0.93
+process_material = ExtResource("6_wq7uj")
+draw_pass_1 = ExtResource("7_xocsq")
+
+[node name="CLOUD MG4" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(5.57, 0, 0, 0, 1.88, 0, 0, 0, 4.89, 37.3794, 58.8099, -84.185)
+amount = 50
+lifetime = 30.0
+explosiveness = 0.98
+trail_lifetime = 0.93
+process_material = ExtResource("6_wq7uj")
+draw_pass_1 = ExtResource("7_xocsq")
+
+[node name="CLOUD MG2" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, 101.909, 52.1396, -256.89)
+amount = 50
+lifetime = 30.0
+explosiveness = 0.98
+trail_lifetime = 0.93
+process_material = ExtResource("6_wq7uj")
+draw_pass_1 = ExtResource("7_xocsq")
+
+[node name="CLOUD RIGHT" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, 43.7462, 13.9044, -32.283)
+amount = 50
+lifetime = 30.0
+explosiveness = 0.98
+trail_lifetime = 0.93
+process_material = ExtResource("6_wq7uj")
+draw_pass_1 = ExtResource("7_xocsq")
+
+[node name="funnel" type="Node" parent="."]
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="funnel"]
+transform = Transform3D(-0.999954, -0.00959898, 2.60716e-08, -4.37114e-08, 1.91069e-15, -0.596475, 0.00959898, -0.999954, -2.50273e-10, -0.376657, -79.9519, -23.4692)
+visible = false
+use_collision = true
+size = Vector3(3, 0.1, 105.593)
+material = SubResource("StandardMaterial3D_ek35x")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="funnel"]
+transform = Transform3D(1.31134e-07, 1, -3.82137e-15, -4.37114e-08, 1.91069e-15, -1, -1, 1.31134e-07, 4.37114e-08, 1.56728, -48.6864, -25.0313)
+visible = false
+use_collision = true
+size = Vector3(3, 0.1, 105.593)
+material = SubResource("StandardMaterial3D_ek35x")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="funnel"]
+transform = Transform3D(1.31134e-07, 1, -3.82137e-15, -4.37114e-08, 1.91069e-15, -1, -1, 1.31134e-07, 4.37114e-08, -1.55557, -48.6864, -25.0313)
+visible = false
+use_collision = true
+size = Vector3(3, 0.1, 105.593)
+material = SubResource("StandardMaterial3D_ek35x")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="funnel"]
+transform = Transform3D(-0.999954, -0.00959898, 4.37094e-08, -4.37114e-08, 1.91069e-15, -1, 0.00959898, -0.999954, -4.19586e-10, -0.376657, -48.6864, -26.4771)
+visible = false
+use_collision = true
+size = Vector3(3, 0.1, 105.593)
+material = SubResource("StandardMaterial3D_ek35x")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="funnel"]
+transform = Transform3D(-0.999954, -0.00959898, 4.37094e-08, -4.37114e-08, 1.91069e-15, -1, 0.00959898, -0.999954, -4.19586e-10, -0.376657, -50.6897, -23.7641)
+visible = false
+use_collision = true
+size = Vector3(3, 0.1, 101.586)
+material = SubResource("StandardMaterial3D_ek35x")
