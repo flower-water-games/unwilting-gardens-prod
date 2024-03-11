@@ -7,13 +7,14 @@
 
 [sub_resource type="Animation" id="Animation_6mywi"]
 resource_name = "growing"
+length = 0.6
 tracks/0/type = "scale_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("CollisionShape3D")
 tracks/0/interp = 2
 tracks/0/loop_wrap = false
-tracks/0/keys = PackedFloat32Array(0, 1, 0.7, 0.7, 0.7, 0.2, 1, 0.9, 0.9, 0.9, 0.4, 1, 0.6, 0.8, 0.6, 1, 1, 0.7, 0.7, 0.7)
+tracks/0/keys = PackedFloat32Array(0, 1, 0.7, 0.7, 0.7, 0.2, 1, 0.9, 0.9, 0.9, 0.4, 1, 0.6, 0.8, 0.6, 0.5, 1, 0.7, 0.7, 0.7)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_axp1d"]
 _data = {
