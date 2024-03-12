@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="1_fctrq"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="2_v52ms"]
-[ext_resource type="AudioStream" uid="uid://7hiryd6ob6vp" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 5-Audio.ogg" id="3_oomq7"]
-[ext_resource type="AudioStream" uid="uid://do06t5ioo764e" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 4-Drum Rack.ogg" id="4_y2c2y"]
-[ext_resource type="AudioStream" uid="uid://iaefvbaf7o05" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 drone.ogg" id="5_de77v"]
-[ext_resource type="AudioStream" uid="uid://hb33o45kxxrg" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 flute.ogg" id="6_jdv4p"]
-[ext_resource type="AudioStream" uid="uid://58gtk2260c2q" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 gabechords.ogg" id="7_16fmk"]
-[ext_resource type="AudioStream" uid="uid://7nf3botyy20m" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 guira.ogg" id="8_mutji"]
-[ext_resource type="AudioStream" uid="uid://ktp6yysuyq54" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 piano smart.ogg" id="9_me624"]
+[ext_resource type="AudioStream" uid="uid://bk83p47r280q0" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 5-Audio.ogg" id="3_oomq7"]
+[ext_resource type="AudioStream" uid="uid://d07dvupyx6cjt" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 4-Drum Rack.ogg" id="4_y2c2y"]
+[ext_resource type="AudioStream" uid="uid://da1j7vc3nlmuk" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 drone.ogg" id="5_de77v"]
+[ext_resource type="AudioStream" uid="uid://btfekcjpnk5xb" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 flute.ogg" id="6_jdv4p"]
+[ext_resource type="AudioStream" uid="uid://cmmf1tcj11imd" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 gabechords.ogg" id="7_16fmk"]
+[ext_resource type="AudioStream" uid="uid://cqftxub7e00gp" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 guira.ogg" id="8_mutji"]
+[ext_resource type="AudioStream" uid="uid://i8j634v2m0rj" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 2 ogg/Stage 2 piano smart.ogg" id="9_me624"]
 
 [sub_resource type="Resource" id="Resource_psci2"]
 script = ExtResource("2_v52ms")

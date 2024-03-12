@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Assets/PB/Cloud_spawner.gd" id="5_blvpx"]
 [ext_resource type="Material" uid="uid://dbj7ucb03mgph" path="res://FRESH-FLOWERS/Scenes/TestScenes/core_cloud.tres" id="6_wq7uj"]
 [ext_resource type="QuadMesh" uid="uid://coogw3vxajngi" path="res://FRESH-FLOWERS/Scenes/TestScenes/cloud1.tres" id="7_xocsq"]
-[ext_resource type="Texture2D" uid="uid://cvq3rekqy5wn4" path="res://FRESH-FLOWERS/Assets/PB/FX_CloudAlpha04-bright copy.png" id="8_h81l7"]
+[ext_resource type="Texture2D" uid="uid://diam7skrebxq2" path="res://FRESH-FLOWERS/Assets/PB/FX_CloudAlpha04-bright copy.png" id="8_h81l7"]
 [ext_resource type="QuadMesh" uid="uid://bmgp8v7gufcl" path="res://FRESH-FLOWERS/Scenes/TestScenes/cloud2.tres" id="8_yjj20"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek35x"]
@@ -109,15 +109,15 @@ billboard_mode = 1
 [sub_resource type="QuadMesh" id="QuadMesh_mkx5c"]
 lightmap_size_hint = Vector2i(27, 27)
 material = SubResource("StandardMaterial3D_40jjo")
-size = Vector2(9, 9)
+size = Vector2(8, 8)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j35kq"]
 emission_shape_scale = Vector3(3.04, 2, 2)
 emission_shape = 3
 emission_box_extents = Vector3(2, 2, 2)
 gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
-scale_min = 440.25
-scale_max = 973.03
+scale_min = 440.0
+scale_max = 926.85
 
 [node name="TutorialSkyIsland" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
@@ -212,9 +212,9 @@ process_material = ExtResource("6_wq7uj")
 draw_pass_1 = ExtResource("7_xocsq")
 
 [node name="CENTER CLOUD" type="GPUParticles3D" parent="Cloud"]
-transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, 0.544991, -5.08327, -21.3606)
-amount = 400
-lifetime = 30.0
+transform = Transform3D(-1.41227, 0, 0, 0, -0.919457, 0, 0, 0, -4.78078, 0.544991, -5.98828, -21.3606)
+amount = 280
+lifetime = 60.0
 explosiveness = 0.98
 trail_lifetime = 0.93
 process_material = ExtResource("6_wq7uj")
@@ -231,8 +231,8 @@ process_material = ExtResource("6_wq7uj")
 draw_pass_1 = ExtResource("7_xocsq")
 
 [node name="CLOUD LEFT" type="GPUParticles3D" parent="Cloud"]
-transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -39.0388, 13.6312, -32.283)
-amount = 30
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -72.7721, 13.6312, -7.4166)
+amount = 120
 lifetime = 30.0
 explosiveness = 0.98
 trail_lifetime = 0.93
@@ -240,8 +240,8 @@ process_material = ExtResource("6_wq7uj")
 draw_pass_1 = ExtResource("7_xocsq")
 
 [node name="CLOUD LEFT2" type="GPUParticles3D" parent="Cloud"]
-transform = Transform3D(347.6, 0, 0, 0, 7.75, 0, 0, 0, 588.73, -19.1749, -119.223, -135.549)
-amount = 1090
+transform = Transform3D(347.6, 0, 0, 0, 7.75, 0, 0, 0, 588.73, -19.1488, -120.125, -135.228)
+amount = 930
 lifetime = 30.0
 explosiveness = 0.98
 trail_lifetime = 0.93
@@ -249,7 +249,7 @@ process_material = SubResource("ParticleProcessMaterial_j35kq")
 draw_pass_1 = ExtResource("8_yjj20")
 
 [node name="CLOUD MG" type="GPUParticles3D" parent="Cloud"]
-transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -4.03053, 41.2942, -123.317)
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -4.31716, 74.9258, -174.996)
 amount = 50
 lifetime = 19.0
 explosiveness = 0.98
@@ -258,7 +258,7 @@ process_material = ExtResource("6_wq7uj")
 draw_pass_1 = ExtResource("7_xocsq")
 
 [node name="CLOUD MG3" type="GPUParticles3D" parent="Cloud"]
-transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -55.7213, 58.8099, -123.317)
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -100.96, 58.8099, -123.317)
 amount = 50
 lifetime = 30.0
 explosiveness = 0.98
@@ -266,9 +266,9 @@ trail_lifetime = 0.93
 process_material = ExtResource("6_wq7uj")
 draw_pass_1 = ExtResource("7_xocsq")
 
-[node name="CLOUD MG4" type="GPUParticles3D" parent="Cloud"]
-transform = Transform3D(5.57, 0, 0, 0, 1.88, 0, 0, 0, 4.89, 37.3794, 58.8099, -84.185)
-amount = 50
+[node name="CLOUD RIGHT MG4" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(5.57, 0, 0, 0, 1.88, 0, 0, 0, 4.89, 113.557, 58.8099, -84.185)
+amount = 130
 lifetime = 30.0
 explosiveness = 0.98
 trail_lifetime = 0.93
@@ -285,8 +285,8 @@ process_material = ExtResource("6_wq7uj")
 draw_pass_1 = ExtResource("7_xocsq")
 
 [node name="CLOUD RIGHT" type="GPUParticles3D" parent="Cloud"]
-transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, 43.7462, 13.9044, -32.283)
-amount = 50
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, 81.9542, 7.64977, -32.2688)
+amount = 140
 lifetime = 30.0
 explosiveness = 0.98
 trail_lifetime = 0.93

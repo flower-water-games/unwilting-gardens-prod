@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="2_45alt"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/fit_to_window.gd" id="3_q1jse"]
 [ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="4_pywf7"]
-[ext_resource type="Texture2D" uid="uid://le1diumix7gn" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_normal.png" id="4_y8ss2"]
+[ext_resource type="Texture2D" uid="uid://cxobp8e8m7x5y" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_normal.png" id="4_y8ss2"]
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="5_ay4hd"]
 [ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="5_h452s"]
 
