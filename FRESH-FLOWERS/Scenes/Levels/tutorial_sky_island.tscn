@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Assets/PB/Cloud_spawner.gd" id="5_blvpx"]
 [ext_resource type="Material" uid="uid://dbj7ucb03mgph" path="res://FRESH-FLOWERS/Scenes/TestScenes/core_cloud.tres" id="6_wq7uj"]
 [ext_resource type="QuadMesh" uid="uid://coogw3vxajngi" path="res://FRESH-FLOWERS/Scenes/TestScenes/cloud1.tres" id="7_xocsq"]
-[ext_resource type="Texture2D" uid="uid://diam7skrebxq2" path="res://FRESH-FLOWERS/Assets/PB/FX_CloudAlpha04-bright copy.png" id="8_h81l7"]
+[ext_resource type="Texture2D" uid="uid://cvq3rekqy5wn4" path="res://FRESH-FLOWERS/Assets/PB/FX_CloudAlpha04-bright copy.png" id="8_h81l7"]
 [ext_resource type="QuadMesh" uid="uid://bmgp8v7gufcl" path="res://FRESH-FLOWERS/Scenes/TestScenes/cloud2.tres" id="8_yjj20"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek35x"]

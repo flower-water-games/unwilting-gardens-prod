@@ -112,236 +112,236 @@ shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 
-[node name="statue_column_glb" type="Node3D" parent="." instance=ExtResource("8_usatj")]
+[node name="statue_column_glb" parent="." instance=ExtResource("8_usatj")]
 transform = Transform3D(4.91487, 0, 0, 0, 4.91487, 0, 0, 0, 4.91487, 10, -3.4, 28)
 
-[node name="statue_column_glb2" type="Node3D" parent="." instance=ExtResource("8_usatj")]
+[node name="statue_column_glb2" parent="." instance=ExtResource("8_usatj")]
 transform = Transform3D(-4.91487, -2.56422e-15, -1.87815e-14, 0, 4.91487, -4.29671e-07, 1.87815e-14, -4.29671e-07, -4.91487, 22, -3.4, 23)
 
-[node name="statue_column_glb3" type="Node3D" parent="." instance=ExtResource("8_usatj")]
+[node name="statue_column_glb3" parent="." instance=ExtResource("8_usatj")]
 transform = Transform3D(-4.91487, -2.56422e-15, -1.87815e-14, 0, 4.91487, -4.29671e-07, 1.87815e-14, -4.29671e-07, -4.91487, 22, -3.4, 50)
 
-[node name="statue_column_glb4" type="Node3D" parent="." instance=ExtResource("8_usatj")]
+[node name="statue_column_glb4" parent="." instance=ExtResource("8_usatj")]
 transform = Transform3D(-4.91487, -2.56422e-15, -1.87815e-14, 0, 4.91487, -4.29671e-07, 1.87815e-14, -4.29671e-07, -4.91487, 13, -3.4, 57)
 
-[node name="statue_column_glb5" type="Node3D" parent="." instance=ExtResource("8_usatj")]
+[node name="statue_column_glb5" parent="." instance=ExtResource("8_usatj")]
 transform = Transform3D(-4.91487, -2.56422e-15, -1.87815e-14, 0, 4.91487, -4.29671e-07, 1.87815e-14, -4.29671e-07, -4.91487, 6, -3.4, 44)
 
-[node name="statue_column_glb6" type="Node3D" parent="." instance=ExtResource("8_usatj")]
+[node name="statue_column_glb6" parent="." instance=ExtResource("8_usatj")]
 transform = Transform3D(-4.91487, -2.56422e-15, -1.87815e-14, 0, 4.91487, -4.29671e-07, 1.87815e-14, -4.29671e-07, -4.91487, -14, -3.4, 55)
 
-[node name="statue_columnDamaged_glb" type="Node3D" parent="." instance=ExtResource("9_wpjq3")]
+[node name="statue_columnDamaged_glb" parent="." instance=ExtResource("9_wpjq3")]
 transform = Transform3D(2.48834, -3.08527, 0, 3.08527, 2.48834, 0, 0, 0, 3.96368, 15, -3.4, 33)
 
-[node name="statue_columnDamaged_glb2" type="Node3D" parent="." instance=ExtResource("9_wpjq3")]
+[node name="statue_columnDamaged_glb2" parent="." instance=ExtResource("9_wpjq3")]
 transform = Transform3D(-1.13606, 1.40859, 3.52647, 3.08527, 2.48834, 8.14339e-16, -2.21387, 2.74495, -1.80963, 2, -3.4, 31)
 
-[node name="stone_tallA_glb" type="Node3D" parent="." instance=ExtResource("10_baviq")]
+[node name="stone_tallA_glb" parent="." instance=ExtResource("10_baviq")]
 transform = Transform3D(5.0283e-07, 0, 3.83447, 0, 3.83447, 0, -3.83447, 0, 5.0283e-07, 6, -3.4, 35)
 
-[node name="stone_smallFlatC_glb" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -3.4, 17)
 
-[node name="stone_smallFlatC_glb2" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb2" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -3.4, 17)
 
-[node name="stone_smallFlatC_glb3" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb3" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -3.4, 18)
 
-[node name="stone_smallFlatC_glb4" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb4" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -3.4, 18)
 
-[node name="stone_smallFlatC_glb5" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb5" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -3.4, 19)
 
-[node name="stone_smallFlatC_glb6" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb6" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -3.4, 19)
 
-[node name="stone_smallFlatC_glb7" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb7" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -3.4, 19)
 
-[node name="stone_smallFlatC_glb8" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb8" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -3.4, 20)
 
-[node name="stone_smallFlatC_glb9" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb9" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -3.4, 20)
 
-[node name="stone_smallFlatC_glb10" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb10" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -3.4, 21)
 
-[node name="stone_smallFlatC_glb11" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb11" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -3.4, 21)
 
-[node name="stone_smallFlatC_glb12" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb12" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -3.4, 21)
 
-[node name="stone_smallFlatB_glb" type="Node3D" parent="." instance=ExtResource("12_2j18j")]
+[node name="stone_smallFlatB_glb" parent="." instance=ExtResource("12_2j18j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -3.4, 18)
 
-[node name="stone_smallFlatB_glb2" type="Node3D" parent="." instance=ExtResource("12_2j18j")]
+[node name="stone_smallFlatB_glb2" parent="." instance=ExtResource("12_2j18j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -3.4, 18)
 
-[node name="stone_smallFlatB_glb3" type="Node3D" parent="." instance=ExtResource("12_2j18j")]
+[node name="stone_smallFlatB_glb3" parent="." instance=ExtResource("12_2j18j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -3.4, 18)
 
-[node name="stone_smallFlatB_glb4" type="Node3D" parent="." instance=ExtResource("12_2j18j")]
+[node name="stone_smallFlatB_glb4" parent="." instance=ExtResource("12_2j18j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -3.4, 18)
 
-[node name="stone_smallFlatB_glb5" type="Node3D" parent="." instance=ExtResource("12_2j18j")]
+[node name="stone_smallFlatB_glb5" parent="." instance=ExtResource("12_2j18j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -3.4, 19)
 
-[node name="stone_smallFlatB_glb6" type="Node3D" parent="." instance=ExtResource("12_2j18j")]
+[node name="stone_smallFlatB_glb6" parent="." instance=ExtResource("12_2j18j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -3.4, 18)
 
-[node name="stone_smallFlatC_glb13" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb13" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(0.968292, 0, -0.249817, 0, 1, 0, 0.249817, 0, 0.968292, 2.58714, -3.4, 18.8759)
 
-[node name="stone_smallFlatC_glb14" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb14" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15126, -3.4, 19.691)
 
-[node name="stone_smallFlatC_glb15" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb15" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0934, -3.4, 21.5727)
 
-[node name="stone_smallFlatC_glb16" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb16" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4674, -3.4, 21.7615)
 
-[node name="stone_smallFlatC_glb17" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb17" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(0.981179, 0, 0.193093, 0, 1, 0, -0.193093, 0, 0.981179, 9.50195, -3.4, 17.9171)
 
-[node name="stone_smallFlatC_glb18" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb18" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1208, -3.4, 20.3538)
 
-[node name="stone_smallFlatC_glb19" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb19" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6865, -3.4, 22.8329)
 
-[node name="stone_smallFlatC_glb20" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb20" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6742, -3.4, 23.9617)
 
-[node name="stone_smallFlatC_glb21" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb21" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(0.281783, 0, -0.959477, 0, 1, 0, 0.959477, 0, 0.281783, 17.457, -3.4, 26.2711)
 
-[node name="stone_smallFlatC_glb22" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb22" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(0.960617, 0, 0.277873, 0, 1, 0, -0.277873, 0, 0.960617, 16.4285, -3.4, 27.8263)
 
-[node name="stone_smallFlatC_glb23" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb23" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(0.995724, 0, -0.0923712, 0, 1, 0, 0.0923712, 0, 0.995724, 17.071, -3.4, 30.2207)
 
-[node name="stone_smallFlatC_glb24" type="Node3D" parent="." instance=ExtResource("11_detp8")]
+[node name="stone_smallFlatC_glb24" parent="." instance=ExtResource("11_detp8")]
 transform = Transform3D(0.975149, 0, -0.221549, 0, 1, 0, 0.221549, 0, 0.975149, 19.2141, -3.4, 31.9972)
 
-[node name="stone_smallG_glb" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(0.98118, 0, -0.193093, 0, 1, 0, 0.193093, 0, 0.98118, 18.8139, -3.4, 30.104)
 
-[node name="stone_smallG_glb2" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb2" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(0.91319, 0, -0.407534, 0, 1, 0, 0.407534, 0, 0.91319, 17.454, -3.4, 33.8169)
 
-[node name="stone_smallG_glb3" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb3" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(0.994274, 0, -0.106842, 0, 1, 0, 0.106842, 0, 0.994274, 14.9157, -3.4, 36.0713)
 
-[node name="stone_smallG_glb4" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb4" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(0.999802, 0, 0.0197793, 0, 1, 0, -0.0197793, 0, 0.999802, 12.5209, -3.4, 35.3)
 
-[node name="stone_smallG_glb5" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb5" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8015, -3.4, 34.2483)
 
-[node name="stone_smallG_glb6" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb6" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.58236, -3.4, 30.5981)
 
-[node name="stone_smallG_glb7" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb7" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51604, -3.4, 30.5816)
 
-[node name="stone_smallG_glb8" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb8" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.59478, -3.4, 34.3347)
 
-[node name="stone_smallG_glb9" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb9" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.73839, -3.4, 35.8201)
 
-[node name="stone_smallG_glb10" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb10" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68227, -3.4, 34.3574)
 
-[node name="stone_smallG_glb11" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb11" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2925, -3.4, 36.5023)
 
-[node name="stone_smallG_glb12" type="Node3D" parent="." instance=ExtResource("13_t7t07")]
+[node name="stone_smallG_glb12" parent="." instance=ExtResource("13_t7t07")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35288, -3.4, 35.6228)
 
-[node name="stone_smallH_glb" type="Node3D" parent="." instance=ExtResource("14_wvya2")]
+[node name="stone_smallH_glb" parent="." instance=ExtResource("14_wvya2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03487, -3.4, 34.7815)
 
-[node name="stone_smallH_glb2" type="Node3D" parent="." instance=ExtResource("14_wvya2")]
+[node name="stone_smallH_glb2" parent="." instance=ExtResource("14_wvya2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14082, -3.4, 35.5257)
 
-[node name="stone_smallH_glb3" type="Node3D" parent="." instance=ExtResource("14_wvya2")]
+[node name="stone_smallH_glb3" parent="." instance=ExtResource("14_wvya2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87631, -3.4, 33.8778)
 
-[node name="stone_tallB_glb" type="Node3D" parent="." instance=ExtResource("15_7fp7u")]
+[node name="stone_tallB_glb" parent="." instance=ExtResource("15_7fp7u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.02456, -3.4, 34.6406)
 
-[node name="stone_tallB_glb2" type="Node3D" parent="." instance=ExtResource("15_7fp7u")]
+[node name="stone_tallB_glb2" parent="." instance=ExtResource("15_7fp7u")]
 transform = Transform3D(-0.925857, 0, 0.377835, 0, 1, 0, -0.377835, 0, -0.925857, 5.02737, -3.4, 35.8621)
 
-[node name="stone_tallB_glb3" type="Node3D" parent="." instance=ExtResource("15_7fp7u")]
+[node name="stone_tallB_glb3" parent="." instance=ExtResource("15_7fp7u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46259, -3.4, 35.0466)
 
-[node name="stone_smallTopB_glb" type="Node3D" parent="." instance=ExtResource("16_fsxev")]
+[node name="stone_smallTopB_glb" parent="." instance=ExtResource("16_fsxev")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.2416, -3.4, 19.0888)
 
-[node name="stone_smallTopB_glb2" type="Node3D" parent="." instance=ExtResource("16_fsxev")]
+[node name="stone_smallTopB_glb2" parent="." instance=ExtResource("16_fsxev")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.5079, -3.4, 22.5414)
 
-[node name="stone_smallTopB_glb3" type="Node3D" parent="." instance=ExtResource("16_fsxev")]
+[node name="stone_smallTopB_glb3" parent="." instance=ExtResource("16_fsxev")]
 transform = Transform3D(-0.360539, 0, -0.932744, 0, 1, 0, 0.932743, 0, -0.360539, 15.5306, -3.4, 23.4695)
 
-[node name="stone_smallTopB_glb4" type="Node3D" parent="." instance=ExtResource("16_fsxev")]
+[node name="stone_smallTopB_glb4" parent="." instance=ExtResource("16_fsxev")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.34152, -3.4, 17.1382)
 
-[node name="stone_smallFlatA_glb" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.64092, -3.4, 32.1173)
 
-[node name="stone_smallFlatA_glb2" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb2" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3134, -3.4, 31.6796)
 
-[node name="stone_smallFlatA_glb3" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb3" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8767, -3.4, 26.3095)
 
-[node name="stone_smallFlatA_glb4" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb4" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4673, -3.4, 25.3048)
 
-[node name="stone_smallFlatA_glb5" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb5" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.657, -3.4, 24.3299)
 
-[node name="stone_smallFlatA_glb6" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb6" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.044, -3.4, 23.4065)
 
-[node name="stone_smallFlatA_glb7" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb7" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8478, -3.4, 23.2263)
 
-[node name="stone_smallFlatA_glb8" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb8" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3877, -3.4, 22.1133)
 
-[node name="stone_smallFlatA_glb9" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb9" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7907, -3.4, 22.722)
 
-[node name="stone_smallFlatA_glb10" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb10" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5219, -3.4, 25.6205)
 
-[node name="stone_smallFlatA_glb11" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb11" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.595, -3.4, 28.6128)
 
-[node name="stone_smallFlatA_glb12" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb12" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8918, -3.4, 33.6092)
 
-[node name="stone_smallFlatA_glb13" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb13" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8464, -3.4, 35.7218)
 
-[node name="stone_smallFlatA_glb14" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb14" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7279, -3.4, 35.0272)
 
-[node name="stone_smallFlatA_glb15" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb15" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.359, -3.4, 31.3592)
 
-[node name="stone_smallFlatA_glb16" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb16" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.892, -3.4, 29.6558)
 
-[node name="stone_smallFlatA_glb17" type="Node3D" parent="." instance=ExtResource("17_0uugi")]
+[node name="stone_smallFlatA_glb17" parent="." instance=ExtResource("17_0uugi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4621, -3.4, 28.8791)
