@@ -1,13 +1,14 @@
-[gd_scene load_steps=27 format=3 uid="uid://cro0vww3oijjx"]
+[gd_scene load_steps=28 format=3 uid="uid://cro0vww3oijjx"]
 
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_orwpc"]
 [ext_resource type="PackedScene" uid="uid://ckt0iiu7qn6d" path="res://FRESH-FLOWERS/PrefabScenes/waterables/bird_cube.tscn" id="3_5rxwc"]
+[ext_resource type="Material" uid="uid://dqwp0xpg02035" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/helen/helen01.tres" id="3_fd6ss"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="3_r051o"]
 [ext_resource type="PackedScene" uid="uid://be823dx66y1qn" path="res://FRESH-FLOWERS/PrefabScenes/mar10_refill_spout.tscn" id="4_mrmf1"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Assets/PB/Cloud_spawner.gd" id="5_blvpx"]
 [ext_resource type="Material" uid="uid://dbj7ucb03mgph" path="res://FRESH-FLOWERS/Scenes/TestScenes/core_cloud.tres" id="6_wq7uj"]
 [ext_resource type="QuadMesh" uid="uid://coogw3vxajngi" path="res://FRESH-FLOWERS/Scenes/TestScenes/cloud1.tres" id="7_xocsq"]
-[ext_resource type="Texture2D" uid="uid://diam7skrebxq2" path="res://FRESH-FLOWERS/Assets/PB/FX_CloudAlpha04-bright copy.png" id="8_h81l7"]
+[ext_resource type="Texture2D" uid="uid://cvq3rekqy5wn4" path="res://FRESH-FLOWERS/Assets/PB/FX_CloudAlpha04-bright copy.png" id="8_h81l7"]
 [ext_resource type="QuadMesh" uid="uid://bmgp8v7gufcl" path="res://FRESH-FLOWERS/Scenes/TestScenes/cloud2.tres" id="8_yjj20"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek35x"]
@@ -170,6 +171,7 @@ transform = Transform3D(0.999997, 0, 0, 0, 0.994214, -0.107347, 0, 0.107347, 0.9
 
 [node name="BirdCube" parent="Path3D/PathFollow3D" instance=ExtResource("3_5rxwc")]
 transform = Transform3D(1, 0, 0, 0, 1, -1.66407e-10, 0, -3.61377e-09, 1, 0, -0.529895, -8.68029)
+my_happy_material = ExtResource("3_fd6ss")
 
 [node name="grass" type="Node3D" parent="."]
 transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 2.89982, 0.276496, -12.967)

@@ -13,7 +13,10 @@ config_version=5
 config/name="unwilting-game"
 run/main_scene="res://UserInterface/MainMenu/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.968627, 0.960784, 0.952941, 1)
+boot_splash/image="res://FRESH-FLOWERS/Assets/game-icon.png"
+boot_splash/fullsize=false
+config/icon="res://FRESH-FLOWERS/Assets/game-icon.png"
 
 [audio]
 

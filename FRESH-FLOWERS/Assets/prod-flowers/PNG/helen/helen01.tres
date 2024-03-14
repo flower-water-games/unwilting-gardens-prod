@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dqwp0xpg02035"]
+
+[ext_resource type="Texture2D" uid="uid://k74pgisapawe" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/helen/Flower 01 HC_v02.png" id="1_16qod"]
+
+[resource]
+albedo_texture = ExtResource("1_16qod")

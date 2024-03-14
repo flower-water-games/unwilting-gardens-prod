@@ -721,19 +721,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -3.43892, 1)
 mesh = ExtResource("16_qt8vn")
 
 [node name="Cobblestone_Floor_1_obj97" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -3.43892, 0)
-mesh = ExtResource("16_qt8vn")
-
-[node name="Cobblestone_Floor_1_obj98" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -3.43892, -1)
-mesh = ExtResource("16_qt8vn")
-
-[node name="Cobblestone_Floor_1_obj99" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -3.43892, -2)
-mesh = ExtResource("16_qt8vn")
-
-[node name="Cobblestone_Floor_1_obj100" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -3.43892, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -3.43892, -0.9947)
 mesh = ExtResource("16_qt8vn")
 
 [node name="Cobblestone_Floor_1_obj101" type="MeshInstance3D" parent="."]

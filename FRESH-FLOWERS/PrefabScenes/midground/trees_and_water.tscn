@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcik7qnh6lh37"]
+[gd_scene load_steps=16 format=3 uid="uid://cp3g0xxyxwkdw"]
 
-[ext_resource type="Shader" uid="uid://c15wrx3bn7p04" path="res://FRESH-FLOWERS/Shaders/WaterShader.tres" id="1_o2sky"]
+[ext_resource type="Shader" uid="uid://dp0152nr674st" path="res://FRESH-FLOWERS/Shaders/WaterShader.tres" id="1_o2sky"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1w5ej"]
 vertex_color_use_as_albedo = true
