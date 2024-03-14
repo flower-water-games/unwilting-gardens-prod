@@ -33,7 +33,6 @@ my_happy_material = SubResource("StandardMaterial3D_m6p55")
 
 [node name="GPUParticles3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00212955, 0.00155741, -0.0676763)
-emitting = true
 lifetime = 2.0
 one_shot = false
 explosiveness = 0.0
