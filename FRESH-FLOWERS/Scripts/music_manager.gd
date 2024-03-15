@@ -19,6 +19,12 @@ func _ready():
 	level_1.hide()
 	level_2.hide()
 
+	# connect sound manager loaded
+	SoundManager.connect("loaded", on_sound_manager_load)
+
+func on_sound_manager_load():
+	SoundManager.play("player", "wind")
+
 func _on_area_exit(node):
 	# if stage 3 is not playing, stop the music
 	if node.is_in_group("Player") and not is_stage_3:

@@ -38,6 +38,7 @@ func check_for_refill() -> void:
 
 func refill_water() -> void:
 	current_water_level = water_capacity
+	SoundManager.play("player", "refill")
 	stop_watering()
 	print("Watering Can: Refilled.")
 
@@ -103,6 +104,7 @@ func use_water() -> void:
 		spawn_particles(20)
 		if current_water_level <= 0:
 			current_water_level = 0
+			SoundManager.play("player", "empty")
 			stop_watering()
 
 		if watering_target:
