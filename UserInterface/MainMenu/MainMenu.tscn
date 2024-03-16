@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="2_45alt"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/fit_to_window.gd" id="3_q1jse"]
 [ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="4_pywf7"]
-[ext_resource type="Texture2D" uid="uid://cxobp8e8m7x5y" path="res://FRESH-FLOWERS/Assets/PB/textures/hex_4k_text/4k_normal.png" id="4_y8ss2"]
+[ext_resource type="Texture2D" uid="uid://uenaj7aahh3y" path="res://FRESH-FLOWERS/Assets/title.png" id="4_t4c1n"]
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="5_ay4hd"]
 [ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="5_h452s"]
 
@@ -11,6 +11,7 @@
 bg_color = Color(0.360784, 0.639216, 0.780392, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_x21xl"]
+line_spacing = 2.08165e-12
 font_size = 24
 
 [node name="MainMenu" type="Control"]
@@ -34,8 +35,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_sjg5i")
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer"]
 layout_mode = 2
-texture = ExtResource("4_y8ss2")
-expand_mode = 2
+texture = ExtResource("4_t4c1n")
+expand_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -52,33 +53,24 @@ dragger_visibility = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer2"]
-custom_minimum_size = Vector2(512, 256)
-layout_mode = 2
-
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer2"]
+visible = false
 layout_mode = 2
 text = "unwilting v34
 
 Godot Engine 
 v4.3.dev4.mono.official.df78c0636
 
-by cm, paul, jenna, jesse, chris
+by cm, paul, jenna, helen, jesse, chris
 
 music by gabriel, william lambert
-
-basic controls
-
-[wasd] to move
-[click] to water
-[space bar] to jump
-
 "
 label_settings = SubResource("LabelSettings_x21xl")
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VSplitContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 8
+size_flags_vertical = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer"]
 layout_mode = 2
@@ -89,6 +81,7 @@ script = null
 
 [node name="PLAY" type="Button" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 8
 text = "PLAY"
 
 [node name="ButtonGoToLevel" parent="PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/PLAY" node_paths=PackedStringArray("button") instance=ExtResource("5_h452s")]

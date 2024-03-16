@@ -14,8 +14,10 @@ var movement_completed = false
 
 func _physics_process(delta: float) -> void:
 
+
 	if move_to_next:
 		path_follow.progress_ratio += (speed * delta) 
+		self.gravity_scale = 0.0
 		
 		if path_follow.progress_ratio > 0.99:
 			move_to_next = false

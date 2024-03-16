@@ -46,7 +46,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 15.9907, -1.43419, 43.9
 stem_name = "flute"
 
 [node name="StemCube6" parent="." instance=ExtResource("1_hltdr")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.80617, -3.07628, 27.0097)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 8.67229, -3.07628, 22.6282)
 stem_name = "4-drumrack"
 
 [node name="WALL" type="CSGBox3D" parent="."]

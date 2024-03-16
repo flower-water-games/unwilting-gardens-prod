@@ -1,58 +1,65 @@
-[gd_resource type="Resource" script_class="MusicTrackResource" load_steps=15 format=3 uid="uid://buowkejaijh1"]
+[gd_resource type="Resource" script_class="MusicTrackResource" load_steps=16 format=3 uid="uid://buowkejaijh1"]
 
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="1_n465s"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="2_0m7ub"]
-[ext_resource type="AudioStream" uid="uid://4u7rhyop77tx" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 bass.ogg" id="3_6jbei"]
-[ext_resource type="AudioStream" uid="uid://t6veknx6y0rv" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 gabe chords.ogg" id="4_aeshh"]
-[ext_resource type="AudioStream" uid="uid://hr3vokaqd7bp" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 leadf-1.ogg" id="5_4epxp"]
-[ext_resource type="AudioStream" uid="uid://c4406g4rkgx3b" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 leadf.ogg" id="6_kohii"]
-[ext_resource type="AudioStream" uid="uid://dll7kbhwggtpo" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 main arp.ogg" id="7_8ceo5"]
-[ext_resource type="AudioStream" uid="uid://cx3ur7qlhxe8u" path="res://FRESH-FLOWERS/Assets/Audio/Music/stage 3 ogg/Stage 3 7-Audio.ogg" id="8_jxhvu"]
+[ext_resource type="AudioStream" uid="uid://cc1701rdeup2q" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ Lead III_Stage3.ogg" id="3_y3aio"]
+[ext_resource type="AudioStream" uid="uid://butpkkpq5grjs" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ gabe chords_Stage3.ogg" id="4_0tiy3"]
+[ext_resource type="AudioStream" uid="uid://bxlqjuw0kx1bt" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ leadf_Stage3.ogg" id="5_7ds8q"]
+[ext_resource type="AudioStream" uid="uid://bwslxslql4dnd" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ main arp_Stage3.ogg" id="6_14wph"]
+[ext_resource type="AudioStream" uid="uid://iryrkevuw4c8" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ Slowbuild_Stage3.ogg" id="7_jsssa"]
+[ext_resource type="AudioStream" uid="uid://bibb56eq6nblp" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/Drums__Stage3.ogg" id="8_w8ork"]
 
 [sub_resource type="Resource" id="Resource_3aixo"]
 script = ExtResource("2_0m7ub")
 name = "bass"
 enabled = true
 volume = 0.0
-stream = ExtResource("3_6jbei")
+stream = ExtResource("3_y3aio")
 
 [sub_resource type="Resource" id="Resource_04qdx"]
 script = ExtResource("2_0m7ub")
 name = "chords"
-enabled = true
+enabled = false
 volume = 0.0
-stream = ExtResource("4_aeshh")
+stream = ExtResource("4_0tiy3")
 
 [sub_resource type="Resource" id="Resource_dvh1q"]
 script = ExtResource("2_0m7ub")
 name = "lead1"
-enabled = true
+enabled = false
 volume = 0.0
-stream = ExtResource("5_4epxp")
+stream = ExtResource("3_y3aio")
 
 [sub_resource type="Resource" id="Resource_d5fhy"]
 script = ExtResource("2_0m7ub")
 name = "lead"
-enabled = true
+enabled = false
 volume = 0.0
-stream = ExtResource("6_kohii")
+stream = ExtResource("5_7ds8q")
 
 [sub_resource type="Resource" id="Resource_o677e"]
 script = ExtResource("2_0m7ub")
 name = "arp"
 enabled = true
 volume = 0.0
-stream = ExtResource("7_8ceo5")
+stream = ExtResource("6_14wph")
 
 [sub_resource type="Resource" id="Resource_ly1rv"]
 script = ExtResource("2_0m7ub")
 name = "bg"
 enabled = true
 volume = 0.0
-stream = ExtResource("8_jxhvu")
+stream = ExtResource("7_jsssa")
+
+[sub_resource type="Resource" id="Resource_eq3t8"]
+script = ExtResource("2_0m7ub")
+name = "drums"
+enabled = true
+volume = 0.0
+stream = ExtResource("8_w8ork")
 
 [resource]
 script = ExtResource("1_n465s")
 name = "Stage3"
 bus = ""
-stems = Array[ExtResource("2_0m7ub")]([SubResource("Resource_3aixo"), SubResource("Resource_04qdx"), SubResource("Resource_dvh1q"), SubResource("Resource_d5fhy"), SubResource("Resource_o677e"), SubResource("Resource_ly1rv")])
+stems = Array[ExtResource("2_0m7ub")]([SubResource("Resource_3aixo"), SubResource("Resource_04qdx"), SubResource("Resource_dvh1q"), SubResource("Resource_d5fhy"), SubResource("Resource_o677e"), SubResource("Resource_ly1rv"), SubResource("Resource_eq3t8")])

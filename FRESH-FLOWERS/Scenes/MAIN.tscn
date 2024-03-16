@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dhatmddsmnj2v"]
+[gd_scene load_steps=36 format=3 uid="uid://dhatmddsmnj2v"]
 
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
@@ -14,6 +14,9 @@
 [ext_resource type="AudioStream" uid="uid://dk4c3vrbatp8v" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Flowercube grow_unwilt.ogg" id="7_hjhgm"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/music_manager.gd" id="8_05bny"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_jkygg"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="9_x4ck7"]
+[ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="10_nkh7x"]
+[ext_resource type="AudioStream" uid="uid://cmkdr4dwnke6i" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section2/Part 2 - MIX_Stage3.ogg" id="11_bpwi2"]
 [ext_resource type="AudioStream" uid="uid://h6bxpluk8w3j" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/watering_prototype2_unwilt.ogg" id="12_0ufuk"]
 [ext_resource type="PackedScene" uid="uid://bn8jq5sn8o5u3" path="res://FRESH-FLOWERS/Scenes/Levels/level_1.tscn" id="14_g0aa1"]
 [ext_resource type="PackedScene" uid="uid://b1m2agh5k1xhv" path="res://FRESH-FLOWERS/Scenes/Levels/level_2.tscn" id="15_7tpt6"]
@@ -22,6 +25,20 @@
 [ext_resource type="PackedScene" uid="uid://dmbmayydxsy62" path="res://FRESH-FLOWERS/Scenes/Levels/dome.tscn" id="15_wqyjm"]
 [ext_resource type="AudioStream" uid="uid://biagjs7tq35kp" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/empty watering can_unwilted.ogg" id="16_8grc2"]
 [ext_resource type="PackedScene" uid="uid://phxwn6amsqjq" path="res://FRESH-FLOWERS/PrefabScenes/wall.tscn" id="17_jas50"]
+[ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="21_u0vjh"]
+
+[sub_resource type="Resource" id="Resource_virrn"]
+script = ExtResource("10_nkh7x")
+name = ""
+enabled = true
+volume = 0.0
+stream = ExtResource("11_bpwi2")
+
+[sub_resource type="Resource" id="Resource_5f0kd"]
+script = ExtResource("9_x4ck7")
+name = "finale"
+bus = ""
+stems = Array[ExtResource("10_nkh7x")]([SubResource("Resource_virrn")])
 
 [sub_resource type="Resource" id="Resource_rxla4"]
 script = ExtResource("4_t7o6m")
@@ -95,10 +112,11 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area", "stage2_area", "stage1_lock", "tutorial_island", "player", "level_1", "level_2", "dome", "regular_light")]
+[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area", "stage2_area", "stage_3", "stage1_lock", "tutorial_island", "player", "level_1", "level_2", "dome", "regular_light")]
 script = ExtResource("8_05bny")
 stage1_area = NodePath("../../LEVEL/Level1/Area3D")
 stage2_area = NodePath("../../LEVEL/Level2/Area3D")
+stage_3 = NodePath("../../LEVEL/Stage3")
 stage1_lock = NodePath("../../LEVEL/LOCKS/WALL4")
 tutorial_island = NodePath("../../LEVEL/TutorialSkyIsland")
 player = NodePath("../PLAYER")
@@ -112,7 +130,7 @@ regular_light = NodePath("../DirectionalLight3D")
 script = ExtResource("9_jkygg")
 label = "Music"
 bus = "Music"
-tracks = Array[Resource("res://addons/resonate/music_manager/music_track_resource.gd")]([ExtResource("5_hdg4c"), ExtResource("6_yq7km"), ExtResource("7_geqx2")])
+tracks = Array[ExtResource("9_x4ck7")]([ExtResource("5_hdg4c"), ExtResource("6_yq7km"), ExtResource("7_geqx2"), SubResource("Resource_5f0kd")])
 
 [node name="SoundBank" type="Node" parent="CORE/GardenMusicManager"]
 script = ExtResource("3_1m4ba")
@@ -163,6 +181,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 14.7805)
 shape = SubResource("BoxShape3D_ti4l8")
 
 [node name="Stage3" type="Node3D" parent="LEVEL"]
+visible = false
+
+[node name="StemCube" parent="LEVEL/Stage3" instance=ExtResource("21_u0vjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14037, -2.8491, 12.6216)
+stem_name = "lead"
+
+[node name="StemCube2" parent="LEVEL/Stage3" instance=ExtResource("21_u0vjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6007, -2.8491, 10.0389)
+stem_name = "lead1"
+
+[node name="StemCube3" parent="LEVEL/Stage3" instance=ExtResource("21_u0vjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96473, -2.8491, 14.6468)
+stem_name = "chords"
 
 [node name="midground" parent="LEVEL" instance=ExtResource("15_my2j6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00473046, 11.8681, -0.00626111)
