@@ -11,7 +11,7 @@ var moisture_level = 0.0
 
 @export_category("Animation")
 @onready var animation_player:AnimationPlayer = %AnimationPlayer
-@export var animation_names = ["growing", "growing_1", "growing_2"]
+@export var animation_names = ["growing", "growing_1"]
 
 @onready var watering_particles : GPUParticles3D = %GPUParticles3D
 
