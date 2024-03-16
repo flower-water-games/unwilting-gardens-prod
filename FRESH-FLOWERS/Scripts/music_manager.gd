@@ -70,12 +70,16 @@ func _stage_2_entered(node):
 # two dictionaries per stage, to remember which stems are playing
 var stage1_total_additional_stems = 3 
 var stage2_total_additional_stems = 4
+var stage3_total_additional_stems = 3
+# stage 3 find "lead", "lead1", and "chords"
 
 var stage1_all_stems_found = false;
 var stage2_all_stems_found = false;
+var stage3_all_stems_found = false;
 
 var stage1_stems = {}
 var stage2_stems = {}
+var stage3_stems = {}
 
 func _is_stage_playing(num: int) -> bool:
 	return MusicManager.is_playing("Music", "Stage" + str(num))
@@ -98,15 +102,30 @@ func enable_stem(stem_name: String):
 		if len(stage2_stems) == stage2_total_additional_stems:
 			# if all stems are playing, all_playing is true
 			stage2_all_stems_found = true
+	elif _is_stage_playing(3):
+		if stem_name in stage3_stems:
+			return
+		stage3_stems[stem_name] = true
+		if len(stage3_stems) == stage3_total_additional_stems:
+			# if all stems are playing, all_playing is true
+			stage3_all_stems_found = true
+		# if stage 3 is playing, do nothing
+		return
+	else:
+		# if no stage is playing, do nothing
+		return
+
 	MusicManager.enable_stem(stem_name)
 
 var is_stage_3 = false
-
+@export var stage_3 : Node3D
 func stage3():
+	print("stage 3")
 	# wait 30 seconds
 	if (is_stage_3):
 		return
 	is_stage_3 = true
+	stage_3.show()
 
 
 	## THREE PHASES IN STAGE 3
@@ -144,6 +163,7 @@ func stage3():
 @export var regular_light : DirectionalLight3D
 
 var is_stage_2 = false
+var game_over = false
 
 func stage2():
 	# unlock stage 3
@@ -156,6 +176,8 @@ func stage2():
 
 func _process(delta):
 	# if all stems are playing, stop the music
+	if game_over:
+		return
 	if stage1_all_stems_found and not is_stage_2:
 		is_stage_2 = true
 		stage2()
@@ -163,6 +185,12 @@ func _process(delta):
 	if stage1_all_stems_found and stage2_all_stems_found:
 		stage1_all_stems_found = false
 		stage3()
+
+	if stage3_all_stems_found:
+		print("GAME OVER!")
+		game_over = true
+		MusicManager.stop(5)
+		MusicManager.play("Music", "finale", 5)
 	# # if I press number 1 on keyboard, activate stage2, for testing
 	# if Input.is_key_pressed(KEY_2):
 	# 	stage2()
