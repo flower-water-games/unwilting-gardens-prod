@@ -1,0 +1,118 @@
+[gd_scene load_steps=11 format=3 uid="uid://dfwpnbrp4kvmf"]
+
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scenes/main-menu-3d.gd" id="1_35od0"]
+[ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="1_syxdw"]
+[ext_resource type="PackedScene" uid="uid://cpxbbx0eydsyl" path="res://FRESH-FLOWERS/Assets/chrisdome/Dome.glb" id="2_wakog"]
+[ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="4_mr5w0"]
+[ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="5_184wm"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/fit_to_window.gd" id="6_i1ym5"]
+[ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="7_clkdu"]
+[ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="8_67hv5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qsmk7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x21xl"]
+line_spacing = 2.08165e-12
+font_size = 24
+
+[node name="Main-menu-3d" type="Node3D" node_paths=PackedStringArray("button")]
+script = ExtResource("1_35od0")
+button = NodePath("MainMenu/PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/PLAY")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_syxdw")]
+
+[node name="Dome" parent="." instance=ExtResource("2_wakog")]
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_mr5w0")
+
+[node name="FitToWindow" parent="MainMenu" node_paths=PackedStringArray("set_node") instance=ExtResource("5_184wm")]
+script = ExtResource("6_i1ym5")
+set_node = NodePath("../PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="MainMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qsmk7")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MainMenu/PanelContainer/MarginContainer"]
+layout_mode = 2
+dragger_visibility = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="MainMenu/PanelContainer/MarginContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MainMenu/PanelContainer/MarginContainer/VSplitContainer/CenterContainer2"]
+visible = false
+layout_mode = 2
+text = "unwilting v34
+
+Godot Engine 
+v4.3.dev4.mono.official.df78c0636
+
+by cm, paul, jenna, helen, jesse, chris
+
+music by gabriel, william lambert
+"
+label_settings = SubResource("LabelSettings_x21xl")
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenu/PanelContainer/MarginContainer/VSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/PanelContainer/MarginContainer/VSplitContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SetSelectedButton" parent="MainMenu/PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer" instance=ExtResource("7_clkdu")]
+script = null
+
+[node name="PLAY" type="Button" parent="MainMenu/PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "PLAY"
+
+[node name="ButtonGoToLevel" parent="MainMenu/PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/PLAY" node_paths=PackedStringArray("button") instance=ExtResource("8_67hv5")]
+button = NodePath("..")
+level_path = "res://FRESH-FLOWERS/Scenes/MAIN.tscn"
+
+[node name="ControlsButton" type="Button" parent="MainMenu/PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Controls"
+
+[node name="ButtonGoToLevel" parent="MainMenu/PanelContainer/MarginContainer/VSplitContainer/CenterContainer/VBoxContainer/ControlsButton" node_paths=PackedStringArray("button") instance=ExtResource("8_67hv5")]
+button = NodePath("..")
+level_path = "res://UserInterface/Controls/UserControls.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+unique_name_in_owner = true
+auto_translate_mode = 1
+light_mask = 3
+visibility_layer = 1048575
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 1.67, 3.94)

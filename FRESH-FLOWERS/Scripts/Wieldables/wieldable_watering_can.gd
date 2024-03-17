@@ -19,6 +19,10 @@ func _ready():
 	super()
 	add_child(watering_timer)
 	setup_watering_timer()
+	hide()
+	# after 5 seconds, show
+	await get_tree().create_timer(5.0).timeout
+	show()
 
 func _process(delta: float) -> void:
 	update_water_level_based_on_usage()
@@ -34,6 +38,7 @@ func check_for_refill() -> void:
 	if interaction_raycast.is_colliding():
 		var target = interaction_raycast.get_collider(0)
 		if target and target.has_method("refill"):
+			show()
 			refill_water()
 
 func refill_water() -> void:
