@@ -26,6 +26,7 @@ func _ready():
 
 	
 @onready var color_rect : ColorRect = %ColorRect
+@onready var credits : Label = %CREDITS
 @onready var fade_tween = get_tree().create_tween()
 
 func fade_in(duration):
@@ -203,6 +204,9 @@ func _process(delta):
 		game_over = true
 		MusicManager.stop(5)
 		MusicManager.play("Music", "finale", 5)
+		await get_tree().create_timer(15).timeout
+		credits.show() 
+
 	# # if I press number 1 on keyboard, activate stage2, for testing
 	# if Input.is_key_pressed(KEY_2):
 	# 	stage2()

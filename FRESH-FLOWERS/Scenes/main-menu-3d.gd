@@ -15,6 +15,7 @@ func fade_out(duration):
 
 
 func exit_fade():
+	button.hide()
 	fade_out(2)
 
 func _ready() -> void:
