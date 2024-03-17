@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://cro0vww3oijjx"]
+[gd_scene load_steps=29 format=3 uid="uid://cro0vww3oijjx"]
 
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_orwpc"]
 [ext_resource type="PackedScene" uid="uid://ckt0iiu7qn6d" path="res://FRESH-FLOWERS/PrefabScenes/waterables/bird_cube.tscn" id="3_5rxwc"]
-[ext_resource type="Material" uid="uid://dqwp0xpg02035" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/helen/helen01.tres" id="3_fd6ss"]
+[ext_resource type="Material" uid="uid://co3ysj0hlua6w" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/helen/bird01.tres" id="3_d0hqp"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="3_r051o"]
+[ext_resource type="Material" uid="uid://di8hto4rv2yvh" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/Final SnapDragons/snapdragon_wilted.tres" id="4_lqppo"]
 [ext_resource type="PackedScene" uid="uid://be823dx66y1qn" path="res://FRESH-FLOWERS/PrefabScenes/mar10_refill_spout.tscn" id="4_mrmf1"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Assets/PB/Cloud_spawner.gd" id="5_blvpx"]
 [ext_resource type="Material" uid="uid://dbj7ucb03mgph" path="res://FRESH-FLOWERS/Scenes/TestScenes/core_cloud.tres" id="6_wq7uj"]
@@ -171,7 +172,8 @@ transform = Transform3D(0.999997, 0, 0, 0, 0.994214, -0.107347, 0, 0.107347, 0.9
 
 [node name="BirdCube" parent="Path3D/PathFollow3D" instance=ExtResource("3_5rxwc")]
 transform = Transform3D(1, 0, 0, 0, 1, -1.66407e-10, 0, -3.61377e-09, 1, 0, -0.529895, -8.68029)
-my_happy_material = ExtResource("3_fd6ss")
+my_happy_material = ExtResource("3_d0hqp")
+my_sad_material = ExtResource("4_lqppo")
 
 [node name="grass" type="Node3D" parent="."]
 transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 2.89982, 0.276496, -12.967)
@@ -295,7 +297,7 @@ trail_lifetime = 0.93
 process_material = ExtResource("6_wq7uj")
 draw_pass_1 = ExtResource("7_xocsq")
 
-[node name="funnel" type="Node" parent="."]
+[node name="funnel" type="Node3D" parent="."]
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="funnel"]
 transform = Transform3D(-0.999954, -0.00959898, 2.60716e-08, -4.37114e-08, 1.91069e-15, -0.596475, 0.00959898, -0.999954, -2.50273e-10, -0.376657, -79.9519, -23.4692)
@@ -326,7 +328,7 @@ size = Vector3(3, 0.1, 105.593)
 material = SubResource("StandardMaterial3D_ek35x")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="funnel"]
-transform = Transform3D(-0.999954, -0.00959898, 4.37094e-08, -4.37114e-08, 1.91069e-15, -1, 0.00959898, -0.999954, -4.19586e-10, -0.376657, -50.6897, -23.7641)
+transform = Transform3D(-0.999954, -0.00959898, 4.37094e-08, -4.37114e-08, 1.91069e-15, -1, 0.00959898, -0.999954, -4.19586e-10, -0.377, -51.38, -23.764)
 visible = false
 use_collision = true
 size = Vector3(3, 0.1, 101.586)

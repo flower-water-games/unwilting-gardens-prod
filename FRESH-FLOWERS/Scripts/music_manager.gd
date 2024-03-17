@@ -6,6 +6,7 @@ class_name GardenMusicManager
 @export var stage1_area : Area3D
 @export var stage2_area : Area3D
 
+
 # when entered / exits, triggers stage 1 vs stage 2 respectively
 func _ready():
 
@@ -21,6 +22,17 @@ func _ready():
 
 	# connect sound manager loaded
 	SoundManager.connect("loaded", on_sound_manager_load)
+	fade_in(5)
+
+	
+@onready var color_rect : ColorRect = %ColorRect
+@onready var fade_tween = get_tree().create_tween()
+
+func fade_in(duration):
+	fade_tween.tween_property(color_rect, "color:a", 0, duration)
+    
+func fade_out(duration):
+	fade_tween.tween_property(color_rect, "color:a", 1, duration)
 
 func on_sound_manager_load():
 	SoundManager.play("player", "wind")
@@ -175,9 +187,9 @@ func stage2():
 	pass
 
 func _process(delta):
-	# if all stems are playing, stop the music
 	if game_over:
 		return
+	# if all stems are playing, stop the music
 	if stage1_all_stems_found and not is_stage_2:
 		is_stage_2 = true
 		stage2()

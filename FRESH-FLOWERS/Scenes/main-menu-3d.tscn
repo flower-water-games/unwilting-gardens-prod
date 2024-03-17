@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfwpnbrp4kvmf"]
+
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scenes/main-menu-3d.gd" id="1_35od0"]
+[ext_resource type="PackedScene" uid="uid://tp71bac306c1" path="res://UserInterface/MainMenu/MainMenu.tscn" id="1_rokg4"]
+[ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="1_syxdw"]
+[ext_resource type="PackedScene" uid="uid://cpxbbx0eydsyl" path="res://FRESH-FLOWERS/Assets/chrisdome/Dome.glb" id="2_wakog"]
+
+[node name="Main-menu-3d" type="Node3D"]
+script = ExtResource("1_35od0")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_syxdw")]
+
+[node name="Dome" parent="." instance=ExtResource("2_wakog")]
+
+[node name="MainMenu" parent="." instance=ExtResource("1_rokg4")]
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+unique_name_in_owner = true
+auto_translate_mode = 1
+light_mask = 3
+visibility_layer = 1048575
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 1.67, 3.94)

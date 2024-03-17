@@ -41,6 +41,7 @@ signal health_updated
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 
 func _process(delta: float) -> void:
 	subviewport_camera.set_global_transform(camera.get_global_transform())
