@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="1_n465s"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="2_0m7ub"]
-[ext_resource type="AudioStream" uid="uid://cc1701rdeup2q" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ Lead III_Stage3.ogg" id="3_y3aio"]
-[ext_resource type="AudioStream" uid="uid://butpkkpq5grjs" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ gabe chords_Stage3.ogg" id="4_0tiy3"]
-[ext_resource type="AudioStream" uid="uid://bxlqjuw0kx1bt" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ leadf_Stage3.ogg" id="5_7ds8q"]
-[ext_resource type="AudioStream" uid="uid://bwslxslql4dnd" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ main arp_Stage3.ogg" id="6_14wph"]
-[ext_resource type="AudioStream" uid="uid://iryrkevuw4c8" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ Slowbuild_Stage3.ogg" id="7_jsssa"]
-[ext_resource type="AudioStream" uid="uid://bibb56eq6nblp" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/Drums__Stage3.ogg" id="8_w8ork"]
+[ext_resource type="AudioStream" uid="uid://duavud7wwk5vo" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ Lead III_Stage3.ogg" id="3_y3aio"]
+[ext_resource type="AudioStream" uid="uid://bqnm0unskc4rc" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ gabe chords_Stage3.ogg" id="4_0tiy3"]
+[ext_resource type="AudioStream" uid="uid://bbcfb6nousiwf" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ leadf_Stage3.ogg" id="5_7ds8q"]
+[ext_resource type="AudioStream" uid="uid://dehlgvd6o3php" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ main arp_Stage3.ogg" id="6_14wph"]
+[ext_resource type="AudioStream" uid="uid://dngf1w1d1uje2" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/ Slowbuild_Stage3.ogg" id="7_jsssa"]
+[ext_resource type="AudioStream" uid="uid://dexnk4ldp6fsg" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section1/Drums__Stage3.ogg" id="8_w8ork"]
 
 [sub_resource type="Resource" id="Resource_3aixo"]
 script = ExtResource("2_0m7ub")
