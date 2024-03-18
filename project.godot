@@ -139,3 +139,4 @@ weapon_toggle={
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/screen_space_aa=1
