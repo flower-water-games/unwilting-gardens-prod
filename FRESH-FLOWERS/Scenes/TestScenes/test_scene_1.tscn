@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b5iivmi4hqlws"]
+[gd_scene load_steps=23 format=3 uid="uid://b5iivmi4hqlws"]
 
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_pkp2k"]
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_q6g3r"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckt0iiu7qn6d" path="res://FRESH-FLOWERS/PrefabScenes/waterables/bird_cube.tscn" id="2_n44rl"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="3_smlsn"]
 [ext_resource type="PackedScene" uid="uid://0ljc5m5p5j8w" path="res://FRESH-FLOWERS/PrefabScenes/cloud.tscn" id="6_ky1ll"]
+[ext_resource type="Shader" path="res://FRESH-FLOWERS/Scenes/TestScenes/outline.gdshader" id="7_ayuf6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek35x"]
 albedo_color = Color(1, 0.776471, 0.819608, 1)
@@ -90,6 +91,25 @@ density = 8.0
 height_falloff = 1e-05
 edge_fade = 0.75281
 density_texture = SubResource("NoiseTexture3D_ntclf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c64kf"]
+render_priority = 0
+shader = ExtResource("7_ayuf6")
+shader_parameter/outlineColor = Color(0, 0, 0, 0.780392)
+shader_parameter/depth_threshold = 0.025
+shader_parameter/normal_threshold = 0.5
+shader_parameter/normal_smoothing = 0.25
+shader_parameter/max_thickness = 0.845
+shader_parameter/min_thickness = 0.5
+shader_parameter/max_distance = 75.0
+shader_parameter/min_distance = 2.0
+shader_parameter/grazing_fresnel_power = 5.0
+shader_parameter/grazing_angle_mask_power = 1.0
+shader_parameter/grazing_angle_modulation_factor = 50.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_6kb7o"]
+flip_faces = true
+size = Vector2(2, 2)
 
 [node name="TestScene1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
@@ -204,3 +224,8 @@ size = Vector3(12, 2, 40)
 material = SubResource("FogMaterial_076l3")
 
 [node name="Cloud" parent="." instance=ExtResource("6_ky1ll")]
+
+[node name="SHADER_SCENE" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_c64kf")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_6kb7o")
