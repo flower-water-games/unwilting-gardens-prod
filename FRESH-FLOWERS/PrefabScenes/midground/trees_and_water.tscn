@@ -1,10 +1,21 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=16 format=3 uid="uid://cp3g0xxyxwkdw"]
 
 [ext_resource type="Shader" uid="uid://dp0152nr674st" path="res://FRESH-FLOWERS/Shaders/WaterShader.tres" id="1_o2sky"]
+=======
+[gd_scene load_steps=21 format=3 uid="uid://bcik7qnh6lh37"]
+
+[ext_resource type="Texture2D" uid="uid://boi4s6x2dgmma" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/trees.png" id="1_eyhs3"]
+[ext_resource type="Shader" uid="uid://c15wrx3bn7p04" path="res://FRESH-FLOWERS/Shaders/WaterShader.tres" id="1_o2sky"]
+[ext_resource type="Texture2D" uid="uid://cpkosb448xv7f" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/stem.png" id="3_ci3jv"]
+[ext_resource type="ArrayMesh" uid="uid://ch6sum20marj4" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj" id="4_nuusn"]
+>>>>>>> Stashed changes
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1w5ej"]
 vertex_color_use_as_albedo = true
 albedo_color = Color(1.0078e-06, 0.726107, 0.601389, 1)
+albedo_texture = ExtResource("1_eyhs3")
+metallic_specular = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_dotgc"]
 
@@ -71,22 +82,33 @@ size = Vector2(10, 10)
 subdivide_width = 10
 subdivide_depth = 10
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxogk"]
+albedo_texture = ExtResource("3_ci3jv")
+metallic_specular = 0.0
+heightmap_scale = -2.45
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tuu5"]
+albedo_texture = ExtResource("1_eyhs3")
+metallic_specular = 0.0
+
 [node name="trees & water" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00473046, 0, -0.00626111)
 
 [node name="tree" type="MeshInstance3D" parent="."]
-transform = Transform3D(11.3396, -6.28486, 19.7558, 11.455, 20.6679, -2.04691e-14, -17.2793, 9.57689, 12.9648, 80.7268, 21.371, 0)
+transform = Transform3D(8.5572, 10.6764, 19.2657, -22.016, 4.77441, 7.13298, -0.669817, -20.5328, 11.6761, 37.9681, 34.5655, 48.3126)
+visible = false
 material_override = SubResource("StandardMaterial3D_1w5ej")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="tree2" type="MeshInstance3D" parent="."]
-transform = Transform3D(12.2247, -20.2221, 0, 20.2221, 12.2247, 0, 0, 0, 23.63, -87.1649, 44.2918, 0)
+transform = Transform3D(-23.6207, 0.661492, 0, -0.176587, -6.30561, 22.7725, 0.637485, 22.7635, 6.30809, -87.1649, 44.2918, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_1w5ej")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="tree3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.016797, -1.34925, 3.3, 4.20911, 0.29376, 0.117474, -0.353727, 3.55962, 1.24115, 0.0236468, 52.4156, 5.89554)
-material_override = SubResource("StandardMaterial3D_1w5ej")
+visible = false
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree3"]
@@ -138,3 +160,49 @@ mesh = SubResource("BoxMesh_dotgc")
 [node name="new water" type="MeshInstance3D" parent="."]
 transform = Transform3D(-46.8327, 0.347286, 5.18377, 0.148853, 47.085, -1.80965, -5.19326, -1.78224, -46.799, 1, -24.4874, 1)
 mesh = SubResource("PlaneMesh_xsu2v")
+
+[node name="tree stack" type="Node3D" parent="."]
+transform = Transform3D(-32.4157, -0.870274, 3.6303, -1.00165, 32.595, -1.13016, -3.59627, -1.23418, -32.4077, 57.2996, -17.3138, 60.7514)
+
+[node name="neuTree2" type="MeshInstance3D" parent="tree stack"]
+transform = Transform3D(-0.056525, 0.0175858, -0.086479, 0.02239, 0.10571, 0.00809533, 0.102297, -0.0134199, -0.0495566, 0.0765376, 1.39502, -0.0226312)
+material_override = SubResource("StandardMaterial3D_mxogk")
+mesh = ExtResource("4_nuusn")
+skeleton = NodePath("../../tree3")
+
+[node name="neuTree3" type="MeshInstance3D" parent="tree stack"]
+transform = Transform3D(-0.117532, 0.0168367, 0.00150252, 0.0186255, 0.106479, 0.00588556, -0.000670945, 0.00653194, -0.0998153, 0.00583875, 1.19951, -0.0117182)
+material_override = SubResource("StandardMaterial3D_mxogk")
+mesh = ExtResource("4_nuusn")
+skeleton = NodePath("../../tree3")
+
+[node name="neuTree4" type="MeshInstance3D" parent="tree stack"]
+transform = Transform3D(-0.117532, 0.0168367, 0.00150252, 0.0186255, 0.106479, 0.00588556, -0.000670943, 0.00653194, -0.0998153, -0.091221, 1.01503, -0.0156811)
+material_override = SubResource("StandardMaterial3D_mxogk")
+mesh = ExtResource("4_nuusn")
+skeleton = NodePath("../../tree3")
+
+[node name="neuTree5" type="MeshInstance3D" parent="tree stack"]
+transform = Transform3D(-0.117532, 0.0168367, 0.00150252, 0.0186255, 0.106479, 0.00588556, -0.000670943, 0.00653194, -0.0998153, -0.199189, 0.82491, 0.0035404)
+material_override = SubResource("StandardMaterial3D_mxogk")
+mesh = ExtResource("4_nuusn")
+skeleton = NodePath("../../tree3")
+
+[node name="neuTree6" type="MeshInstance3D" parent="tree stack"]
+transform = Transform3D(-0.117532, 0.0168367, 0.00150252, 0.0186255, 0.106479, 0.00588556, -0.000670943, 0.00653194, -0.0998153, -0.319243, 0.649837, 0.0235298)
+material_override = SubResource("StandardMaterial3D_mxogk")
+mesh = ExtResource("4_nuusn")
+skeleton = NodePath("../../tree3")
+
+[node name="neutreeTop" type="MeshInstance3D" parent="tree stack"]
+transform = Transform3D(-0.0935433, 0.0457681, -0.252679, 0.0469455, 0.283771, 0.0319347, 0.301341, -0.0300009, -0.0834122, 0.161084, 1.74066, -0.0456207)
+material_override = SubResource("StandardMaterial3D_1tuu5")
+mesh = ExtResource("4_nuusn")
+skeleton = NodePath("../..")
+
+[node name="neutreeTop2" type="MeshInstance3D" parent="tree stack"]
+transform = Transform3D(-0.164912, 0.0992907, -0.0183518, 0.111139, 0.149446, -0.00629803, 0.0140677, -0.0167096, -0.165377, 0.109342, 1.68772, 0.675042)
+visible = false
+material_override = SubResource("StandardMaterial3D_1tuu5")
+mesh = ExtResource("4_nuusn")
+skeleton = NodePath("../..")
