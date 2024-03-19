@@ -31,7 +31,7 @@ func _ready():
 
 func fade_in(duration):
 	fade_tween.tween_property(color_rect, "color:a", 0, duration)
-    
+	
 func fade_out(duration):
 	fade_tween.tween_property(color_rect, "color:a", 1, duration)
 

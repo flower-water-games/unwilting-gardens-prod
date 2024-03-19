@@ -35,18 +35,33 @@ size = Vector3(43.696, 0.1, 100)
 
 [node name="StemCube" parent="." instance=ExtResource("1_hltdr")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.62449, -2.05457, 34.9458)
+collision_layer = 10
+collision_mask = 10
 stem_name = "pianosmart"
 
 [node name="StemCube3" parent="." instance=ExtResource("1_hltdr")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 8.00412, -3.07628, 31.0192)
+collision_layer = 10
+collision_mask = 10
 stem_name = "gabechords"
 
 [node name="StemCube4" parent="." instance=ExtResource("1_hltdr")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 15.9907, -1.43419, 43.9337)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.75409, 4.79404, 51.8781)
+collision_layer = 10
+collision_mask = 10
 stem_name = "flute"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StemCube4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.01158, 0)
+visible = false
+use_collision = true
+collision_layer = 15
+collision_mask = 15
 
 [node name="StemCube6" parent="." instance=ExtResource("1_hltdr")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 8.67229, -3.07628, 22.6282)
+collision_layer = 10
+collision_mask = 10
 stem_name = "4-drumrack"
 
 [node name="WALL" type="CSGBox3D" parent="."]
@@ -99,8 +114,8 @@ map_scale = Vector3(0.1, 0.1, 0.1)
 _terrain_data = ExtResource("4_6klxu")
 chunk_size = 16
 collision_enabled = true
-collision_layer = 5
-collision_mask = 7
+collision_layer = 13
+collision_mask = 13
 shader_type = "Classic4Lite"
 custom_shader = null
 custom_globalmap_shader = null
