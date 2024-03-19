@@ -231,6 +231,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 14.7805)
 shape = SubResource("BoxShape3D_ti4l8")
 
 [node name="Stage3" type="Node3D" parent="LEVEL"]
+visible = false
 
 [node name="StemCube" parent="LEVEL/Stage3" instance=ExtResource("21_u0vjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.739242, -2.55462, 12.6216)

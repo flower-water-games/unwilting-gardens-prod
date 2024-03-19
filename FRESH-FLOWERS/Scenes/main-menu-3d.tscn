@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://d073wobhv0j0f" path="res://UserInterface/Themes/Default/DefaultTheme.tres" id="4_mr5w0"]
 [ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="5_184wm"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/fit_to_window.gd" id="6_i1ym5"]
-[ext_resource type="Texture2D" uid="uid://c2rvsu2rfsr35" path="res://Unwilting logo.png" id="6_j2jhn"]
+[ext_resource type="Texture2D" uid="uid://6uumnm10s66r" path="res://Unwilting logo.png" id="6_j2jhn"]
 [ext_resource type="PackedScene" uid="uid://dgcv8upoe41pl" path="res://UserInterface/Components/SetSelectedButton/SetSelectedButton.tscn" id="7_clkdu"]
 [ext_resource type="PackedScene" uid="uid://ce5ymux13mm1x" path="res://Managers/ButtonGoToLevel/ButtonGoToLevel.tscn" id="8_67hv5"]
 [ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="10_efnf7"]
