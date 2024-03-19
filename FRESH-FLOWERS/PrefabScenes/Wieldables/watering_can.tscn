@@ -312,7 +312,9 @@ spread = 0.5
 initial_velocity_min = 4.0
 initial_velocity_max = 4.0
 color = Color(0.252188, 0.0125756, 0.83884, 1)
-collision_mode = 2
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qdx7y"]
 size = Vector3(2.18, 1, 1)
@@ -379,11 +381,11 @@ skeleton = NodePath("")
 
 [node name="WaterStream" type="GPUParticles3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(-4.24496e-08, 1.04266e-08, 1, 0.238533, 0.971134, -3.48787e-16, -0.971134, 0.238533, -4.37114e-08, -0.0021705, 0.150094, -0.25499)
+transform = Transform3D(-4.24496e-08, 1.04266e-08, 1, 0.238533, 0.971134, -3.48787e-16, -0.971134, 0.238533, -4.37114e-08, -0.0021705, 0.150094, -0.0478138)
 emitting = false
 amount = 120
 lifetime = 2.0
-collision_base_size = 1.0
+trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_1vode")
 draw_pass_1 = ExtResource("10_5abv2")
 

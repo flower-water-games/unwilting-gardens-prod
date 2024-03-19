@@ -55,7 +55,7 @@ albedo_color = Color(0.949758, 0.610842, 0.827143, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_bjc6x"]
 material = SubResource("StandardMaterial3D_t6x84")
-text = "thank you <3"
+text = "o"
 font_size = 12
 
 [node name="BaseCube" type="RigidBody3D" groups=["Cube"]]

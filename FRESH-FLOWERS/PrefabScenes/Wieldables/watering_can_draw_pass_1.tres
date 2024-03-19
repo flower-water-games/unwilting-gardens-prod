@@ -11,3 +11,5 @@ shader_parameter/ColorParameter = Color(0, 0.266667, 0.533333, 1)
 material = SubResource("ShaderMaterial_0rude")
 radius = 0.013
 height = 0.025
+radial_segments = 4
+rings = 2

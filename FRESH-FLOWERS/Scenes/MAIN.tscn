@@ -231,18 +231,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 14.7805)
 shape = SubResource("BoxShape3D_ti4l8")
 
 [node name="Stage3" type="Node3D" parent="LEVEL"]
-visible = false
 
 [node name="StemCube" parent="LEVEL/Stage3" instance=ExtResource("21_u0vjh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14037, -2.8491, 12.6216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.739242, -2.55462, 12.6216)
 stem_name = "lead"
 
 [node name="StemCube2" parent="LEVEL/Stage3" instance=ExtResource("21_u0vjh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6007, -2.8491, 10.0389)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.91882, -2.8491, 8.89158)
 stem_name = "lead1"
 
 [node name="StemCube3" parent="LEVEL/Stage3" instance=ExtResource("21_u0vjh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96473, -2.8491, 14.6468)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69288, -2.8491, 11.9741)
 stem_name = "chords"
 
 [node name="midground" parent="LEVEL" instance=ExtResource("15_my2j6")]
