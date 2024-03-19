@@ -15,14 +15,23 @@ var watering_timer: Timer = Timer.new()
 
 var watering_target: Waterable
 
+var watering_sfx_instance:PooledAudioStreamPlayer
+
 func _ready():
 	super()
 	add_child(watering_timer)
 	setup_watering_timer()
+
 	hide()
+	await get_tree().create_timer(0.1).timeout
+	on_sound_manager_load()
 	# after 5 seconds, show
 	await get_tree().create_timer(5.0).timeout
 	show()
+
+
+func on_sound_manager_load():
+	watering_sfx_instance = SoundManager.instance("player", "water-flow")
 
 func _process(delta: float) -> void:
 	update_water_level_based_on_usage()
@@ -64,7 +73,8 @@ func start_watering() -> void:
 	if not is_watering and current_water_level > 0:
 		is_watering = true
 		water_stream.emitting = true
-
+		watering_sfx_instance.trigger()
+		#TODO SOUND EFFECT WATER STREAM
 		use_water()
 		watering_timer.start()
 		# use_water()
@@ -99,6 +109,9 @@ func stop_watering() -> void:
 		is_watering = false
 		reset_watering_target()
 		water_stream.emitting = false
+		watering_sfx_instance.stop()
+		#TODO SOUND EFFECT WATER STREAM
+
 		watering_timer.stop()
 		print("Watering Can: Stopped watering")
 

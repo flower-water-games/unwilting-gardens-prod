@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dhatmddsmnj2v"]
+[gd_scene load_steps=40 format=3 uid="uid://dhatmddsmnj2v"]
 
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="10_nkh7x"]
 [ext_resource type="AudioStream" uid="uid://cmkdr4dwnke6i" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section2/Part 2 - MIX_Stage3.ogg" id="11_bpwi2"]
 [ext_resource type="AudioStream" uid="uid://h6bxpluk8w3j" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/watering_prototype2_unwilt.ogg" id="12_0ufuk"]
+[ext_resource type="AudioStream" uid="uid://o8fm4ka6m2nt" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/running water_unwilted.ogg" id="12_etr3k"]
 [ext_resource type="PackedScene" uid="uid://bn8jq5sn8o5u3" path="res://FRESH-FLOWERS/Scenes/Levels/level_1.tscn" id="14_g0aa1"]
 [ext_resource type="PackedScene" uid="uid://b1m2agh5k1xhv" path="res://FRESH-FLOWERS/Scenes/Levels/level_2.tscn" id="15_7tpt6"]
 [ext_resource type="AudioStream" uid="uid://ojge3ql56rbd" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/refill can_unwilted.ogg" id="15_8ewx2"]
@@ -25,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dmbmayydxsy62" path="res://FRESH-FLOWERS/Scenes/Levels/dome.tscn" id="15_wqyjm"]
 [ext_resource type="AudioStream" uid="uid://biagjs7tq35kp" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/empty watering can_unwilted.ogg" id="16_8grc2"]
 [ext_resource type="PackedScene" uid="uid://phxwn6amsqjq" path="res://FRESH-FLOWERS/PrefabScenes/wall.tscn" id="17_jas50"]
+[ext_resource type="AudioStream" uid="uid://bvmp2yd2w6481" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/wind_unwilted.ogg" id="18_ne831"]
 [ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="21_u0vjh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_35j3x"]
@@ -71,9 +73,9 @@ streams = Array[AudioStream]([ExtResource("7_hjhgm")])
 script = ExtResource("4_t7o6m")
 name = "wind"
 bus = ""
-volume = 0.0
+volume = 4.44089e-15
 pitch = 1.0
-streams = Array[AudioStream]([])
+streams = Array[AudioStream]([ExtResource("18_ne831")])
 
 [sub_resource type="Resource" id="Resource_gvs7c"]
 script = ExtResource("4_t7o6m")
@@ -87,9 +89,17 @@ streams = Array[AudioStream]([ExtResource("15_8ewx2")])
 script = ExtResource("4_t7o6m")
 name = "empty"
 bus = ""
-volume = 0.0
+volume = 0.6
 pitch = 1.0
 streams = Array[AudioStream]([ExtResource("16_8grc2")])
+
+[sub_resource type="Resource" id="Resource_tu8dx"]
+script = ExtResource("4_t7o6m")
+name = "water-flow"
+bus = ""
+volume = 0.0
+pitch = 1.0
+streams = Array[AudioStream]([ExtResource("12_etr3k")])
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ti4l8"]
 size = Vector3(40, 19.835, 47.9604)
@@ -176,7 +186,7 @@ tracks = Array[ExtResource("9_x4ck7")]([ExtResource("5_hdg4c"), ExtResource("6_y
 script = ExtResource("3_1m4ba")
 label = "player"
 bus = "SFX"
-events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResource("Resource_a88or"), SubResource("Resource_xr3dh"), SubResource("Resource_14tu3"), SubResource("Resource_gvs7c"), SubResource("Resource_rjwjs")])
+events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResource("Resource_a88or"), SubResource("Resource_xr3dh"), SubResource("Resource_14tu3"), SubResource("Resource_gvs7c"), SubResource("Resource_rjwjs"), SubResource("Resource_tu8dx")])
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CORE"]
 transform = Transform3D(0.841281, -0.0291302, 0.539813, -0.535954, -0.175542, 0.825796, 0.0707043, -0.984041, -0.163293, 0, 0, 0)
