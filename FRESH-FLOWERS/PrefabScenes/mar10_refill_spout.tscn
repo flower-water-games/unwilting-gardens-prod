@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://be823dx66y1qn"]
+[gd_scene load_steps=9 format=3 uid="uid://be823dx66y1qn"]
 
 [ext_resource type="PackedScene" uid="uid://c5i02euvrmxfy" path="res://FRESH-FLOWERS/Assets/KenneyHex/fantasytown/GLTF format/fountainRound.glb" id="1_dfw81"]
+[ext_resource type="Shader" uid="uid://dp0152nr674st" path="res://FRESH-FLOWERS/Shaders/WaterShader.tres" id="1_qahht"]
 [ext_resource type="PackedScene" uid="uid://jpkppfsajlyt" path="res://FRESH-FLOWERS/Assets/KenneyHex/fantasytown/GLTF format/fountainRoundDetail.glb" id="2_qb6tr"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/refill_watering.gd" id="3_f6chr"]
 
@@ -11,15 +12,19 @@ spread = 5.0
 initial_velocity_min = 4.0
 initial_velocity_max = 8.0
 color = Color(0.236366, 2.3722e-05, 0.92348, 1)
-collision_mode = 2
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svcyr"]
-albedo_color = Color(0, 0.823459, 0.760311, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vmmtl"]
+render_priority = 0
+shader = ExtResource("1_qahht")
+shader_parameter/ColorParameter = Color(0, 0.266667, 0.533333, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_yn73a"]
-material = SubResource("StandardMaterial3D_svcyr")
-radius = 0.05
-height = 0.1
+material = SubResource("ShaderMaterial_vmmtl")
+radius = 0.013
+height = 0.025
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e8yuq"]
 size = Vector3(1, 5.55, 1)

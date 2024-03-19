@@ -37,6 +37,7 @@ func fade_out(duration):
 
 func on_sound_manager_load():
 	SoundManager.play("player", "wind")
+	MusicManager.play("Music", "water-flow")
 
 func _on_area_exit(node):
 	# if stage 3 is not playing, stop the music

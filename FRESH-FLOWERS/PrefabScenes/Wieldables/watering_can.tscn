@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dt6brf8pfl28d"]
+[gd_scene load_steps=39 format=3 uid="uid://dt6brf8pfl28d"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/Wieldables/wieldable_watering_can.gd" id="1_ttr6a"]
 [ext_resource type="Texture2D" uid="uid://bjs40jntrm8so" path="res://FRESH-FLOWERS/Assets/PB/textures/body_normal.001.png" id="2_5b5sc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cs8hwpxbdnova" path="res://FRESH-FLOWERS/Assets/PB/textures/sphererough3.png" id="6_m1xv7"]
 [ext_resource type="Texture2D" uid="uid://ccrtu8kqdfiov" path="res://FRESH-FLOWERS/Assets/PB/textures/srough.png" id="7_i21yn"]
 [ext_resource type="Texture2D" uid="uid://bx6fm6xbyo544" path="res://FRESH-FLOWERS/Assets/PB/textures/handle_normal.png" id="8_km6e1"]
+[ext_resource type="SphereMesh" uid="uid://r2k0c6g8em5a" path="res://FRESH-FLOWERS/PrefabScenes/Wieldables/watering_can_draw_pass_1.tres" id="10_5abv2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6wmva"]
 size = Vector3(0.2, 0.2, 0.2)
@@ -311,15 +312,9 @@ spread = 0.5
 initial_velocity_min = 4.0
 initial_velocity_max = 4.0
 color = Color(0.252188, 0.0125756, 0.83884, 1)
-collision_mode = 2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svcyr"]
-albedo_color = Color(0, 0.823459, 0.760311, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_yn73a"]
-material = SubResource("StandardMaterial3D_svcyr")
-radius = 0.05
-height = 0.1
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qdx7y"]
 size = Vector3(2.18, 1, 1)
@@ -386,13 +381,13 @@ skeleton = NodePath("")
 
 [node name="WaterStream" type="GPUParticles3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(-4.24496e-08, 1.04266e-08, 1, 0.238533, 0.971134, -3.48787e-16, -0.971134, 0.238533, -4.37114e-08, -0.0021705, 0.150094, -0.25499)
+transform = Transform3D(-4.24496e-08, 1.04266e-08, 1, 0.238533, 0.971134, -3.48787e-16, -0.971134, 0.238533, -4.37114e-08, -0.0021705, 0.150094, -0.0478138)
 emitting = false
 amount = 120
 lifetime = 2.0
-collision_base_size = 1.0
+trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_1vode")
-draw_pass_1 = SubResource("SphereMesh_yn73a")
+draw_pass_1 = ExtResource("10_5abv2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
