@@ -1,0 +1,13 @@
+[gd_resource type="SphereMesh" load_steps=3 format=3 uid="uid://r2k0c6g8em5a"]
+
+[ext_resource type="Shader" uid="uid://dp0152nr674st" path="res://FRESH-FLOWERS/Shaders/WaterShader.tres" id="1_lde1g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rude"]
+render_priority = 0
+shader = ExtResource("1_lde1g")
+shader_parameter/ColorParameter = Color(0, 0.266667, 0.533333, 1)
+
+[resource]
+material = SubResource("ShaderMaterial_0rude")
+radius = 0.013
+height = 0.025

@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bn8jq5sn8o5u3" path="res://FRESH-FLOWERS/Scenes/Levels/level_1.tscn" id="14_g0aa1"]
 [ext_resource type="PackedScene" uid="uid://b1m2agh5k1xhv" path="res://FRESH-FLOWERS/Scenes/Levels/level_2.tscn" id="15_7tpt6"]
 [ext_resource type="AudioStream" uid="uid://ojge3ql56rbd" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/refill can_unwilted.ogg" id="15_8ewx2"]
-[ext_resource type="PackedScene" uid="uid://cp3g0xxyxwkdw" path="res://FRESH-FLOWERS/PrefabScenes/midground/trees_and_water.tscn" id="15_my2j6"]
+[ext_resource type="PackedScene" uid="uid://dfukf844u4vqi" path="res://FRESH-FLOWERS/PrefabScenes/midground/trees_and_water.tscn" id="15_my2j6"]
 [ext_resource type="PackedScene" uid="uid://dmbmayydxsy62" path="res://FRESH-FLOWERS/Scenes/Levels/dome.tscn" id="15_wqyjm"]
 [ext_resource type="AudioStream" uid="uid://biagjs7tq35kp" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/empty watering can_unwilted.ogg" id="16_8grc2"]
 [ext_resource type="PackedScene" uid="uid://phxwn6amsqjq" path="res://FRESH-FLOWERS/PrefabScenes/wall.tscn" id="17_jas50"]
