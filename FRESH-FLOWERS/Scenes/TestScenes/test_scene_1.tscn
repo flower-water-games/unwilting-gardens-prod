@@ -93,6 +93,27 @@ height_falloff = 1e-05
 edge_fade = 0.75281
 density_texture = SubResource("NoiseTexture3D_ntclf")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wo00g"]
+render_priority = 0
+shader = ExtResource("8_rry8c")
+shader_parameter/outlineColor = Color(0.407843, 0.0588235, 0.309804, 0.643137)
+shader_parameter/depth_threshold = 0.025
+shader_parameter/normal_threshold = 0.5
+shader_parameter/normal_smoothing = 1.0
+shader_parameter/max_thickness = 0.49
+shader_parameter/min_thickness = 0.5
+shader_parameter/max_distance = 75.0
+shader_parameter/min_distance = 2.0
+shader_parameter/grazing_fresnel_power = 21.15
+shader_parameter/grazing_angle_mask_power = 1.0
+shader_parameter/grazing_angle_modulation_factor = 44.2
+
+[sub_resource type="QuadMesh" id="QuadMesh_6kb7o"]
+lightmap_size_hint = Vector2i(12, 12)
+flip_faces = true
+uv2_padding = 2.08
+size = Vector2(3.77, 2.83)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ih1wn"]
 shading_mode = 0
 albedo_color = Color(0, 0.624, 0.96, 1)
