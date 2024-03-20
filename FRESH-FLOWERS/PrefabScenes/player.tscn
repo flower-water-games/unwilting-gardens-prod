@@ -89,6 +89,7 @@ fov = 80.7
 
 [node name="SHADER_SCENE" type="MeshInstance3D" parent="Head/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0, -1.19186)
+visible = false
 layers = 524303
 material_override = SubResource("ShaderMaterial_wo00g")
 mesh = SubResource("QuadMesh_6kb7o")
