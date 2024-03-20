@@ -225,7 +225,7 @@ process_material = ExtResource("6_wq7uj")
 draw_pass_1 = SubResource("QuadMesh_mkx5c")
 
 [node name="CENTER CLOUD2" type="GPUParticles3D" parent="Cloud"]
-transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -1.165, -112.719, -41.4514)
+transform = Transform3D(2.25, 0, 0, 0, 0.94, 0, 0, 0, 4.89, -1.165, -59.2558, -41.4514)
 amount = 400
 lifetime = 30.0
 explosiveness = 0.98

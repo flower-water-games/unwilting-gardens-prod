@@ -56,46 +56,6 @@ collision_mask = 15
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 8.67229, -3.07628, 22.6282)
 stem_name = "4-drumrack"
 
-[node name="WALL" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.8405, 2.81764, 38.4109)
-visible = false
-use_collision = true
-collision_layer = 7
-collision_mask = 7
-size = Vector3(0.1, 27.7943, 58.052)
-
-[node name="WALL2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6313, 2.82643, 36.0738)
-visible = false
-use_collision = true
-collision_layer = 7
-collision_mask = 7
-size = Vector3(0.1, 27.8119, 50.335)
-
-[node name="WALL4" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.00315908, 0, 0.999995, 0, 1, 0, -0.999995, 0, -0.00315908, -11.6485, -1.78631, 11.2425)
-visible = false
-use_collision = true
-collision_layer = 7
-collision_mask = 7
-size = Vector3(0.1, 18.5864, 21.8422)
-
-[node name="WALL5" type="CSGBox3D" parent="."]
-transform = Transform3D(-0.00315908, 0, 0.999995, 0, 1, 0, -0.999995, 0, -0.00315908, 18.8981, -1.78631, 11.2425)
-visible = false
-use_collision = true
-collision_layer = 7
-collision_mask = 7
-size = Vector3(0.1, 18.5864, 21.8422)
-
-[node name="WALL3" type="CSGBox3D" parent="."]
-transform = Transform3D(0.00127406, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.00127406, 4.13924, 2.80269, 61.2021)
-visible = false
-use_collision = true
-collision_layer = 7
-collision_mask = 7
-size = Vector3(0.1, 27.7644, 60.4029)
-
 [node name="RefillSpout" parent="." instance=ExtResource("1_fyeua")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.31664, -5.67494, 23.358)
 

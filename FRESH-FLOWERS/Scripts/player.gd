@@ -91,8 +91,8 @@ func _physics_process(delta):
 	
 	# Falling/respawning
 	
-	if position.y < -10:
-		get_tree().reload_current_scene()
+	# if position.y < -10:
+	# 	get_tree().reload_current_scene()
 
 
 # Mouse movement

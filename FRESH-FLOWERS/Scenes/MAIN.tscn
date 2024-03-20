@@ -103,7 +103,7 @@ pitch = 1.0
 streams = Array[AudioStream]([ExtResource("12_etr3k")])
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ti4l8"]
-size = Vector3(40, 19.835, 47.9604)
+size = Vector3(411.429, 81.9284, 650.586)
 
 [node name="Main" type="Node3D"]
 
@@ -162,18 +162,19 @@ wieldable = NodePath("Head/Camera/Container/WateringCan")
 
 [node name="Cloud" parent="CORE" instance=ExtResource("3_mp4mw")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -38.1993, 36.9284, -10.8552)
+visible = false
 
 [node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area", "stage2_area", "stage_3", "stage1_lock", "tutorial_island", "player", "level_1", "level_2", "dome", "regular_light")]
 script = ExtResource("8_05bny")
-stage1_area = NodePath("../../LEVEL/Level1/Area3D")
-stage2_area = NodePath("../../LEVEL/Level2/Area3D")
+stage1_area = NodePath("../../LEVEL/Area3D")
+stage2_area = NodePath("../../LEVEL/Area3D2")
 stage_3 = NodePath("../../LEVEL/Stage3")
 stage1_lock = NodePath("../../LEVEL/LOCKS/WALL4")
 tutorial_island = NodePath("../../LEVEL/TutorialSkyIsland")
 player = NodePath("../PLAYER")
-level_1 = NodePath("../../LEVEL/Level1")
-level_2 = NodePath("../../LEVEL/Level2")
-dome = NodePath("../../LEVEL/DOME")
+level_1 = NodePath("../../World")
+level_2 = NodePath("../../World")
+dome = NodePath("../../DOMETOPLEVEL")
 color_to_tween = Color(0.337255, 0, 0.901961, 1)
 regular_light = NodePath("../DirectionalLight3D")
 
@@ -209,29 +210,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 120, 24.488)
 [node name="FogVolume" type="FogVolume" parent="LEVEL/TutorialSkyIsland"]
 transform = Transform3D(6.77826, 0, 0, 0, 0.996119, 0, 0, 0, 17.7411, 0, -2.89602, -11.0333)
 
-[node name="DOME" parent="LEVEL" instance=ExtResource("15_wqyjm")]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 13.1214, -1.07085, 26.3322)
+[node name="Area3D" type="Area3D" parent="LEVEL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0214282, 18.6368, 0.0150852)
 
-[node name="Level1" parent="LEVEL" instance=ExtResource("14_g0aa1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0214282, -734.59, 0.0150852)
-visible = false
-
-[node name="Area3D" type="Area3D" parent="LEVEL/Level1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level1/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76953, -9.29761)
 shape = SubResource("BoxShape3D_ti4l8")
 
-[node name="Level2" parent="LEVEL" instance=ExtResource("15_7tpt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -734.58, 2.11205)
+[node name="Area3D2" type="Area3D" parent="LEVEL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.6468, 25.2276)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 185.715, 34.2337, 47.0168)
+shape = SubResource("BoxShape3D_ti4l8")
+
+[node name="Level1" parent="LEVEL" instance=ExtResource("14_g0aa1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0214282, -204.257, 0.0150852)
 visible = false
 
-[node name="Area3D" type="Area3D" parent="LEVEL/Level2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.1155)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 14.7805)
-shape = SubResource("BoxShape3D_ti4l8")
+[node name="Level2" parent="LEVEL" instance=ExtResource("15_7tpt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -204.247, 2.11205)
+visible = false
 
 [node name="Stage3" type="Node3D" parent="LEVEL"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -734.58, 0)
@@ -250,12 +249,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69288, -2.8491, 11.9741)
 stem_name = "chords"
 
 [node name="midground" parent="LEVEL" instance=ExtResource("15_my2j6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00473046, -176.702, -0.00626111)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.00473046, 63.6902, -0.00626111)
 
 [node name="LOCKS" type="Node3D" parent="LEVEL"]
 
 [node name="WALL4" parent="LEVEL/LOCKS" instance=ExtResource("17_jas50")]
 transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.37245e-23, 0.600091, 6.84338)
 
+[node name="DOMETOPLEVEL" parent="." instance=ExtResource("15_wqyjm")]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, -10.1833, 40.2473, -57.1183)
+visible = false
+
 [node name="World" parent="." instance=ExtResource("29_eh6jf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -212.039, 2.08165e-12, -270.956)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -206.469, 2.08165e-12, -243.256)
