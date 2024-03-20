@@ -186,6 +186,7 @@ func stage2():
 	dome_animation_player.play("Dissapear")
 	# dome has a child animation player and needs to play 2 animations named: 
 		# "Dissapear" and "Disappear_001"
+	print("debug")
 	pass
 
 func _process(delta):

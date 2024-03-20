@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckt0iiu7qn6d"]
+[gd_scene load_steps=9 format=3 uid="uid://ckt0iiu7qn6d"]
 
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_20o7n"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/waterable/bird_cube.gd" id="2_j4u4v"]
@@ -11,7 +11,21 @@ albedo_texture = ExtResource("3_ht032")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bybl"]
 albedo_texture = ExtResource("4_qqtr8")
 
+[sub_resource type="Animation" id="Animation_7peow"]
+resource_name = "flying"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6sf2"]
+_data = {
+"flying": SubResource("Animation_7peow")
+}
+
 [node name="BirdCube" instance=ExtResource("1_20o7n")]
 script = ExtResource("2_j4u4v")
 my_happy_material = SubResource("StandardMaterial3D_eyr2r")
 my_sad_material = SubResource("StandardMaterial3D_6bybl")
+
+[node name="FlyingAnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_q6sf2")
+}
