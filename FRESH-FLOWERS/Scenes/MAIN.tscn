@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dhatmddsmnj2v"]
+[gd_scene load_steps=44 format=3 uid="uid://dhatmddsmnj2v"]
 
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://phxwn6amsqjq" path="res://FRESH-FLOWERS/PrefabScenes/wall.tscn" id="17_jas50"]
 [ext_resource type="AudioStream" uid="uid://bvmp2yd2w6481" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/wind_unwilted.ogg" id="18_ne831"]
 [ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="21_u0vjh"]
+[ext_resource type="Shader" uid="uid://dp0152nr674st" path="res://FRESH-FLOWERS/Shaders/WaterShader.tres" id="27_4ewn3"]
 [ext_resource type="PackedScene" uid="uid://dfbl84vbchpd0" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world.tscn" id="29_eh6jf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_35j3x"]
@@ -104,6 +105,17 @@ streams = Array[AudioStream]([ExtResource("12_etr3k")])
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ti4l8"]
 size = Vector3(411.429, 81.9284, 650.586)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ieyh0"]
+render_priority = 0
+shader = ExtResource("27_4ewn3")
+shader_parameter/ColorParameter = Color(0, 0.266667, 0.533333, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bxc7x"]
+material = SubResource("ShaderMaterial_ieyh0")
+top_radius = 2.0
+bottom_radius = 2.0
+height = 0.1
 
 [node name="Main" type="Node3D"]
 
@@ -206,6 +218,7 @@ light_volumetric_fog_energy = 2.024
 
 [node name="TutorialSkyIsland" parent="LEVEL" instance=ExtResource("2_vpoja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 120, 24.488)
+visible = false
 
 [node name="FogVolume" type="FogVolume" parent="LEVEL/TutorialSkyIsland"]
 transform = Transform3D(6.77826, 0, 0, 0, 0.996119, 0, 0, 0, 17.7411, 0, -2.89602, -11.0333)
@@ -249,7 +262,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69288, -2.8491, 11.9741)
 stem_name = "chords"
 
 [node name="midground" parent="LEVEL" instance=ExtResource("15_my2j6")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.00473046, 63.6902, -0.00626111)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00473046, 32.9973, -0.00626111)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LEVEL/midground"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 23.5165, -7.69351, -18.6269)
+mesh = SubResource("CylinderMesh_bxc7x")
 
 [node name="LOCKS" type="Node3D" parent="LEVEL"]
 
