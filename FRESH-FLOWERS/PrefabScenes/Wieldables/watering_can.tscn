@@ -1,21 +1,20 @@
 [gd_scene load_steps=39 format=3 uid="uid://dt6brf8pfl28d"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/Wieldables/wieldable_watering_can.gd" id="1_ttr6a"]
-[ext_resource type="Texture2D" uid="uid://bjs40jntrm8so" path="res://FRESH-FLOWERS/Assets/PB/textures/body_normal.001.png" id="2_5b5sc"]
+[ext_resource type="Texture2D" uid="uid://beahn688wx3rf" path="res://FRESH-FLOWERS/Assets/PB/textures/body_normal.001.png" id="2_5b5sc"]
 [ext_resource type="PackedScene" uid="uid://bhfus2f8yr0h1" path="res://FRESH-FLOWERS/PrefabScenes/water_particle.tscn" id="2_dqbid"]
-[ext_resource type="Texture2D" uid="uid://jjom3jg5c4wa" path="res://FRESH-FLOWERS/Assets/PB/textures/spout.png" id="3_ufum8"]
-[ext_resource type="Texture2D" uid="uid://btq23e0kfh5n3" path="res://FRESH-FLOWERS/Assets/PB/textures/normal_frontspout.png" id="4_hbqqd"]
-[ext_resource type="Texture2D" uid="uid://hwofgsivaqu4" path="res://FRESH-FLOWERS/Assets/PB/textures/spout_rough.png" id="5_26gnf"]
-[ext_resource type="Texture2D" uid="uid://cs8hwpxbdnova" path="res://FRESH-FLOWERS/Assets/PB/textures/sphererough3.png" id="6_m1xv7"]
-[ext_resource type="Texture2D" uid="uid://ccrtu8kqdfiov" path="res://FRESH-FLOWERS/Assets/PB/textures/srough.png" id="7_i21yn"]
-[ext_resource type="Texture2D" uid="uid://bx6fm6xbyo544" path="res://FRESH-FLOWERS/Assets/PB/textures/handle_normal.png" id="8_km6e1"]
+[ext_resource type="Texture2D" uid="uid://c0pkt2orvm34w" path="res://FRESH-FLOWERS/Assets/PB/textures/spout.png" id="3_ufum8"]
+[ext_resource type="Texture2D" uid="uid://c7ybrltgj1lnq" path="res://FRESH-FLOWERS/Assets/PB/textures/normal_frontspout.png" id="4_hbqqd"]
+[ext_resource type="Texture2D" uid="uid://cok38rttyvrn3" path="res://FRESH-FLOWERS/Assets/PB/textures/spout_rough.png" id="5_26gnf"]
+[ext_resource type="Texture2D" uid="uid://druhnb47g4tld" path="res://FRESH-FLOWERS/Assets/PB/textures/sphererough3.png" id="6_m1xv7"]
+[ext_resource type="Texture2D" uid="uid://bg63wwotdccav" path="res://FRESH-FLOWERS/Assets/PB/textures/srough.png" id="7_i21yn"]
+[ext_resource type="Texture2D" uid="uid://ovlx0l6c5k5f" path="res://FRESH-FLOWERS/Assets/PB/textures/handle_normal.png" id="8_km6e1"]
 [ext_resource type="SphereMesh" uid="uid://r2k0c6g8em5a" path="res://FRESH-FLOWERS/PrefabScenes/Wieldables/watering_can_draw_pass_1.tres" id="10_5abv2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6wmva"]
 size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6hcm"]
-transparency = 1
 albedo_color = Color(1, 0.545098, 1, 1)
 albedo_texture_msdf = true
 metallic = 0.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b5iivmi4hqlws"]
+[gd_scene load_steps=27 format=3 uid="uid://b5iivmi4hqlws"]
 
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_pkp2k"]
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_q6g3r"]
@@ -6,8 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ckt0iiu7qn6d" path="res://FRESH-FLOWERS/PrefabScenes/waterables/bird_cube.tscn" id="2_n44rl"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="3_smlsn"]
 [ext_resource type="PackedScene" uid="uid://0ljc5m5p5j8w" path="res://FRESH-FLOWERS/PrefabScenes/cloud.tscn" id="6_ky1ll"]
-[ext_resource type="Shader" path="res://FRESH-FLOWERS/Shaders/spatial/edge_detection.gdshader" id="7_dfdrn"]
-[ext_resource type="Shader" path="res://FRESH-FLOWERS/Scenes/TestScenes/glass.gdshader" id="7_x5i8b"]
 [ext_resource type="Shader" path="res://FRESH-FLOWERS/Scenes/TestScenes/outline.gdshader" id="8_rry8c"]
 [ext_resource type="Shader" path="res://FRESH-FLOWERS/Scenes/TestScenes/bubble.gdshader" id="10_t4sdk"]
 
@@ -95,44 +93,26 @@ height_falloff = 1e-05
 edge_fade = 0.75281
 density_texture = SubResource("NoiseTexture3D_ntclf")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ro83"]
-render_priority = 0
-shader = ExtResource("7_dfdrn")
-shader_parameter/edge_only = true
-shader_parameter/edge_threshold = 0.2
-shader_parameter/line_color = Color(0.043, 0.282, 0.467, 1)
-shader_parameter/background_color = Color(0.627451, 0, 0.411765, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1qeu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wo00g"]
 render_priority = 0
 shader = ExtResource("8_rry8c")
-shader_parameter/outlineColor = Color(0.444409, 0.593215, 0.185488, 0.780392)
-shader_parameter/depth_threshold = 0.525
+shader_parameter/outlineColor = Color(0.407843, 0.0588235, 0.309804, 0.643137)
+shader_parameter/depth_threshold = 0.025
 shader_parameter/normal_threshold = 0.5
-shader_parameter/normal_smoothing = 0.25
-shader_parameter/max_thickness = 1.3
+shader_parameter/normal_smoothing = 1.0
+shader_parameter/max_thickness = 0.558
 shader_parameter/min_thickness = 0.5
 shader_parameter/max_distance = 75.0
 shader_parameter/min_distance = 2.0
-shader_parameter/grazing_fresnel_power = 5.0
+shader_parameter/grazing_fresnel_power = 21.15
 shader_parameter/grazing_angle_mask_power = 1.0
-shader_parameter/grazing_angle_modulation_factor = 50.0
+shader_parameter/grazing_angle_modulation_factor = 44.2
 
 [sub_resource type="QuadMesh" id="QuadMesh_6kb7o"]
+lightmap_size_hint = Vector2i(12, 12)
 flip_faces = true
-size = Vector2(2, 2)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_y36cb"]
-lightmap_size_hint = Vector2i(14, 17)
-size = Vector2(2.54, 3.16)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7wx8"]
-render_priority = 0
-shader = ExtResource("7_x5i8b")
-shader_parameter/albedo = Color(1, 1, 1, 0)
-shader_parameter/specular = -1.8
-shader_parameter/offset = 0.01
-shader_parameter/opacity = -0.83
+uv2_padding = 2.08
+size = Vector2(3.77, 2.83)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ih1wn"]
 shading_mode = 0
@@ -266,19 +246,9 @@ material = SubResource("FogMaterial_076l3")
 [node name="Cloud" parent="." instance=ExtResource("6_ky1ll")]
 
 [node name="SHADER_SCENE" type="MeshInstance3D" parent="."]
-visible = false
-material_override = SubResource("ShaderMaterial_1ro83")
-material_overlay = SubResource("ShaderMaterial_p1qeu")
-transparency = 0.35
-extra_cull_margin = 16384.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31216, 0)
+material_override = SubResource("ShaderMaterial_wo00g")
 mesh = SubResource("QuadMesh_6kb7o")
-
-[node name="mirror" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.00219, -0.125309, 1.78707, 1.80377, -0.10106, -2.252, -11.9829, 0.00572518, -0.637589, 1.49078, 7.81443, -6.7735)
-visible = false
-mesh = SubResource("PlaneMesh_y36cb")
-skeleton = NodePath("../SHADER_SCENE")
-surface_material_override/0 = SubResource("ShaderMaterial_u7wx8")
 
 [node name="bubble" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0.759052, 1.8861, -3.21027)

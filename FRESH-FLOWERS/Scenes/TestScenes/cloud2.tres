@@ -1,6 +1,6 @@
 [gd_resource type="QuadMesh" load_steps=3 format=3 uid="uid://bmgp8v7gufcl"]
 
-[ext_resource type="Texture2D" uid="uid://cvq3rekqy5wn4" path="res://FRESH-FLOWERS/Assets/PB/FX_CloudAlpha04-bright copy.png" id="1_0mqji"]
+[ext_resource type="Texture2D" uid="uid://diam7skrebxq2" path="res://FRESH-FLOWERS/Assets/PB/FX_CloudAlpha04-bright copy.png" id="1_0mqji"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40jjo"]
 transparency = 1
