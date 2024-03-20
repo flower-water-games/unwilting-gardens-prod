@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_threshold_reached():
 	super()
-	# flying_animation_player.play("flying")
+	flying_animation_player.play("flying")
+	# flying_animation_player.play("noise")
 	if not movement_completed:
 		move_to_next = true
