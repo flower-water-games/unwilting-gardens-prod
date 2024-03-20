@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfukf844u4vqi"]
+[gd_scene load_steps=12 format=3 uid="uid://dfukf844u4vqi"]
 
 [ext_resource type="Shader" uid="uid://dp0152nr674st" path="res://FRESH-FLOWERS/Shaders/WaterShader.tres" id="1_o2sky"]
 
@@ -11,53 +11,39 @@ albedo_color = Color(1.0078e-06, 0.726107, 0.601389, 1)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_82rbk"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
+[sub_resource type="Gradient" id="Gradient_6mh7g"]
+offsets = PackedFloat32Array(0.0896552, 0.333793, 1)
+colors = PackedColorArray(0.30364, 0.57577, 1, 1, 0.724887, 0.309778, 0.525448, 1, 1, 1, 0.52549, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h3xl0"]
+gradient = SubResource("Gradient_6mh7g")
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tsmwi"]
-seed = -380
-frequency = 0.0064
+noise_type = 0
+frequency = 0.014
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gneq7"]
 in_3d_space = true
+seamless = true
+seamless_blend_skirt = 0.319
+as_normal_map = true
+bump_strength = 6.4
 noise = SubResource("FastNoiseLite_tsmwi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaq8c"]
-albedo_color = Color(0.288131, 0.711783, 0.714676, 1)
-metallic = 0.5
-metallic_specular = 1.0
-roughness = 0.4
+albedo_color = Color(1, 1, 1, 0.937255)
+albedo_texture = SubResource("GradientTexture2D_h3xl0")
+metallic = 0.88
+metallic_specular = 0.49
+roughness = 0.9
+emission_enabled = true
+emission = Color(0.431373, 0.0862745, 0.760784, 1)
+emission_energy_multiplier = 0.35
 normal_enabled = true
+normal_scale = -1.07
 normal_texture = SubResource("NoiseTexture2D_gneq7")
-
-[sub_resource type="Gradient" id="Gradient_etfpk"]
-colors = PackedColorArray(0.891701, 0.000227813, 0.784711, 1, 0.521417, 0.996398, 0.661512, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_mu5am"]
-noise_type = 0
-seed = 630
-frequency = 0.0687
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lm4f6"]
-invert = true
-in_3d_space = true
-seamless = true
-color_ramp = SubResource("Gradient_etfpk")
-noise = SubResource("FastNoiseLite_mu5am")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ba13t"]
-albedo_color = Color(0.654902, 0.54902, 1, 1)
-metallic = 1.0
-metallic_specular = 1.0
-metallic_texture = SubResource("NoiseTexture2D_lm4f6")
-roughness = 0.23
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lbsd"]
-albedo_color = Color(0.0352941, 0.588235, 0.25098, 1)
-roughness = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtlo8"]
-albedo_color = Color(0.715012, 0.626812, 0.437485, 1)
-metallic = 0.55
-metallic_specular = 0.86
-roughness = 0.3
+rim_enabled = true
+rim_tint = 0.6
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7i4um"]
 render_priority = 0
@@ -111,28 +97,28 @@ material_override = SubResource("StandardMaterial3D_iaq8c")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="mountain 2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-106.377, 175.969, 415.482, 229.617, 388.577, -105.784, -388.415, 181.519, -176.326, -454.223, -175.251, 20.3465)
-material_override = SubResource("StandardMaterial3D_ba13t")
+transform = Transform3D(-223.758, 224.344, 338.391, 229.617, 388.577, -105.784, -334.836, 116.55, -298.677, -454.223, -90.2249, 20.3465)
+material_override = SubResource("StandardMaterial3D_iaq8c")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="mountain 3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-399.522, 235.109, -3.58294, 229.617, 388.577, -105.784, -50.646, -92.9413, -451.335, 60.6816, -127.53, 479.929)
-material_override = SubResource("StandardMaterial3D_6lbsd")
+material_override = SubResource("StandardMaterial3D_iaq8c")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="mountain 5" type="MeshInstance3D" parent="."]
 transform = Transform3D(-331.202, 251.483, 204.86, 229.617, 388.577, -105.784, -229.102, 25.8928, -402.18, 238.257, -35.7132, -394.083)
-material_override = SubResource("StandardMaterial3D_ba13t")
+material_override = SubResource("StandardMaterial3D_iaq8c")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="mountain 4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-399.522, 235.109, -3.58294, -79.6588, -141.98, -434.054, -221.231, -373.46, 162.76, -348.384, -0.891922, 477.413)
-material_override = SubResource("StandardMaterial3D_ba13t")
+material_override = SubResource("StandardMaterial3D_iaq8c")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="mountaiun 5" type="MeshInstance3D" parent="."]
 transform = Transform3D(-370.445, 156.035, -230.933, 229.617, 388.577, -105.784, 157.965, -198.916, -387.796, -145.838, -215.317, -325.879)
-material_override = SubResource("StandardMaterial3D_dtlo8")
+material_override = SubResource("StandardMaterial3D_iaq8c")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="new water" type="MeshInstance3D" parent="."]
