@@ -1,11 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv1sl0ejnwbfm"]
+[gd_scene load_steps=9 format=3 uid="uid://cv1sl0ejnwbfm"]
 
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/player.gd" id="1_0hgre"]
+[ext_resource type="Shader" path="res://FRESH-FLOWERS/Scenes/TestScenes/outline.gdshader" id="2_73qm3"]
 [ext_resource type="PackedScene" uid="uid://dt6brf8pfl28d" path="res://FRESH-FLOWERS/PrefabScenes/Wieldables/watering_can.tscn" id="2_nmbek"]
+[ext_resource type="Shader" path="res://FRESH-FLOWERS/Shaders/spatial/edge_detection.gdshader" id="3_l27cs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xk3yy"]
 radius = 0.3
 height = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wo00g"]
+render_priority = 0
+shader = ExtResource("2_73qm3")
+shader_parameter/outlineColor = Color(0.407843, 0.0588235, 0.309804, 0.643137)
+shader_parameter/depth_threshold = 0.025
+shader_parameter/normal_threshold = 0.5
+shader_parameter/normal_smoothing = 1.0
+shader_parameter/max_thickness = 0.558
+shader_parameter/min_thickness = 0.5
+shader_parameter/max_distance = 75.0
+shader_parameter/min_distance = 2.0
+shader_parameter/grazing_fresnel_power = 21.15
+shader_parameter/grazing_angle_mask_power = 1.0
+shader_parameter/grazing_angle_modulation_factor = 44.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o2e8k"]
+render_priority = 0
+shader = ExtResource("3_l27cs")
+shader_parameter/edge_only = true
+shader_parameter/edge_threshold = 0.2
+shader_parameter/line_color = Color(0.043, 0.282, 0.467, 1)
+shader_parameter/background_color = Color(0.408, 0.969, 0.694, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_6kb7o"]
+lightmap_size_hint = Vector2i(12, 12)
+material = SubResource("ShaderMaterial_o2e8k")
+flip_faces = true
+uv2_padding = 2.08
+size = Vector2(3.77, 2.83)
 
 [node name="PLAYER" type="CharacterBody3D" node_paths=PackedStringArray("wieldable") groups=["Player"]]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -48,6 +80,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 cull_mask = 524287
 current = true
 fov = 80.7
+
+[node name="SHADER_SCENE" type="MeshInstance3D" parent="Head/Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+layers = 524303
+material_override = SubResource("ShaderMaterial_wo00g")
+mesh = SubResource("QuadMesh_6kb7o")
 
 [node name="Container" type="Node3D" parent="Head/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.551, 0, -2.60209e-18)

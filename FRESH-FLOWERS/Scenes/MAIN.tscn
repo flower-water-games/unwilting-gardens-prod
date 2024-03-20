@@ -265,7 +265,7 @@ stem_name = "chords"
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00473046, 32.9973, -0.00626111)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LEVEL/midground"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 23.5165, -7.69351, -18.6269)
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 23.5165, -12.8545, 2.09559)
 mesh = SubResource("CylinderMesh_bxc7x")
 
 [node name="LOCKS" type="Node3D" parent="LEVEL"]
