@@ -16,24 +16,13 @@ func _ready():
 
 	stage2_area.connect("body_entered", _stage_2_entered)
 	stage2_area.connect("body_exited", _on_area_exit)	
-	
-	level_1.hide()
-	level_2.hide()
 
 	# connect sound manager loaded
 	SoundManager.connect("loaded", on_sound_manager_load)
-	fade_in(5)
 
 	
-@onready var color_rect : ColorRect = %ColorRect
 @onready var credits : Label = %CREDITS
-@onready var fade_tween = get_tree().create_tween()
 
-func fade_in(duration):
-	fade_tween.tween_property(color_rect, "color:a", 0, duration)
-	
-func fade_out(duration):
-	fade_tween.tween_property(color_rect, "color:a", 1, duration)
 
 func on_sound_manager_load():
 	SoundManager.play("player", "wind")
@@ -186,7 +175,6 @@ func stage2():
 	dome_animation_player.play("Dissapear")
 	# dome has a child animation player and needs to play 2 animations named: 
 		# "Dissapear" and "Disappear_001"
-	print("debug")
 	pass
 
 func _process(delta):
