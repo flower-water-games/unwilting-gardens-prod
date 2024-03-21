@@ -75,7 +75,7 @@ instance_mesh = ExtResource("9_gkj1g")
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
-shader_params/u_instance_scale = null
+shader_params/u_instance_scale = Vector3(0.3, 0.3, 0.3)
 shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_hojgf")
 

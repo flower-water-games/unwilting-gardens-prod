@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dhatmddsmnj2v"]
+[gd_scene load_steps=40 format=3 uid="uid://dhatmddsmnj2v"]
 
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="3_1m4ba"]
 [ext_resource type="PackedScene" uid="uid://0ljc5m5p5j8w" path="res://FRESH-FLOWERS/PrefabScenes/cloud.tscn" id="3_mp4mw"]
 [ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="4_t7o6m"]
-[ext_resource type="AudioStream" uid="uid://b24pcwhf2an63" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/watering_unwilt.ogg" id="5_dcjwd"]
 [ext_resource type="Resource" uid="uid://wa0jawp4obka" path="res://FRESH-FLOWERS/Resources/stage1.tres" id="5_hdg4c"]
 [ext_resource type="AudioStream" uid="uid://d1v2a7w8d8ry3" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/watering threshold reached_unwilt.ogg" id="6_3fsdn"]
 [ext_resource type="Resource" uid="uid://mjr65n7vu26e" path="res://FRESH-FLOWERS/Resources/stage_2.tres" id="6_yq7km"]
@@ -52,7 +51,7 @@ name = "watering"
 bus = ""
 volume = 0.0
 pitch = 1.0
-streams = Array[AudioStream]([ExtResource("5_dcjwd"), ExtResource("12_0ufuk")])
+streams = Array[AudioStream]([ExtResource("12_0ufuk")])
 
 [sub_resource type="Resource" id="Resource_a88or"]
 script = ExtResource("4_t7o6m")
@@ -191,7 +190,7 @@ bus = "SFX"
 events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResource("Resource_a88or"), SubResource("Resource_xr3dh"), SubResource("Resource_14tu3"), SubResource("Resource_gvs7c"), SubResource("Resource_rjwjs"), SubResource("Resource_tu8dx")])
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CORE"]
-transform = Transform3D(0.841281, -0.0291302, 0.539813, -0.535954, -0.175542, 0.825796, 0.0707043, -0.984041, -0.163293, 0, 0, 0)
+transform = Transform3D(0.841281, -0.02913, 0.539812, -0.535954, -0.175542, 0.825795, 0.0707043, -0.984041, -0.163293, 0, -206.159, 0)
 light_energy = 1.303
 
 [node name="PartyLights3D" type="DirectionalLight3D" parent="CORE"]
@@ -206,7 +205,6 @@ light_volumetric_fog_energy = 2.024
 
 [node name="TutorialSkyIsland" parent="LEVEL" instance=ExtResource("2_vpoja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 120, 24.488)
-visible = false
 
 [node name="FogVolume" type="FogVolume" parent="LEVEL/TutorialSkyIsland"]
 transform = Transform3D(6.77826, 0, 0, 0, 0.996119, 0, 0, 0, 17.7411, 0, -2.89602, -11.0333)
@@ -250,7 +248,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69288, -2.8491, 11.9741)
 stem_name = "chords"
 
 [node name="midground" parent="LEVEL" instance=ExtResource("15_my2j6")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00473046, 32.9973, -0.00626111)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.00473046, 103.166, -0.00626111)
 
 [node name="LOCKS" type="Node3D" parent="LEVEL"]
 
