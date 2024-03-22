@@ -1,15 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckt0iiu7qn6d"]
+[gd_scene load_steps=8 format=3 uid="uid://ckt0iiu7qn6d"]
 
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_20o7n"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/waterable/bird_cube.gd" id="2_j4u4v"]
-[ext_resource type="Texture2D" uid="uid://dysfwn70vna0x" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/Final Marigolds/Marigold_Pink.png" id="3_ht032"]
-[ext_resource type="Texture2D" uid="uid://1g5oid1mxy0q" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/Final Marigolds/Marigold_Wilted.png" id="4_qqtr8"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyr2r"]
-albedo_texture = ExtResource("3_ht032")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bybl"]
-albedo_texture = ExtResource("4_qqtr8")
+[ext_resource type="Material" uid="uid://c0mbu7gdfv6ij" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/helen/bird_happy.tres" id="3_s362g"]
+[ext_resource type="Material" uid="uid://co3ysj0hlua6w" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/helen/bird01.tres" id="4_fqmi5"]
 
 [sub_resource type="Animation" id="Animation_7peow"]
 resource_name = "flying"
@@ -41,8 +35,9 @@ _data = {
 
 [node name="BirdCube" instance=ExtResource("1_20o7n")]
 script = ExtResource("2_j4u4v")
-my_happy_material = SubResource("StandardMaterial3D_eyr2r")
-my_sad_material = SubResource("StandardMaterial3D_6bybl")
+speed = 0.1
+my_happy_material = ExtResource("3_s362g")
+my_sad_material = ExtResource("4_fqmi5")
 
 [node name="FlowerCubeMesh" parent="CollisionShape3D" index="0"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.19471e-13, 0.00748644, 5.19471e-13)
