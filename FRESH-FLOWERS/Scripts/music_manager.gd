@@ -5,6 +5,7 @@ class_name GardenMusicManager
 # two area 3ds, one for stage 1 music, stage 2 music, 
 @export var stage1_area : Area3D
 @export var stage2_area : Area3D
+@export var player : Player
 
 
 # when entered / exits, triggers stage 1 vs stage 2 respectively
@@ -53,6 +54,8 @@ func play_stage_3():
 	tween.tween_property(regular_light, "light_color", color_to_tween, time_to_music_start)
 	tween.tween_property(regular_light, "light_energy", 4.0, time_to_music_start)
 	MusicManager.play("Music", "Stage3", time_to_music_start)
+	player.jump_strength = 25
+	player.movement_speed = 25
 	
 
 # two dictionaries per stage, to remember which stems are playing
