@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://beqhfvynh63sr"]
+
+[ext_resource type="Texture2D" uid="uid://wyp8fpyj6f0f" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/Final SnapDragons/SnapDragon_Wilted.png" id="1_615x5"]
+
+[resource]
+albedo_texture = ExtResource("1_615x5")

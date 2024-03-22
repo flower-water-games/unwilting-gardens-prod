@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://esee0wvnx22t"]
+
+[ext_resource type="Texture2D" uid="uid://1g5oid1mxy0q" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/Final Marigolds/Marigold_Wilted.png" id="1_f0xwm"]
+
+[resource]
+albedo_texture = ExtResource("1_f0xwm")

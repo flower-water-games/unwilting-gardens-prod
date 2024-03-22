@@ -73,6 +73,7 @@ func fade_out(duration):
 	fade_tween.tween_property(color_rect, "color:a", 1, duration)
 
 func _process(delta):
+
 	if stage3_in_progress and not game_over:
 		if music_manager.is_stage_3_complete():
 			print("GAME OVER!")
@@ -82,5 +83,6 @@ func _process(delta):
 			await get_tree().create_timer(15).timeout
 			credits.show()
 	elif music_manager.is_stage_1_complete() and music_manager.is_stage_2_complete():
-		# game over
+		print("STAGE 3 IN PROGRESS")
 		stage3_in_progress = true
+		stage3()

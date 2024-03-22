@@ -93,6 +93,11 @@ func _physics_process(delta):
 	
 	# if position.y < -10:
 	# 	get_tree().reload_current_scene()
+		# if i ever fall off the stage by going y < -1000, make my y = 1000
+	if position.y < -200:
+		position.x = 0
+		position.z = 0
+		position.y = 200
 
 
 # Mouse movement
