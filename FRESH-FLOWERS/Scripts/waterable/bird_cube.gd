@@ -8,7 +8,7 @@ func _ready():
 	super()
 	path_follow = get_parent()
 
-var speed = 0.1
+@export var speed = 0.1
 
 var move_to_next = false
 var movement_completed = false
