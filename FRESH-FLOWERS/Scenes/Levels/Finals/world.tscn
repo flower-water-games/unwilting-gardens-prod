@@ -1,9 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://dfbl84vbchpd0"]
+[gd_scene load_steps=26 format=3 uid="uid://dfbl84vbchpd0"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_1tq7c"]
+[ext_resource type="ArrayMesh" uid="uid://cfj3thtuhkb56" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj" id="2_2opqk"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_a5kbo"]
 [ext_resource type="Resource" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/data.hterrain" id="2_kn31j"]
+[ext_resource type="Texture2D" uid="uid://1x56rbisljno" path="res://FRESH-FLOWERS/Assets/PB/textures/top.png" id="3_jf23s"]
 [ext_resource type="Texture2D" uid="uid://b3g8bp47o1i8s" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world_slot0_albedo_bump.png" id="4_lrlqv"]
+[ext_resource type="Texture2D" uid="uid://2iul7ofofkxp" path="res://FRESH-FLOWERS/Assets/PB/textures/tree_2.png" id="4_qn2rd"]
+[ext_resource type="Texture2D" uid="uid://dkqjvcof8dq51" path="res://FRESH-FLOWERS/Assets/PB/textures/stem_3.png" id="5_6pctm"]
 [ext_resource type="Texture2D" uid="uid://c556q8nntm8lv" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world_slot0_normal_roughness.png" id="5_e7r52"]
 [ext_resource type="Texture2D" uid="uid://du4bnw3h12m62" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world_slot1_albedo_bump.png" id="5_hj8us"]
 [ext_resource type="Texture2D" uid="uid://bkeco1hqyudga" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world_slot1_normal_roughness.png" id="7_dbugo"]
@@ -15,6 +19,23 @@
 [ext_resource type="PackedScene" uid="uid://c36d2u5ykulxg" path="res://FRESH-FLOWERS/PrefabScenes/waterables/flower_cube.tscn" id="10_xcaku"]
 [ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="11_hojgf"]
 [ext_resource type="PackedScene" uid="uid://be823dx66y1qn" path="res://FRESH-FLOWERS/PrefabScenes/mar10_refill_spout.tscn" id="18_57h4b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxrif"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_jf23s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3llnt"]
+shading_mode = 0
+albedo_texture = ExtResource("4_qn2rd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yy0e"]
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("5_6pctm")
+refraction_scale = -0.49
+detail_blend_mode = 1
 
 [sub_resource type="Resource" id="Resource_lybcn"]
 script = ExtResource("2_a5kbo")
@@ -46,6 +67,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.896, 18.3236, 232.505)
 
 [node name="flower_cube6" parent="." instance=ExtResource("10_xcaku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.529, 18.3236, 236.526)
+
+[node name="block tree" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.703, 36.6891, 167.732)
+
+[node name="top" type="MeshInstance3D" parent="block tree"]
+transform = Transform3D(0.912138, 0.00168937, 0.967936, 4.63886e-16, 1.33, -0.00232129, -0.967938, 0.00159198, 0.912137, 0, 4.27034, 0)
+mesh = ExtResource("2_2opqk")
+surface_material_override/0 = SubResource("StandardMaterial3D_dxrif")
+
+[node name="top2" type="MeshInstance3D" parent="block tree"]
+transform = Transform3D(2.17714, -0.000842401, -0.48266, 7.77794e-16, 2.23, -0.00389208, 0.48266, 0.00379982, 2.17714, 0, 7.50053, 0)
+mesh = ExtResource("2_2opqk")
+surface_material_override/0 = SubResource("StandardMaterial3D_dxrif")
+
+[node name="middle_branch" type="MeshInstance3D" parent="block tree"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.00924, 0)
+mesh = ExtResource("2_2opqk")
+surface_material_override/0 = SubResource("StandardMaterial3D_3llnt")
+
+[node name="midle_stem" type="MeshInstance3D" parent="block tree"]
+transform = Transform3D(0.104202, -1.71042e-16, -0.386189, 1.39515e-16, 0.4, -1.39515e-16, 0.386189, -9.83534e-17, 0.104202, 0, -0.157224, 0)
+mesh = ExtResource("2_2opqk")
+surface_material_override/0 = SubResource("StandardMaterial3D_4yy0e")
+
+[node name="midle_stem4" type="MeshInstance3D" parent="block tree"]
+transform = Transform3D(0.350523, -1.89469e-16, -0.192701, 1.39515e-16, 0.4, -1.39515e-16, 0.192701, 5.5046e-17, 0.350523, 0, 0.651375, 0)
+mesh = ExtResource("2_2opqk")
+surface_material_override/0 = SubResource("StandardMaterial3D_4yy0e")
+
+[node name="midle_stem2" type="MeshInstance3D" parent="block tree"]
+transform = Transform3D(-0.121852, -1.44565e-16, -0.536332, 1.91833e-16, 0.55, -1.91833e-16, 0.536332, -2.29566e-16, -0.121852, 0, -1.03234, 0)
+mesh = ExtResource("2_2opqk")
+surface_material_override/0 = SubResource("StandardMaterial3D_4yy0e")
+
+[node name="midle_stem3" type="MeshInstance3D" parent="block tree"]
+transform = Transform3D(0.738128, 0, -0.703966, 0, 1.02, 0, 0.703966, 0, 0.738128, 0, -2.49814, 0)
+mesh = ExtResource("2_2opqk")
+surface_material_override/0 = SubResource("StandardMaterial3D_4yy0e")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("1_1tq7c")
@@ -79,13 +138,15 @@ shader_params/u_instance_scale = Vector3(0.3, 0.3, 0.3)
 shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_hojgf")
 
-[node name="@Node3D@57943" type="Node3D" parent="HTerrain"]
+[node name="_Node3D_57943" type="Node3D" parent="HTerrain"]
 script = ExtResource("8_yjy5s")
 layer_index = 1
+texture = ExtResource("5_6pctm")
+instance_mesh = ExtResource("2_2opqk")
 shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
-shader_params/u_instance_scale = null
+shader_params/u_instance_scale = Vector3(0.4, 3, 0.4)
 shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_hojgf")
 
