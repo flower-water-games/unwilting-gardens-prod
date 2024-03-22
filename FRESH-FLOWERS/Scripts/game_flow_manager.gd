@@ -65,6 +65,7 @@ func stage3():
 	stage2_area.queue_free()
 	music_manager.play_stage_3()
 
+
 # FADE IN AND OUT
 func fade_in(duration):
 	fade_tween.tween_property(color_rect, "color:a", 0, duration)
