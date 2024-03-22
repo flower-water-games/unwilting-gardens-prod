@@ -196,8 +196,9 @@ light_energy = 5.246
 light_indirect_energy = 2.972
 light_volumetric_fog_energy = 2.024
 
-[node name="GameFlowManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("world_node", "tutorial_island", "tutorial_end_hitbox", "stage1_area", "stage2_area", "music_manager")]
+[node name="GameFlowManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("player", "world_node", "tutorial_island", "tutorial_end_hitbox", "stage1_area", "stage2_area", "music_manager")]
 script = ExtResource("21_ha3s4")
+player = NodePath("../PLAYER")
 world_node = NodePath("../../World")
 tutorial_island = NodePath("../../LEVEL/TutorialSkyIsland")
 tutorial_end_hitbox = NodePath("../../LEVEL/TutorialSkyIsland/Area3D")
