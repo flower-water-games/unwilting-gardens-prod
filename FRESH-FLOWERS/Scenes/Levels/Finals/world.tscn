@@ -138,17 +138,31 @@ shader_params/u_instance_scale = Vector3(0.3, 0.3, 0.3)
 shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_hojgf")
 
-[node name="_Node3D_57943" type="Node3D" parent="HTerrain"]
-script = ExtResource("8_yjy5s")
-layer_index = 1
-texture = ExtResource("5_6pctm")
-instance_mesh = ExtResource("2_2opqk")
-shader_params/u_globalmap_tint_bottom = null
-shader_params/u_globalmap_tint_top = null
-shader_params/u_bottom_ao = null
-shader_params/u_instance_scale = Vector3(0.4, 3, 0.4)
-shader_params/u_roughness = null
-metadata/_editor_icon = ExtResource("11_hojgf")
+[node name="STAGE2 STEMCUBES" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.834, 34.1087, 311.137)
+
+[node name="StemCube" parent="STAGE2 STEMCUBES" instance=ExtResource("8_pb66j")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.62449, -2.05457, 34.9458)
+stem_name = "guira"
+
+[node name="StemCube3" parent="STAGE2 STEMCUBES" instance=ExtResource("8_pb66j")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 8.00412, -3.07628, 31.0192)
+stem_name = "gabechords"
+
+[node name="StemCube4" parent="STAGE2 STEMCUBES" instance=ExtResource("8_pb66j")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.75409, 4.79404, 51.8781)
+stem_name = "flute"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="STAGE2 STEMCUBES/StemCube4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.01158, 0)
+visible = false
+use_collision = true
+collision_layer = 15
+collision_mask = 15
+
+[node name="StemCube6" parent="STAGE2 STEMCUBES" instance=ExtResource("8_pb66j")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 8.67229, -3.07628, 22.6282)
+stem_name = "4-drumrack"
 
 [node name="STAGE1 STEMCUBES" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.986, 38.9893, 187.46)
