@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://c2cewko6fg3ve"]
 
 [ext_resource type="ArrayMesh" uid="uid://ch6sum20marj4" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj" id="1_8cff8"]
-[ext_resource type="Texture2D" uid="uid://6r0rfbcif47d" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/tree_2.png" id="2_3h1f7"]
-[ext_resource type="Texture2D" uid="uid://7062m4rwivfr" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/top.png" id="2_l6jf3"]
-[ext_resource type="Texture2D" uid="uid://vjky1i0p3e76" path="res://FRESH-FLOWERS/Assets/PB/textures/stem_3.png" id="4_h6j3o"]
+[ext_resource type="Texture2D" uid="uid://6r0rfbcif47d" path="res://FRESH-FLOWERS/Assets/PB/textures/tree_2.png" id="2_3h1f7"]
+[ext_resource type="Texture2D" uid="uid://7062m4rwivfr" path="res://FRESH-FLOWERS/Assets/PB/textures/top.png" id="2_l6jf3"]
+[ext_resource type="Texture2D" uid="uid://ofkv8w40aos" path="res://FRESH-FLOWERS/Assets/PB/textures/stem_3.png" id="4_h6j3o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxrif"]
 shading_mode = 0
