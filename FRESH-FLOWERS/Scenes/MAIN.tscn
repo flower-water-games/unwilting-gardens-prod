@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dhatmddsmnj2v"]
+[gd_scene load_steps=41 format=3 uid="uid://dhatmddsmnj2v"]
 
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
@@ -6,28 +6,27 @@
 [ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="3_1m4ba"]
 [ext_resource type="PackedScene" uid="uid://0ljc5m5p5j8w" path="res://FRESH-FLOWERS/PrefabScenes/cloud.tscn" id="3_mp4mw"]
 [ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="4_t7o6m"]
-[ext_resource type="AudioStream" uid="uid://8kmr3rk4h28r" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/watering_unwilt.ogg" id="5_dcjwd"]
 [ext_resource type="Resource" uid="uid://wa0jawp4obka" path="res://FRESH-FLOWERS/Resources/stage1.tres" id="5_hdg4c"]
-[ext_resource type="AudioStream" uid="uid://wpdue7i8v2mn" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/watering threshold reached_unwilt.ogg" id="6_3fsdn"]
+[ext_resource type="AudioStream" uid="uid://d1v2a7w8d8ry3" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/watering threshold reached_unwilt.ogg" id="6_3fsdn"]
 [ext_resource type="Resource" uid="uid://mjr65n7vu26e" path="res://FRESH-FLOWERS/Resources/stage_2.tres" id="6_yq7km"]
 [ext_resource type="Resource" uid="uid://buowkejaijh1" path="res://FRESH-FLOWERS/Resources/stage_3.tres" id="7_geqx2"]
-[ext_resource type="AudioStream" uid="uid://7h0qgnloxv6y" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Flowercube grow_unwilt.ogg" id="7_hjhgm"]
+[ext_resource type="AudioStream" uid="uid://dk4c3vrbatp8v" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Flowercube grow_unwilt.ogg" id="7_hjhgm"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/music_manager.gd" id="8_05bny"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_jkygg"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="9_x4ck7"]
 [ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="10_nkh7x"]
-[ext_resource type="AudioStream" uid="uid://b170imlo0t5r7" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section2/Part 2 - MIX_Stage3.ogg" id="11_bpwi2"]
-[ext_resource type="AudioStream" uid="uid://ggltg6idoom3" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/watering_prototype2_unwilt.ogg" id="12_0ufuk"]
-[ext_resource type="AudioStream" uid="uid://co8hlc8u0oesa" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/running water_unwilted.ogg" id="12_etr3k"]
-[ext_resource type="PackedScene" uid="uid://bn8jq5sn8o5u3" path="res://FRESH-FLOWERS/Scenes/Levels/level_1.tscn" id="14_g0aa1"]
-[ext_resource type="PackedScene" uid="uid://b1m2agh5k1xhv" path="res://FRESH-FLOWERS/Scenes/Levels/level_2.tscn" id="15_7tpt6"]
-[ext_resource type="AudioStream" uid="uid://dqwohq1wi6s3g" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/refill can_unwilted.ogg" id="15_8ewx2"]
+[ext_resource type="AudioStream" uid="uid://cmkdr4dwnke6i" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section2/Part 2 - MIX_Stage3.ogg" id="11_bpwi2"]
+[ext_resource type="AudioStream" uid="uid://h6bxpluk8w3j" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/watering_prototype2_unwilt.ogg" id="12_0ufuk"]
+[ext_resource type="AudioStream" uid="uid://o8fm4ka6m2nt" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/running water_unwilted.ogg" id="12_etr3k"]
+[ext_resource type="AudioStream" uid="uid://ojge3ql56rbd" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/refill can_unwilted.ogg" id="15_8ewx2"]
 [ext_resource type="PackedScene" uid="uid://dfukf844u4vqi" path="res://FRESH-FLOWERS/PrefabScenes/midground/trees_and_water.tscn" id="15_my2j6"]
 [ext_resource type="PackedScene" uid="uid://dmbmayydxsy62" path="res://FRESH-FLOWERS/Scenes/Levels/dome.tscn" id="15_wqyjm"]
-[ext_resource type="AudioStream" uid="uid://c4tr7fqp7lqmg" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/empty watering can_unwilted.ogg" id="16_8grc2"]
+[ext_resource type="AudioStream" uid="uid://biagjs7tq35kp" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/empty watering can_unwilted.ogg" id="16_8grc2"]
 [ext_resource type="PackedScene" uid="uid://phxwn6amsqjq" path="res://FRESH-FLOWERS/PrefabScenes/wall.tscn" id="17_jas50"]
-[ext_resource type="AudioStream" uid="uid://c52t3yv5uromx" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/wind_unwilted.ogg" id="18_ne831"]
+[ext_resource type="AudioStream" uid="uid://bvmp2yd2w6481" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/wind_unwilted.ogg" id="18_ne831"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/game_flow_manager.gd" id="21_ha3s4"]
 [ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="21_u0vjh"]
+[ext_resource type="PackedScene" uid="uid://dfbl84vbchpd0" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world.tscn" id="29_eh6jf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_35j3x"]
 font_color = Color(0, 0, 0, 1)
@@ -51,7 +50,7 @@ name = "watering"
 bus = ""
 volume = 0.0
 pitch = 1.0
-streams = Array[AudioStream]([ExtResource("5_dcjwd"), ExtResource("12_0ufuk")])
+streams = Array[AudioStream]([ExtResource("12_0ufuk")])
 
 [sub_resource type="Resource" id="Resource_a88or"]
 script = ExtResource("4_t7o6m")
@@ -101,8 +100,14 @@ volume = 0.0
 pitch = 1.0
 streams = Array[AudioStream]([ExtResource("12_etr3k")])
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_00vpy"]
+size = Vector3(10, 1, 10)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ti4l8"]
-size = Vector3(40, 19.835, 47.9604)
+size = Vector3(644.822, 279.287, 318.524)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4sm4g"]
+size = Vector3(644.822, 147.834, 289.129)
 
 [node name="Main" type="Node3D"]
 
@@ -161,20 +166,11 @@ wieldable = NodePath("Head/Camera/Container/WateringCan")
 
 [node name="Cloud" parent="CORE" instance=ExtResource("3_mp4mw")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -38.1993, 36.9284, -10.8552)
+visible = false
 
-[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("stage1_area", "stage2_area", "stage_3", "stage1_lock", "tutorial_island", "player", "level_1", "level_2", "dome", "regular_light")]
+[node name="GardenMusicManager" type="Node3D" parent="CORE"]
 script = ExtResource("8_05bny")
-stage1_area = NodePath("../../LEVEL/Level1/Area3D")
-stage2_area = NodePath("../../LEVEL/Level2/Area3D")
-stage_3 = NodePath("../../LEVEL/Stage3")
-stage1_lock = NodePath("../../LEVEL/LOCKS/WALL4")
-tutorial_island = NodePath("../../LEVEL/TutorialSkyIsland")
-player = NodePath("../PLAYER")
-level_1 = NodePath("../../LEVEL/Level1")
-level_2 = NodePath("../../LEVEL/Level2")
-dome = NodePath("../../LEVEL/DOME")
 color_to_tween = Color(0.337255, 0, 0.901961, 1)
-regular_light = NodePath("../DirectionalLight3D")
 
 [node name="MusicBank" type="Node" parent="CORE/GardenMusicManager"]
 script = ExtResource("9_jkygg")
@@ -189,7 +185,7 @@ bus = "SFX"
 events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResource("Resource_a88or"), SubResource("Resource_xr3dh"), SubResource("Resource_14tu3"), SubResource("Resource_gvs7c"), SubResource("Resource_rjwjs"), SubResource("Resource_tu8dx")])
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CORE"]
-transform = Transform3D(0.841281, -0.0291302, 0.539813, -0.535954, -0.175542, 0.825796, 0.0707043, -0.984041, -0.163293, 0, 0, 0)
+transform = Transform3D(0.841281, -0.02913, 0.539812, -0.535954, -0.175542, 0.825795, 0.0707043, -0.984041, -0.163293, 0, -206.159, 0)
 light_energy = 1.303
 
 [node name="PartyLights3D" type="DirectionalLight3D" parent="CORE"]
@@ -200,38 +196,46 @@ light_energy = 5.246
 light_indirect_energy = 2.972
 light_volumetric_fog_energy = 2.024
 
+[node name="GameFlowManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("world_node", "tutorial_island", "tutorial_end_hitbox", "stage1_area", "stage2_area", "music_manager")]
+script = ExtResource("21_ha3s4")
+world_node = NodePath("../../World")
+tutorial_island = NodePath("../../LEVEL/TutorialSkyIsland")
+tutorial_end_hitbox = NodePath("../../LEVEL/TutorialSkyIsland/Area3D")
+stage1_area = NodePath("../../LEVEL/Level1Area")
+stage2_area = NodePath("../../LEVEL/Level2Area")
+music_manager = NodePath("../GardenMusicManager")
+
 [node name="LEVEL" type="Node3D" parent="."]
 
 [node name="TutorialSkyIsland" parent="LEVEL" instance=ExtResource("2_vpoja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 120, 24.488)
-visible = false
 
 [node name="FogVolume" type="FogVolume" parent="LEVEL/TutorialSkyIsland"]
 transform = Transform3D(6.77826, 0, 0, 0, 0.996119, 0, 0, 0, 17.7411, 0, -2.89602, -11.0333)
 
-[node name="DOME" parent="LEVEL" instance=ExtResource("15_wqyjm")]
-transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 13.1214, -1.07085, 26.3322)
+[node name="Area3D" type="Area3D" parent="LEVEL/TutorialSkyIsland"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.593322, -62.1211, -23.3639)
 
-[node name="Level1" parent="LEVEL" instance=ExtResource("14_g0aa1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0214282, -0.00998591, 0.0150852)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/TutorialSkyIsland/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.70934)
+shape = SubResource("BoxShape3D_00vpy")
 
-[node name="Area3D" type="Area3D" parent="LEVEL/Level1"]
+[node name="Level1Area" type="Area3D" parent="LEVEL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0214282, 18.6368, 0.0150852)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level1/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76953, -9.29761)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level1Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5112, -38.2484, -161.682)
 shape = SubResource("BoxShape3D_ti4l8")
 
-[node name="Level2" parent="LEVEL" instance=ExtResource("15_7tpt6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.11205)
+[node name="Level2Area" type="Area3D" parent="LEVEL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.6468, 25.2276)
 
-[node name="Area3D" type="Area3D" parent="LEVEL/Level2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.1155)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18701, 14.7805)
-shape = SubResource("BoxShape3D_ti4l8")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level2Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.6504, 34.2337, 176.896)
+shape = SubResource("BoxShape3D_4sm4g")
 
 [node name="Stage3" type="Node3D" parent="LEVEL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -734.58, 0)
 visible = false
 
 [node name="StemCube" parent="LEVEL/Stage3" instance=ExtResource("21_u0vjh")]
@@ -247,9 +251,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69288, -2.8491, 11.9741)
 stem_name = "chords"
 
 [node name="midground" parent="LEVEL" instance=ExtResource("15_my2j6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00473046, 11.8681, -0.00626111)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.00473046, 98.5171, -10.687)
 
 [node name="LOCKS" type="Node3D" parent="LEVEL"]
 
 [node name="WALL4" parent="LEVEL/LOCKS" instance=ExtResource("17_jas50")]
 transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.37245e-23, 0.600091, 6.84338)
+
+[node name="DOMETOPLEVEL" parent="." instance=ExtResource("15_wqyjm")]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, -10.1833, 40.2473, -57.1183)
+visible = false
+
+[node name="World" parent="." instance=ExtResource("29_eh6jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -206.469, 2.08165e-12, -243.256)

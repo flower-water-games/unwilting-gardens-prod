@@ -1,6 +1,6 @@
 [gd_resource type="Environment" load_steps=160 format=3 uid="uid://chtxyiji1i281"]
 
-[ext_resource type="Texture2D" uid="uid://chqky57d6bgji" path="res://FRESH-FLOWERS/Assets/192.jpg" id="1_ws8oh"]
+[ext_resource type="Texture2D" uid="uid://i3shhj6qhgbn" path="res://FRESH-FLOWERS/Assets/192.jpg" id="1_ws8oh"]
 
 [sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_tnq3l"]
 
@@ -1536,7 +1536,6 @@ ssil_normal_rejection = 0.11
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_bounce_feedback = 0.07
-glow_enabled = true
 glow_intensity = 1.38
 glow_strength = 1.18
 glow_blend_mode = 1

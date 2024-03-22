@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b5iivmi4hqlws"]
+[gd_scene load_steps=25 format=3 uid="uid://b5iivmi4hqlws"]
 
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_pkp2k"]
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_q6g3r"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckt0iiu7qn6d" path="res://FRESH-FLOWERS/PrefabScenes/waterables/bird_cube.tscn" id="2_n44rl"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="3_smlsn"]
 [ext_resource type="PackedScene" uid="uid://0ljc5m5p5j8w" path="res://FRESH-FLOWERS/PrefabScenes/cloud.tscn" id="6_ky1ll"]
-[ext_resource type="Shader" path="res://FRESH-FLOWERS/Scenes/TestScenes/outline.gdshader" id="8_rry8c"]
+[ext_resource type="PackedScene" uid="uid://dlxwcah42sy08" path="res://FRESH-FLOWERS/PrefabScenes/shader_scene.tscn" id="7_dne0f"]
 [ext_resource type="Shader" path="res://FRESH-FLOWERS/Scenes/TestScenes/bubble.gdshader" id="10_t4sdk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ek35x"]
@@ -245,10 +245,7 @@ material = SubResource("FogMaterial_076l3")
 
 [node name="Cloud" parent="." instance=ExtResource("6_ky1ll")]
 
-[node name="SHADER_SCENE" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31216, 0)
-material_override = SubResource("ShaderMaterial_wo00g")
-mesh = SubResource("QuadMesh_6kb7o")
+[node name="SHADER_SCENE" parent="." instance=ExtResource("7_dne0f")]
 
 [node name="bubble" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0.759052, 1.8861, -3.21027)

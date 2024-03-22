@@ -122,5 +122,5 @@ material_override = SubResource("StandardMaterial3D_iaq8c")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="new water" type="MeshInstance3D" parent="."]
-transform = Transform3D(-46.8327, 0.347286, 5.18377, 0.148853, 47.085, -1.80965, -5.19326, -1.78224, -46.799, 1, -24.4874, 1)
+transform = Transform3D(-46.8327, 0.00737026, 5.18377, 0.148853, 0.999257, -1.80965, -5.19326, -0.0378234, -46.799, 1, -24.4874, 1)
 mesh = SubResource("PlaneMesh_xsu2v")

@@ -1,0 +1,120 @@
+[gd_scene load_steps=19 format=3 uid="uid://dfbl84vbchpd0"]
+
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_1tq7c"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="2_a5kbo"]
+[ext_resource type="Resource" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/data.hterrain" id="2_kn31j"]
+[ext_resource type="Texture2D" uid="uid://b3g8bp47o1i8s" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world_slot0_albedo_bump.png" id="4_lrlqv"]
+[ext_resource type="Texture2D" uid="uid://c556q8nntm8lv" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world_slot0_normal_roughness.png" id="5_e7r52"]
+[ext_resource type="Texture2D" uid="uid://du4bnw3h12m62" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world_slot1_albedo_bump.png" id="5_hj8us"]
+[ext_resource type="Texture2D" uid="uid://bkeco1hqyudga" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world_slot1_normal_roughness.png" id="7_dbugo"]
+[ext_resource type="PackedScene" uid="uid://dmbmayydxsy62" path="res://FRESH-FLOWERS/Scenes/Levels/dome.tscn" id="8_gi4g8"]
+[ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="8_pb66j"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="8_yjy5s"]
+[ext_resource type="ArrayMesh" uid="uid://b3s57rrjvf8l" path="res://FRESH-FLOWERS/Resources/grass_mesh.tres" id="9_gkj1g"]
+[ext_resource type="Material" uid="uid://oroysy4sr13h" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/Final Beauty/wilted_beauty.tres" id="9_pl5q0"]
+[ext_resource type="PackedScene" uid="uid://c36d2u5ykulxg" path="res://FRESH-FLOWERS/PrefabScenes/waterables/flower_cube.tscn" id="10_xcaku"]
+[ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="11_hojgf"]
+[ext_resource type="PackedScene" uid="uid://be823dx66y1qn" path="res://FRESH-FLOWERS/PrefabScenes/mar10_refill_spout.tscn" id="18_57h4b"]
+
+[sub_resource type="Resource" id="Resource_lybcn"]
+script = ExtResource("2_a5kbo")
+mode = 0
+textures = [[ExtResource("4_lrlqv"), ExtResource("5_hj8us")], [ExtResource("5_e7r52"), ExtResource("7_dbugo")]]
+
+[sub_resource type="Gradient" id="Gradient_tkcdg"]
+offsets = PackedFloat32Array(0.539801, 1)
+colors = PackedColorArray(0.346798, 0.685092, 0.274016, 1, 1, 0.607843, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5uaag"]
+gradient = SubResource("Gradient_tkcdg")
+fill_from = Vector2(0.542735, 0.0213675)
+fill_to = Vector2(0.534188, 0.99359)
+
+[node name="World" type="Node3D"]
+
+[node name="flower_cube2" parent="." instance=ExtResource("10_xcaku")]
+transform = Transform3D(0.968293, 0, 0.249817, 0, 1, 0, -0.249817, 0, 0.968293, 183.896, 18.3236, 225.52)
+
+[node name="flower_cube3" parent="." instance=ExtResource("10_xcaku")]
+transform = Transform3D(0.97975, 0, 0.200223, 0, 1, 0, -0.200223, 0, 0.97975, 186.984, 18.3236, 236.526)
+
+[node name="flower_cube4" parent="." instance=ExtResource("10_xcaku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.896, 18.3236, 239.45)
+
+[node name="flower_cube5" parent="." instance=ExtResource("10_xcaku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.896, 18.3236, 232.505)
+
+[node name="flower_cube6" parent="." instance=ExtResource("10_xcaku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.529, 18.3236, 236.526)
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_1tq7c")
+ambient_wind = 0.2
+_terrain_data = ExtResource("2_kn31j")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 13
+collision_mask = 13
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_lybcn")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20.0
+shader_params/u_depth_blending = false
+shader_params/u_triplanar = true
+shader_params/u_tile_reduction = Vector4(2.08165e-12, -1.48, 2.08165e-12, 2.08165e-12)
+
+[node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("8_yjy5s")
+texture = SubResource("GradientTexture2D_5uaag")
+density = 1.177
+instance_mesh = ExtResource("9_gkj1g")
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3(0.3, 0.3, 0.3)
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("11_hojgf")
+
+[node name="@Node3D@57943" type="Node3D" parent="HTerrain"]
+script = ExtResource("8_yjy5s")
+layer_index = 1
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = null
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("11_hojgf")
+
+[node name="STAGE1 STEMCUBES" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.986, 38.9893, 187.46)
+
+[node name="StemCube" parent="STAGE1 STEMCUBES" instance=ExtResource("8_pb66j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3318, 7.38396, -93.4753)
+stem_name = "piano"
+my_sad_material = ExtResource("9_pl5q0")
+
+[node name="StemCube3" parent="STAGE1 STEMCUBES" instance=ExtResource("8_pb66j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.735, 21.2764, -33.4655)
+stem_name = "flute"
+my_sad_material = ExtResource("9_pl5q0")
+
+[node name="StemCube4" parent="STAGE1 STEMCUBES" instance=ExtResource("8_pb66j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.8995, 38.2302, 8.78995)
+stem_name = "string"
+my_sad_material = ExtResource("9_pl5q0")
+
+[node name="DOMESOUTH" parent="." instance=ExtResource("8_gi4g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.765, 28.7977, 305.969)
+
+[node name="RefillSpout" parent="." instance=ExtResource("18_57h4b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.812, 15.4224, 242.364)
+
+[node name="RefillSpout2" parent="." instance=ExtResource("18_57h4b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 306.543, 23.7811, 317.211)
+
+[node name="DOMENORTH" parent="." instance=ExtResource("8_gi4g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 199.453, 40.167, 162.26)

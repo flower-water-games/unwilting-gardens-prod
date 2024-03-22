@@ -26,9 +26,9 @@ void fragment() {
 	vec2 xy = (2.0 * uv);
 	xy.x = xy.x - 1.0;
 	xy.y = xy.y - 1.0;
-	
+
 	xy *= zoom;
-	
+
 	// Dynamic crop adjustment. -0.5 is equavalent to 'none'.
 	float d_adjust = -0.5;
 	if (dynamic_crop) {
