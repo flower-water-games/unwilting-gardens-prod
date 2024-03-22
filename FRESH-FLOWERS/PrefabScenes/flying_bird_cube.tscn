@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddy1k62r4t20u"]
+
+[ext_resource type="PackedScene" uid="uid://ckt0iiu7qn6d" path="res://FRESH-FLOWERS/PrefabScenes/waterables/bird_cube.tscn" id="1_mpmgo"]
+[ext_resource type="Material" uid="uid://co3ysj0hlua6w" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/helen/bird01.tres" id="2_eiusi"]
+[ext_resource type="Material" uid="uid://di8hto4rv2yvh" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/Final SnapDragons/snapdragon_wilted.tres" id="3_knvio"]
+
+[sub_resource type="Curve3D" id="Curve3D_ffx66"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.08165e-12, 2.08165e-12, 2.08165e-12, 0, 0, 0, 0, 0, 0, 2.08165e-12, 1.39427, -12.9133),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Path3D" type="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.0854)
+curve = SubResource("Curve3D_ffx66")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+transform = Transform3D(0.999997, 0, 0, 0, 0.994214, -0.107347, 0, 0.107347, 0.994214, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="BirdCube" parent="PathFollow3D" instance=ExtResource("1_mpmgo")]
+transform = Transform3D(1, 0, 0, 0, 1, -1.66407e-10, 0, -3.61377e-09, 1, 0, -0.529895, -8.68029)
+my_happy_material = ExtResource("2_eiusi")
+my_sad_material = ExtResource("3_knvio")

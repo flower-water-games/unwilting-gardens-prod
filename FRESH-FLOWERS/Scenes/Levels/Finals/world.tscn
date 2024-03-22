@@ -79,6 +79,16 @@ shader_params/u_instance_scale = Vector3(0.3, 0.3, 0.3)
 shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("11_hojgf")
 
+[node name="@Node3D@57943" type="Node3D" parent="HTerrain"]
+script = ExtResource("8_yjy5s")
+layer_index = 1
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = null
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("11_hojgf")
+
 [node name="STAGE1 STEMCUBES" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.986, 38.9893, 187.46)
 
@@ -93,7 +103,7 @@ stem_name = "flute"
 my_sad_material = ExtResource("9_pl5q0")
 
 [node name="StemCube4" parent="STAGE1 STEMCUBES" instance=ExtResource("8_pb66j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.8995, 47.5235, 8.78995)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.8995, 38.2302, 8.78995)
 stem_name = "string"
 my_sad_material = ExtResource("9_pl5q0")
 
@@ -102,6 +112,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.765, 28.7977, 305.969)
 
 [node name="RefillSpout" parent="." instance=ExtResource("18_57h4b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.812, 15.4224, 242.364)
+
+[node name="RefillSpout2" parent="." instance=ExtResource("18_57h4b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 306.543, 23.7811, 317.211)
 
 [node name="DOMENORTH" parent="." instance=ExtResource("8_gi4g8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 199.453, 40.167, 162.26)
