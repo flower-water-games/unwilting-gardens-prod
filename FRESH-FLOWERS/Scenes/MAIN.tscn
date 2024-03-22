@@ -165,8 +165,7 @@ wieldable = NodePath("Head/Camera/Container/WateringCan")
 [node name="WorldEnvironment" parent="CORE" instance=ExtResource("2_u1ghk")]
 
 [node name="Cloud" parent="CORE" instance=ExtResource("3_mp4mw")]
-transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -38.1993, 36.9284, -10.8552)
-visible = false
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -38.1993, 54.5861, -10.8552)
 
 [node name="GardenMusicManager" type="Node3D" parent="CORE"]
 script = ExtResource("8_05bny")

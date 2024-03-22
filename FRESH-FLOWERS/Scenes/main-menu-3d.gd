@@ -3,6 +3,7 @@ class_name MainMenu3D
 
 @onready var color_rect : ColorRect = %ColorRect
 @export var button : Button
+@export var main_menu_music : AudioStreamPlayer
 
 
 func fade_in(duration):
@@ -16,8 +17,10 @@ func fade_out(duration):
 
 func exit_fade():
 	button.hide()
+	main_menu_music.stop()
 	fade_out(2)
 
 func _ready() -> void:
 	button.pressed.connect(exit_fade)
 	fade_in(1)
+	main_menu_music.play()
