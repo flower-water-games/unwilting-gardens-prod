@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7rrtouxl4kms"]
+
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scenes/loading_screen.gd" id="1_oeb75"]
+[ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="2_f64no"]
+[ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/fit_to_window.gd" id="3_l174k"]
+[ext_resource type="Texture2D" uid="uid://dy08wt6mk8rdh" path="res://FRESH-FLOWERS/Assets/game-icon.png" id="4_yschs"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oeb75")
+scene_path = "res://FRESH-FLOWERS/Scenes/MAIN.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+auto_translate_mode = 1
+light_mask = 3
+visibility_layer = 1048575
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FitToWindow" parent="." node_paths=PackedStringArray("set_node") instance=ExtResource("2_f64no")]
+script = ExtResource("3_l174k")
+set_node = NodePath("..")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_yschs")
+expand_mode = 2
