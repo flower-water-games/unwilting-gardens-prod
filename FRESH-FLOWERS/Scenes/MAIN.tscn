@@ -104,7 +104,7 @@ streams = Array[AudioStream]([ExtResource("12_etr3k")])
 size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ti4l8"]
-size = Vector3(644.822, 279.287, 318.524)
+size = Vector3(644.822, 257.662, 355.29)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4sm4g"]
 size = Vector3(644.822, 147.834, 289.129)
@@ -160,6 +160,8 @@ label_settings = SubResource("LabelSettings_35j3x")
 
 [node name="PLAYER" parent="CORE" node_paths=PackedStringArray("wieldable") instance=ExtResource("1_sxd3a")]
 transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 2.08165e-12, 120, 23)
+movement_speed = 25
+jump_strength = 25
 wieldable = NodePath("Head/Camera/Container/WateringCan")
 
 [node name="WorldEnvironment" parent="CORE" instance=ExtResource("2_u1ghk")]
@@ -225,7 +227,7 @@ shape = SubResource("BoxShape3D_00vpy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0214282, 18.6368, 0.0150852)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level1Area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5112, -38.2484, -161.682)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5112, -49.0608, -143.299)
 shape = SubResource("BoxShape3D_ti4l8")
 
 [node name="Level2Area" type="Area3D" parent="LEVEL"]

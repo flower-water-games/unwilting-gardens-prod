@@ -169,8 +169,7 @@ curve = SubResource("Curve3D_ffx66")
 transform = Transform3D(0.999997, 0, 0, 0, 0.994214, -0.107347, 0, 0.107347, 0.994214, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="BirdCube" parent="Path3D/PathFollow3D" instance=ExtResource("3_5rxwc")]
-transform = Transform3D(1, 0, 0, 0, 1, -1.66407e-10, 0, -3.61377e-09, 1, 0, -0.529895, -8.68029)
-speed = 0.1
+transform = Transform3D(-0.998355, 0.00615504, 0.0570061, -0.00615504, 0.976972, -0.213279, -0.0570061, -0.213279, -0.975327, 0, -0.529895, -8.68029)
 
 [node name="grass" type="Node3D" parent="."]
 transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 2.89982, 0.276496, -12.967)
