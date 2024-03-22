@@ -22,7 +22,8 @@ class_name GameFlowManager
 # CREDITS
 @onready var credits : Label = %CREDITS
 
-
+var stage3_in_progress = false
+var game_over = false
 # ready
 func _ready():
 	world_node.hide()
@@ -72,16 +73,14 @@ func fade_out(duration):
 	fade_tween.tween_property(color_rect, "color:a", 1, duration)
 
 func _process(delta):
-	if music_manager.is_stage_1_complete() and music_manager.is_stage_2_complete():
-		# game over
-		print('gameover')
+	if stage3_in_progress and not game_over:
 		if music_manager.is_stage_3_complete():
 			print("GAME OVER!")
+			game_over = true
 			MusicManager.stop(5)
 			MusicManager.play("Music", "finale", 5)
 			await get_tree().create_timer(15).timeout
-	# # if I press number 1 on keyboard, activate stage2, for testing
-	# if Input.is_key_pressed(KEY_2):
-	# 	stage2()
-	if Input.is_key_pressed(KEY_3):
-		stage3()
+			credits.show()
+	elif music_manager.is_stage_1_complete() and music_manager.is_stage_2_complete():
+		# game over
+		stage3_in_progress = true
