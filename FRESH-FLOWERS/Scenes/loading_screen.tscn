@@ -26,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.980392, 0.972549, 0.964706, 1)
 
 [node name="FitToWindow" parent="." node_paths=PackedStringArray("set_node") instance=ExtResource("2_f64no")]
 script = ExtResource("3_l174k")
@@ -38,8 +39,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
+offset_left = -62.0
+offset_top = -64.0
+offset_right = -12.0
+offset_bottom = -14.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("4_yschs")
