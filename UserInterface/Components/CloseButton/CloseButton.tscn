@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://px53y6ltnb6a" path="res://UserInterface/Themes/RoundButton/RoundButton.tres" id="1_7lpb7"]
 [ext_resource type="Script" path="res://UserInterface/Components/CloseButton/CloseButton.gd" id="1_n2qcu"]
-[ext_resource type="Texture2D" path="res://Assets/UIControls/Close-X-24x24.png" id="2_b3adh"]
+[ext_resource type="Texture2D" uid="uid://p1tk6286nbr5" path="res://Assets/UIControls/Close-X-24x24.png" id="2_b3adh"]
 
 [node name="CloseButton" type="Button"]
 z_index = 1
