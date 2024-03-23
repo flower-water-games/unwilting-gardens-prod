@@ -1,7 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://cro0vww3oijjx"]
+[gd_scene load_steps=29 format=3 uid="uid://cro0vww3oijjx"]
 
 [ext_resource type="PackedScene" uid="uid://5pjvp6vhf3n5" path="res://FRESH-FLOWERS/PrefabScenes/waterables/base_cube.tscn" id="1_orwpc"]
+[ext_resource type="Material" uid="uid://be1u4r0l58lld" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/Final Marigolds/marigold_yellow.tres" id="2_sf6gm"]
 [ext_resource type="PackedScene" uid="uid://ckt0iiu7qn6d" path="res://FRESH-FLOWERS/PrefabScenes/waterables/bird_cube.tscn" id="3_5rxwc"]
+[ext_resource type="Material" uid="uid://beqhfvynh63sr" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/Final Marigolds/marigold_wilted.tres" id="3_81l6o"]
 [ext_resource type="Shader" uid="uid://cusitmsu80qnd" path="res://FRESH-FLOWERS/Assets/PB/GrassShader.tres" id="3_r051o"]
 [ext_resource type="PackedScene" uid="uid://be823dx66y1qn" path="res://FRESH-FLOWERS/PrefabScenes/mar10_refill_spout.tscn" id="4_mrmf1"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Assets/PB/Cloud_spawner.gd" id="5_blvpx"]
@@ -160,6 +162,8 @@ material = SubResource("StandardMaterial3D_ek35x")
 
 [node name="FlowerCube" parent="." instance=ExtResource("1_orwpc")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.021, 0.274887, -14.5161)
+my_happy_material = ExtResource("2_sf6gm")
+my_sad_material = ExtResource("3_81l6o")
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.0854)
@@ -170,6 +174,7 @@ transform = Transform3D(0.999997, 0, 0, 0, 0.994214, -0.107347, 0, 0.107347, 0.9
 
 [node name="BirdCube" parent="Path3D/PathFollow3D" instance=ExtResource("3_5rxwc")]
 transform = Transform3D(-0.998355, 0.00615504, 0.0570061, -0.00615504, 0.976972, -0.213279, -0.0570061, -0.213279, -0.975327, 0, -0.529895, -8.68029)
+main_menu_bird = false
 
 [node name="grass" type="Node3D" parent="."]
 transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 2.89982, 0.276496, -12.967)
