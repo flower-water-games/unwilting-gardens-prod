@@ -1,8 +1,10 @@
-[gd_scene load_steps=38 format=3 uid="uid://dhatmddsmnj2v"]
+[gd_scene load_steps=41 format=3 uid="uid://dhatmddsmnj2v"]
 
+[ext_resource type="PackedScene" uid="uid://wq10uq6j3rj0" path="res://UserInterface/Components/FitToWindow/FitToWindow.tscn" id="1_2fqwa"]
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
 [ext_resource type="PackedScene" uid="uid://cro0vww3oijjx" path="res://FRESH-FLOWERS/Scenes/Levels/tutorial_sky_island.tscn" id="2_vpoja"]
+[ext_resource type="Texture2D" uid="uid://bdydfmiw3s6fu" path="res://FRESH-FLOWERS/Assets/logo.png" id="2_xgywy"]
 [ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="3_1m4ba"]
 [ext_resource type="PackedScene" uid="uid://0ljc5m5p5j8w" path="res://FRESH-FLOWERS/PrefabScenes/cloud.tscn" id="3_mp4mw"]
 [ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="4_t7o6m"]
@@ -25,8 +27,13 @@
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/game_flow_manager.gd" id="21_ha3s4"]
 [ext_resource type="PackedScene" uid="uid://dfbl84vbchpd0" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world.tscn" id="29_eh6jf"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igln0"]
+bg_color = Color(0.741176, 0.937255, 0.709804, 0.321569)
+
 [sub_resource type="LabelSettings" id="LabelSettings_35j3x"]
+font_size = 22
 font_color = Color(0, 0, 0, 1)
+outline_size = 1
 
 [sub_resource type="Resource" id="Resource_virrn"]
 script = ExtResource("10_nkh7x")
@@ -111,6 +118,56 @@ size = Vector3(644.822, 147.834, 289.129)
 [node name="UI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
+[node name="CREDITS" type="Control" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FitToWindow" parent="UI/CREDITS" node_paths=PackedStringArray("set_node") instance=ExtResource("1_2fqwa")]
+set_node = NodePath("../VBoxContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CREDITS"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -258.5
+offset_right = 477.0
+offset_bottom = 258.5
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/CREDITS/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_xgywy")
+expand_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/CREDITS/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_igln0")
+
+[node name="CREDITS" type="Label" parent="UI/CREDITS/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(34.82, 2.08165e-12)
+layout_mode = 2
+text = "thank you for playing <3
+
+unwilting
+
+game development by cm
+art direction, environment, shader, visual style by pauljamesbarbato
+flowers by jenna, jesse, paul, and helen
+dome art and animation by chris
+birds by helen
+music and sound design by william lambert
+music and logo design by houis
+"
+label_settings = SubResource("LabelSettings_35j3x")
+autowrap_mode = 3
+
 [node name="ColorRect" type="ColorRect" parent="UI"]
 unique_name_in_owner = true
 light_mask = 3
@@ -120,38 +177,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="CREDITS" type="Label" parent="UI"]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 40.0
-offset_top = -24.5
-offset_right = 325.0
-offset_bottom = 24.5
-grow_vertical = 2
-text = "thank you for playing <3
-
-unwilting
-
-music by william lambert and gabriel
-
-sound design by william lambert
-
-art direction by paul
-
-flowers by helen, jenna, jesse, and paul
-
-birds by helen
-
-game design and development by cm
-
-dome and animation by chris
-
-"
-label_settings = SubResource("LabelSettings_35j3x")
 
 [node name="CORE" type="Node3D" parent="."]
 

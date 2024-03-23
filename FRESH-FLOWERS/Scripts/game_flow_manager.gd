@@ -21,7 +21,7 @@ class_name GameFlowManager
 @onready var color_rect : ColorRect = %ColorRect
 
 # CREDITS
-@onready var credits : Label = %CREDITS
+@onready var credits : Control = %CREDITS
 
 var stage3_in_progress = false
 var game_over = false
@@ -90,7 +90,7 @@ func _process(delta):
 			print("GAME OVER!")
 			game_over = true
 			MusicManager.play("Music", "finale", 1)
-			await get_tree().create_timer(12).timeout
+			await get_tree().create_timer(14).timeout
 			credits.show()
 	
 	if music_manager.is_stage_1_complete() and music_manager.is_stage_2_complete() and not game_over and not stage3_in_progress:
