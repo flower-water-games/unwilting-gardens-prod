@@ -205,7 +205,8 @@ events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResour
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CORE"]
 transform = Transform3D(0.841281, -0.02913, 0.539812, -0.535954, -0.175542, 0.825795, 0.0707043, -0.984041, -0.163293, 0, -206.159, 0)
-light_energy = 1.303
+light_color = Color(0.996078, 0.631373, 0.65098, 1)
+light_energy = 2.546
 
 [node name="PartyLights3D" type="DirectionalLight3D" parent="CORE"]
 transform = Transform3D(0.841281, -0.0291302, 0.539813, -0.535954, -0.175542, 0.825796, 0.0707043, -0.984041, -0.163293, 0, 0, 0)
