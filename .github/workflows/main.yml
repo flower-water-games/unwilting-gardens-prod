@@ -11,6 +11,8 @@ env:
 
 # Whenever a tag push matching pattern "v*" then run the job
 on: 
+    release:
+      types: [created]
     push:
         # only run on branch names /main and /playtest
         branches:
@@ -84,7 +86,7 @@ jobs:
               itchUsername: ${{ env.ITCH_USERNAME }}
               itchGameId: ${{ env.ITCH_GAMEID }}
               buildChannel: windows
-              buildNumber: windows:${{ github.run_number }}
+              buildNumber: unwilting-${{ github.ref}}
     deploy_mac:
       needs: export_game
       runs-on: ubuntu-latest
@@ -108,7 +110,7 @@ jobs:
               itchUsername: ${{ env.ITCH_USERNAME }}
               itchGameId: ${{ env.ITCH_GAMEID }}
               buildChannel: macOS
-              buildNumber: mac:${{ github.run_number }}
+              buildNumber: unwilting-${{ github.ref}}
     deploy_linux:
       needs: export_game
       runs-on: ubuntu-latest
@@ -126,4 +128,4 @@ jobs:
               itchUsername: ${{ env.ITCH_USERNAME }}
               itchGameId: ${{ env.ITCH_GAMEID }}
               buildChannel: linux
-              buildNumber: linux:${{ github.run_number }}
+              buildNumber: unwilting-${{ github.ref}}
