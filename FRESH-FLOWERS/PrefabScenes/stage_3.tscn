@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dak4tuasg6css"]
+
+[ext_resource type="PackedScene" uid="uid://clhki2jaqqksr" path="res://FRESH-FLOWERS/PrefabScenes/waterables/stem_cube.tscn" id="1_mcc48"]
+
+[node name="Stage3" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -734.58, 0)
+
+[node name="StemCube" parent="." instance=ExtResource("1_mcc48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.739242, -2.55462, 12.6216)
+stem_name = "lead"
+
+[node name="StemCube2" parent="." instance=ExtResource("1_mcc48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.91882, -2.8491, 8.89158)
+stem_name = "lead1"
+
+[node name="StemCube3" parent="." instance=ExtResource("1_mcc48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69288, -2.8491, 11.9741)
+stem_name = "chords"
