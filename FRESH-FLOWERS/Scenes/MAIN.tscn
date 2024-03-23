@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dhatmddsmnj2v"]
+[gd_scene load_steps=38 format=3 uid="uid://dhatmddsmnj2v"]
 
 [ext_resource type="PackedScene" uid="uid://cv1sl0ejnwbfm" path="res://FRESH-FLOWERS/PrefabScenes/player.tscn" id="1_sxd3a"]
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
@@ -23,7 +23,6 @@
 [ext_resource type="AudioStream" uid="uid://biagjs7tq35kp" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/empty watering can_unwilted.ogg" id="16_8grc2"]
 [ext_resource type="AudioStream" uid="uid://bvmp2yd2w6481" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/wind_unwilted.ogg" id="18_ne831"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/game_flow_manager.gd" id="21_ha3s4"]
-[ext_resource type="PackedScene" uid="uid://dak4tuasg6css" path="res://FRESH-FLOWERS/PrefabScenes/stage_3.tscn" id="23_ny2py"]
 [ext_resource type="PackedScene" uid="uid://dfbl84vbchpd0" path="res://FRESH-FLOWERS/Scenes/Levels/Finals/world.tscn" id="29_eh6jf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_35j3x"]
@@ -165,8 +164,9 @@ wieldable = NodePath("Head/Camera/Container/WateringCan")
 [node name="Cloud" parent="CORE" instance=ExtResource("3_mp4mw")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -38.1993, 119.559, 40.1061)
 
-[node name="GardenMusicManager" type="Node3D" parent="CORE"]
+[node name="GardenMusicManager" type="Node3D" parent="CORE" node_paths=PackedStringArray("player")]
 script = ExtResource("8_05bny")
+player = NodePath("../PLAYER")
 color_to_tween = Color(0.337255, 0, 0.901961, 1)
 
 [node name="MusicBank" type="Node" parent="CORE/GardenMusicManager"]
@@ -231,8 +231,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.6468, 25.2276)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LEVEL/Level2Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.6504, 34.2337, 176.896)
 shape = SubResource("BoxShape3D_4sm4g")
-
-[node name="Stage3" parent="LEVEL" instance=ExtResource("23_ny2py")]
 
 [node name="midground" parent="LEVEL" instance=ExtResource("15_my2j6")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.00473046, 98.5171, -10.687)
