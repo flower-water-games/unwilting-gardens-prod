@@ -14,6 +14,7 @@ class_name GameFlowManager
 @export var music_manager : GardenMusicManager
 
 
+@onready var stage3_node : Node3D = world_node.get_node("%Stage3")
 # UI FADE IN
 # @export_category("UI Fade In")
 @onready var fade_tween = get_tree().create_tween()
@@ -65,6 +66,7 @@ func stage3():
 	stage2_area.queue_free()
 	music_manager.play_stage_3()
 	stage3_in_progress = true
+	stage3_node.position.y = 0.591
 
 
 # FADE IN AND OUT
@@ -75,6 +77,10 @@ func fade_out(duration):
 	fade_tween.tween_property(color_rect, "color:a", 1, duration)
 
 func _process(delta):
+	# if key 3 is presssed, enable stage 3
+	if Input.is_key_pressed(KEY_3) and not stage3_in_progress and not game_over:
+		stage3()
+
 	if stage3_in_progress and not game_over:
 		if music_manager.is_stage_3_complete():
 			print("GAME OVER!")
@@ -82,7 +88,8 @@ func _process(delta):
 			MusicManager.play("Music", "finale", 1)
 			await get_tree().create_timer(12).timeout
 			credits.show()
-	elif music_manager.is_stage_1_complete() and music_manager.is_stage_2_complete():
+	
+	if music_manager.is_stage_1_complete() and music_manager.is_stage_2_complete() and not game_over and not stage3_in_progress:
 		print("STAGE 3 IN PROGRESS")
 		if not stage3_in_progress and not game_over:
 			stage3()
