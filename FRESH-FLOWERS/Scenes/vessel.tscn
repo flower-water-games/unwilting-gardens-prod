@@ -1,0 +1,94 @@
+[gd_scene load_steps=17 format=3 uid="uid://doxc5fypy7828"]
+
+[ext_resource type="PackedScene" uid="uid://oxc1h3yjana6" path="res://FRESH-FLOWERS/Assets/PB/vessel.glb" id="1_24f85"]
+[ext_resource type="Texture2D" uid="uid://bxp2jiivqtsqn" path="res://FRESH-FLOWERS/Assets/PB/textures/body_normal.001.png" id="2_bmdkd"]
+[ext_resource type="Texture2D" uid="uid://byuin6m47gdt1" path="res://FRESH-FLOWERS/Assets/PB/textures/spout.png" id="3_qrtux"]
+[ext_resource type="Texture2D" uid="uid://vlm07ybca1oe" path="res://FRESH-FLOWERS/Assets/PB/textures/normal_frontspout.png" id="4_8vxip"]
+[ext_resource type="Texture2D" uid="uid://dqrufaooclh4p" path="res://FRESH-FLOWERS/Assets/PB/textures/spout_rough.png" id="5_6muff"]
+[ext_resource type="Texture2D" uid="uid://dle7mkysgadvu" path="res://FRESH-FLOWERS/Assets/PB/textures/sphererough3.png" id="6_7ca3k"]
+[ext_resource type="Texture2D" uid="uid://c2xc8pri3fdtv" path="res://FRESH-FLOWERS/Assets/PB/textures/srough.png" id="6_gwefj"]
+[ext_resource type="Texture2D" uid="uid://btyj5l84goy2r" path="res://FRESH-FLOWERS/Assets/PB/textures/handle_normal.png" id="6_nvd2e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6hcm"]
+transparency = 1
+albedo_color = Color(1, 0.545098, 1, 1)
+albedo_texture_msdf = true
+metallic = 0.5
+metallic_specular = 0.3
+normal_enabled = true
+normal_scale = -0.5
+normal_texture = ExtResource("2_bmdkd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sup24"]
+albedo_color = Color(1, 0.576471, 1, 1)
+albedo_texture_msdf = true
+normal_enabled = true
+normal_scale = 2.03
+normal_texture = ExtResource("3_qrtux")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jhtx"]
+albedo_color = Color(0.458824, 0.356863, 1, 1)
+roughness_texture = ExtResource("5_6muff")
+normal_enabled = true
+normal_texture = ExtResource("4_8vxip")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wrv58"]
+noise_type = 3
+frequency = 0.026
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p5egx"]
+in_3d_space = true
+noise = SubResource("FastNoiseLite_wrv58")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n58hx"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+depth_draw_mode = 1
+albedo_color = Color(0.396078, 0.768627, 1, 1)
+albedo_texture_msdf = true
+metallic = 0.6
+metallic_texture = ExtResource("6_7ca3k")
+roughness = 0.8
+normal_scale = -7.49
+normal_texture = ExtResource("6_gwefj")
+heightmap_scale = 7.775
+refraction_scale = 1.0
+refraction_texture = SubResource("NoiseTexture2D_p5egx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ecwqv"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qiv2v"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.478431, 0.45098, 1, 1)
+albedo_texture_msdf = true
+metallic_specular = 0.37
+normal_enabled = true
+normal_scale = -2.29
+normal_texture = ExtResource("6_nvd2e")
+
+[node name="vessel" instance=ExtResource("1_24f85")]
+
+[node name="squarebody_001" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_j6hcm")
+
+[node name="spout_001" parent="." index="1"]
+transform = Transform3D(0.251755, 0.0331014, 0.00613955, 0.19408, -0.0430933, -0.00273291, -0.00976172, -0.00308639, 0.104004, 0.584031, 0.100023, -0.0298001)
+material_override = SubResource("StandardMaterial3D_sup24")
+
+[node name="watering_001" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_3jhtx")
+
+[node name="water sphere_001" parent="." index="3"]
+transform = Transform3D(0.218219, -0.00923923, 0.0144566, 0.00956092, 0.218635, -0.00458977, -0.0142459, 0.0052071, 0.218366, -0.0200156, 0.187973, 0.00389402)
+material_override = SubResource("StandardMaterial3D_n58hx")
+
+[node name="ui_001" parent="." index="4"]
+transform = Transform3D(1.17555, 0.171394, 0.0702311, -0.169843, 1.17748, -0.0306427, -0.0739018, 0.020246, 1.18759, -0.039032, -0.116142, 0.00292781)
+material_override = SubResource("StandardMaterial3D_ecwqv")
+
+[node name="handle_001" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_qiv2v")

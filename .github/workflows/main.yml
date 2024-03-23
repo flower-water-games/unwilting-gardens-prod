@@ -14,7 +14,7 @@ on:
     push:
         # only run on branch names /main and /playtest
         branches:
-            - main
+            # - main
             - playtest
             - workflows
 #

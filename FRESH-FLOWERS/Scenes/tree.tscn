@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2cewko6fg3ve"]
+
+[ext_resource type="ArrayMesh" uid="uid://ch6sum20marj4" path="res://FRESH-FLOWERS/Assets/PB/textures/cube_textures/default/cube.obj" id="1_8cff8"]
+[ext_resource type="Texture2D" uid="uid://6r0rfbcif47d" path="res://FRESH-FLOWERS/Assets/PB/textures/tree_2.png" id="2_3h1f7"]
+[ext_resource type="Texture2D" uid="uid://7062m4rwivfr" path="res://FRESH-FLOWERS/Assets/PB/textures/top.png" id="2_l6jf3"]
+[ext_resource type="Texture2D" uid="uid://ofkv8w40aos" path="res://FRESH-FLOWERS/Assets/PB/textures/stem_3.png" id="4_h6j3o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxrif"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_l6jf3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3llnt"]
+shading_mode = 0
+albedo_texture = ExtResource("2_3h1f7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yy0e"]
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_h6j3o")
+refraction_scale = -0.49
+detail_blend_mode = 1
+
+[node name="block tree" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0194283, 2.66927, -0.00322342)
+
+[node name="top" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.912138, 0.00168937, 0.967936, 4.63886e-16, 1.33, -0.00232129, -0.967938, 0.00159198, 0.912137, 0, 4.27034, 0)
+mesh = ExtResource("1_8cff8")
+surface_material_override/0 = SubResource("StandardMaterial3D_dxrif")
+
+[node name="top2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.17714, -0.000842401, -0.48266, 7.77794e-16, 2.23, -0.00389208, 0.48266, 0.00379982, 2.17714, 0, 7.50053, 0)
+mesh = ExtResource("1_8cff8")
+surface_material_override/0 = SubResource("StandardMaterial3D_dxrif")
+
+[node name="middle_branch" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.00924, 0)
+mesh = ExtResource("1_8cff8")
+surface_material_override/0 = SubResource("StandardMaterial3D_3llnt")
+
+[node name="midle_stem" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.104202, -1.71042e-16, -0.386189, 1.39515e-16, 0.4, -1.39515e-16, 0.386189, -9.83534e-17, 0.104202, 0, -0.157224, 0)
+mesh = ExtResource("1_8cff8")
+surface_material_override/0 = SubResource("StandardMaterial3D_4yy0e")
+
+[node name="midle_stem4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.350523, -1.89469e-16, -0.192701, 1.39515e-16, 0.4, -1.39515e-16, 0.192701, 5.5046e-17, 0.350523, 0, 0.651375, 0)
+mesh = ExtResource("1_8cff8")
+surface_material_override/0 = SubResource("StandardMaterial3D_4yy0e")
+
+[node name="midle_stem2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.121852, -1.44565e-16, -0.536332, 1.91833e-16, 0.55, -1.91833e-16, 0.536332, -2.29566e-16, -0.121852, 0, -1.03234, 0)
+mesh = ExtResource("1_8cff8")
+surface_material_override/0 = SubResource("StandardMaterial3D_4yy0e")
+
+[node name="midle_stem3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.738128, 0, -0.703966, 0, 1.02, 0, 0.703966, 0, 0.738128, 0, -2.49814, 0)
+mesh = ExtResource("1_8cff8")
+surface_material_override/0 = SubResource("StandardMaterial3D_4yy0e")
