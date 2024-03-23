@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c0mbu7gdfv6ij"]
 
-[ext_resource type="Texture2D" uid="uid://bc12fhl1pli5w" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/helen/Bird 01 HC flight.png" id="1_m13s7"]
+[ext_resource type="Texture2D" uid="uid://dmmpxctr447mx" path="res://FRESH-FLOWERS/Assets/prod-flowers/PNG/helen/Bird 04 flying.png" id="1_2qjln"]
 
 [resource]
-albedo_texture = ExtResource("1_m13s7")
+albedo_texture = ExtResource("1_2qjln")
