@@ -69,7 +69,7 @@ func stage3():
 	stage3_node.position.y = 0.591
 	# for each rigidbody in the stage 3 node, set the gravity to 1
 	for child in stage3_node.get_children():
-		if child is RigidBody:
+		if child is RigidBody3D:
 			child.gravity_scale = 1
 
 
