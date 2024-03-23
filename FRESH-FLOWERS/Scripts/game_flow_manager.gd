@@ -67,6 +67,10 @@ func stage3():
 	music_manager.play_stage_3()
 	stage3_in_progress = true
 	stage3_node.position.y = 0.591
+	# for each rigidbody in the stage 3 node, set the gravity to 1
+	for child in stage3_node.get_children():
+		if child is RigidBody:
+			child.gravity_scale = 1
 
 
 # FADE IN AND OUT
