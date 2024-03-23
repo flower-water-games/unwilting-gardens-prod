@@ -62,16 +62,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00473046, 0, -0.00626111)
 
 [node name="tree" type="MeshInstance3D" parent="."]
 transform = Transform3D(11.3396, -6.28486, 19.7558, 11.455, 20.6679, -2.04691e-14, -17.2793, 9.57689, 12.9648, 80.7268, 21.371, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_1w5ej")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="tree2" type="MeshInstance3D" parent="."]
 transform = Transform3D(12.2247, -20.2221, 0, 20.2221, 12.2247, 0, 0, 0, 23.63, -87.1649, 44.2918, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_1w5ej")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="tree3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.016797, -1.34925, 3.3, 4.20911, 0.29376, 0.117474, -0.353727, 3.55962, 1.24115, 0.0236468, 52.4156, 5.89554)
+visible = false
 material_override = SubResource("StandardMaterial3D_1w5ej")
 mesh = SubResource("BoxMesh_dotgc")
 
@@ -83,11 +86,13 @@ shape = SubResource("ConvexPolygonShape3D_82rbk")
 
 [node name="tree4" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.20389, -3.64566, 10.185, 9.44781, 5.71143, 6.07948e-09, -5.26909, 8.71609, 4.26005, -35.5137, 44.2918, 169.395)
+visible = false
 material_override = SubResource("StandardMaterial3D_1w5ej")
 mesh = SubResource("BoxMesh_dotgc")
 
 [node name="tree5" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.20389, -3.64566, 10.185, 9.44781, 5.71143, 6.07948e-09, -5.26909, 8.71609, 4.26005, -232.109, 28.0125, 26.7052)
+visible = false
 material_override = SubResource("StandardMaterial3D_1w5ej")
 mesh = SubResource("BoxMesh_dotgc")
 
