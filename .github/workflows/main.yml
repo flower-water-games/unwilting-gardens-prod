@@ -2,7 +2,7 @@ env:
   ITCH_USERNAME: carlos-michael
   ITCH_GAMEID: unwilting
   GODOT_VERSION: 4.3
-  GODOT_BUILD : dev4
+  GODOT_BUILD : dev4-mono
   # TODO this is not working yet, web step is just commented out
   DEPLOY_WEB: false
   DEPLOY_MAC: true
@@ -41,8 +41,8 @@ jobs:
           uses: firebelley/godot-export@v5.2.1
           with:
             # Defining all the required inputs
-            godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/${{ env.GODOT_BUILD }}/Godot_v${{ env.GODOT_VERSION }}-${{ env.GODOT_BUILD }}_linux.x86_64.zip
-            godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/${{ env.GODOT_VERSION }}/${{ env.GODOT_BUILD }}/Godot_v${{ env.GODOT_VERSION }}-${{ env.GODOT_BUILD }}_export_templates.tpz
+            godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.3/dev4/mono/Godot_v4.3-dev4_mono_linux_x86_64.zip
+            godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.3/dev4/mono/Godot_v4.3-dev4_mono_export_templates.tpz
             relative_project_path: ./
             archive_output: true
         - uses: actions/upload-artifact@v3
