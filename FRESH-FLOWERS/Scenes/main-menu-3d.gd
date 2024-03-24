@@ -15,13 +15,13 @@ func _ready() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(camera, "position:z", 4.7, 1.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(camera, "position:z", 4.6, 2.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.set_loops(-1)
+	# tween.set_loops(-1)
 
 	var new_tween = get_tree().create_tween()
 	new_tween.tween_property(camera, "rotation_degrees:x", -1.5, .4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	new_tween.tween_property(camera, "rotation_degrees:x", -.9, .4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	new_tween.tween_property(camera, "rotation_degrees:x", 0, 2.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	new_tween.set_loops(-1)
+	# new_tween.set_loops(-1)
 
 
 func fade_in(duration):
