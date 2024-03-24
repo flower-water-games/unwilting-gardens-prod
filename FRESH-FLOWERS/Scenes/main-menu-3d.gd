@@ -5,6 +5,7 @@ class_name MainMenu3D
 @export var button : Button
 @export var main_menu_music : AudioStreamPlayer
 @export var camera : Camera3D
+@export var version_label : Label
 
 func _ready() -> void:
 	button.pressed.connect(exit_fade)
@@ -22,6 +23,8 @@ func _ready() -> void:
 	new_tween.tween_property(camera, "rotation_degrees:x", -.9, .4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	new_tween.tween_property(camera, "rotation_degrees:x", 0, 2.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	# new_tween.set_loops(-1)
+	# get version number from project settings
+	version_label.text = "unwilting-" + ProjectSettings.get_setting("application/config/version")
 
 
 func fade_in(duration):
