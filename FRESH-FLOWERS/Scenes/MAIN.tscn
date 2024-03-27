@@ -199,7 +199,7 @@ tracks = Array[ExtResource("9_x4ck7")]([ExtResource("5_hdg4c"), ExtResource("6_y
 
 [node name="SoundBank" type="Node" parent="CORE/GardenMusicManager"]
 script = ExtResource("3_1m4ba")
-label = "sfx"
+label = "player"
 bus = "SFX"
 events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResource("Resource_a88or"), SubResource("Resource_xr3dh"), SubResource("Resource_14tu3"), SubResource("Resource_gvs7c"), SubResource("Resource_rjwjs"), SubResource("Resource_tu8dx")])
 
