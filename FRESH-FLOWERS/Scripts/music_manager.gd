@@ -9,7 +9,7 @@ class_name GardenMusicManager
 # when entered / exits, triggers stage 1 vs stage 2 respectively
 func _ready():
 	# connect sound manager loaded
-	SoundManager.connect("loaded", on_sound_manager_load)
+	SoundManager.loaded.connect(on_sound_manager_load)
 	
 
 
