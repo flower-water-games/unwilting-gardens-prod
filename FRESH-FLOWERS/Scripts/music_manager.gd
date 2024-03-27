@@ -9,12 +9,11 @@ class_name GardenMusicManager
 # when entered / exits, triggers stage 1 vs stage 2 respectively
 func _ready():
 	# connect sound manager loaded
-	SoundManager.loaded.connect(on_sound_manager_load)
+	await get_tree().create_timer(1.0).timeout
+	SoundManager.play("player", "wind")
 	
 
 
-func on_sound_manager_load():
-	SoundManager.play("player", "wind")
 
 
 func play_stage_1():
