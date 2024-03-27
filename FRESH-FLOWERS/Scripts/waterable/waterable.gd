@@ -36,6 +36,7 @@ func _on_watering_timer_timeout():
 func _ready():
 	flower_cube_mesh.material_override = my_sad_material
 	# await  one second
+	await get_tree().create_timer(3.0).timeout
 	on_sound_manager_load()
 	setup_watering_timer()
 

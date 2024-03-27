@@ -4,18 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://blygiqdb50c45" path="res://FRESH-FLOWERS/PrefabScenes/world_environment.tscn" id="2_u1ghk"]
 [ext_resource type="PackedScene" uid="uid://cro0vww3oijjx" path="res://FRESH-FLOWERS/Scenes/Levels/tutorial_sky_island.tscn" id="2_vpoja"]
 [ext_resource type="Texture2D" uid="uid://bdydfmiw3s6fu" path="res://FRESH-FLOWERS/Assets/logo.png" id="2_xgywy"]
-[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="3_1m4ba"]
 [ext_resource type="PackedScene" uid="uid://0ljc5m5p5j8w" path="res://FRESH-FLOWERS/PrefabScenes/cloud.tscn" id="3_mp4mw"]
-[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="4_t7o6m"]
 [ext_resource type="Resource" uid="uid://wa0jawp4obka" path="res://FRESH-FLOWERS/Resources/stage1.tres" id="5_hdg4c"]
 [ext_resource type="AudioStream" uid="uid://d1v2a7w8d8ry3" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/watering threshold reached_unwilt.ogg" id="6_3fsdn"]
 [ext_resource type="Resource" uid="uid://mjr65n7vu26e" path="res://FRESH-FLOWERS/Resources/stage_2.tres" id="6_yq7km"]
 [ext_resource type="Resource" uid="uid://buowkejaijh1" path="res://FRESH-FLOWERS/Resources/stage_3.tres" id="7_geqx2"]
 [ext_resource type="AudioStream" uid="uid://dk4c3vrbatp8v" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Flowercube grow_unwilt.ogg" id="7_hjhgm"]
 [ext_resource type="Script" path="res://FRESH-FLOWERS/Scripts/music_manager.gd" id="8_05bny"]
-[ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="9_jkygg"]
-[ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="9_x4ck7"]
-[ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="10_nkh7x"]
 [ext_resource type="AudioStream" uid="uid://cmkdr4dwnke6i" path="res://FRESH-FLOWERS/Assets/Audio/Music/OGG Stage 3/Section2/Part 2 - MIX_Stage3.ogg" id="11_bpwi2"]
 [ext_resource type="AudioStream" uid="uid://h6bxpluk8w3j" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/Ogg sfx_13 mar/watering_prototype2_unwilt.ogg" id="12_0ufuk"]
 [ext_resource type="AudioStream" uid="uid://o8fm4ka6m2nt" path="res://FRESH-FLOWERS/Assets/Audio/Music/sfx/running water_unwilted.ogg" id="12_etr3k"]
@@ -34,21 +29,121 @@ font_size = 22
 font_color = Color(0, 0, 0, 1)
 outline_size = 1
 
+[sub_resource type="GDScript" id="GDScript_yu4uj"]
+script/source = "class_name MusicBank
+extends Node
+## A container used to store & group music tracks in your scene.
+
+
+## This bank's unique identifier.
+@export var label: String
+
+## The bus to use for all tracks played from this bank.[br][br]
+## [b]Note:[/b] this will override the bus set in your project settings (Audio/Manager/Music/Bank)
+@export var bus: String
+
+## The underlying process mode for all tracks played from this bank.
+@export var mode: Node.ProcessMode
+
+## The collection of tracks associated with this bank.
+@export var tracks: Array[MusicTrackResource]
+"
+
+[sub_resource type="GDScript" id="GDScript_ot278"]
+script/source = "class_name MusicTrackResource
+extends Resource
+## A container used to store the details of a music track and all of its corresponding stems.
+
+
+## This track's unique identifier within the scope of the bank it belongs to.
+@export var name: String = \"\"
+
+## The bus to use for this particular track.[br][br]
+## [b]Note:[/b] this will override the bus set on the bank, or in your project settings (Audio/Manager/Music/Bank)
+@export var bus: String = \"\"
+
+## The collection of stems that make up this track.
+@export var stems: Array[MusicStemResource]
+"
+
+[sub_resource type="GDScript" id="GDScript_xsd17"]
+script/source = "class_name MusicStemResource
+extends Resource
+## A container used to store the details of one particular music track's stem.
+
+
+## This stem's unique identifier within the scope of the track it belongs to.
+@export var name: String = \"\"
+
+## Whether this stem will start playing automatically when the track starts.
+@export var enabled: bool = false
+
+## The volume of the stem.
+@export_range(-80.0, 6.0, 0.1, \"suffix:dB\") var volume: float = 0.0
+
+## The audio stream associated with this stem.
+@export var stream: AudioStream
+"
+
 [sub_resource type="Resource" id="Resource_virrn"]
-script = ExtResource("10_nkh7x")
+script = SubResource("GDScript_xsd17")
 name = ""
 enabled = true
 volume = 0.0
 stream = ExtResource("11_bpwi2")
 
 [sub_resource type="Resource" id="Resource_5f0kd"]
-script = ExtResource("9_x4ck7")
+script = SubResource("GDScript_ot278")
 name = "finale"
 bus = ""
-stems = Array[ExtResource("10_nkh7x")]([SubResource("Resource_virrn")])
+stems = Array[SubResource("GDScript_xsd17")]([SubResource("Resource_virrn")])
+
+[sub_resource type="GDScript" id="GDScript_f2f8p"]
+script/source = "class_name SoundBank
+extends Node
+## A container used to store & group sound events in your scene.
+
+
+## This bank's unique identifier.
+@export var label: String
+
+## The bus to use for all sound events in this bank.[br][br]
+## [b]Note:[/b] this will override the bus set in your project settings (Audio/Manager/Sound/Bank)
+@export var bus: String
+
+## The underlying process mode for all sound events in this bank.
+@export var mode: Node.ProcessMode
+
+## The collection of sound events associated with this bank.
+@export var events: Array[SoundEventResource]
+"
+
+[sub_resource type="GDScript" id="GDScript_coxpx"]
+script/source = "class_name SoundEventResource
+extends Resource
+## The container used to store the details of a sound event.
+
+
+## This sound event's unique identifier.
+@export var name: String = \"\"
+
+## The bus to use for all sound events in this bank.[br][br]
+## [b]Note:[/b] this will override the bus set in this events sound bank, 
+## or your project settings (Audio/Manager/Sound/Bank)
+@export var bus: String = \"\"
+
+## The volume of the sound event.
+@export_range(-80.0, 6.0, 0.1, \"suffix:dB\") var volume: float = 0.0
+
+## The pitch of the sound event.
+@export var pitch: float = 1.0
+
+## The collection of audio streams (variations) associated with this sound event.
+@export var streams: Array[AudioStream]
+"
 
 [sub_resource type="Resource" id="Resource_rxla4"]
-script = ExtResource("4_t7o6m")
+script = SubResource("GDScript_coxpx")
 name = "watering"
 bus = ""
 volume = 0.0
@@ -56,7 +151,7 @@ pitch = 1.0
 streams = Array[AudioStream]([ExtResource("12_0ufuk")])
 
 [sub_resource type="Resource" id="Resource_a88or"]
-script = ExtResource("4_t7o6m")
+script = SubResource("GDScript_coxpx")
 name = "watered"
 bus = ""
 volume = 0.0
@@ -64,7 +159,7 @@ pitch = 1.0
 streams = Array[AudioStream]([ExtResource("6_3fsdn")])
 
 [sub_resource type="Resource" id="Resource_xr3dh"]
-script = ExtResource("4_t7o6m")
+script = SubResource("GDScript_coxpx")
 name = "complete"
 bus = ""
 volume = 0.0
@@ -72,7 +167,7 @@ pitch = 1.0
 streams = Array[AudioStream]([ExtResource("7_hjhgm")])
 
 [sub_resource type="Resource" id="Resource_14tu3"]
-script = ExtResource("4_t7o6m")
+script = SubResource("GDScript_coxpx")
 name = "wind"
 bus = ""
 volume = 4.44089e-15
@@ -80,7 +175,7 @@ pitch = 1.0
 streams = Array[AudioStream]([ExtResource("18_ne831")])
 
 [sub_resource type="Resource" id="Resource_gvs7c"]
-script = ExtResource("4_t7o6m")
+script = SubResource("GDScript_coxpx")
 name = "refill"
 bus = ""
 volume = 0.0
@@ -88,7 +183,7 @@ pitch = 1.0
 streams = Array[AudioStream]([ExtResource("15_8ewx2")])
 
 [sub_resource type="Resource" id="Resource_rjwjs"]
-script = ExtResource("4_t7o6m")
+script = SubResource("GDScript_coxpx")
 name = "empty"
 bus = ""
 volume = 0.6
@@ -96,7 +191,7 @@ pitch = 1.0
 streams = Array[AudioStream]([ExtResource("16_8grc2")])
 
 [sub_resource type="Resource" id="Resource_tu8dx"]
-script = ExtResource("4_t7o6m")
+script = SubResource("GDScript_coxpx")
 name = "water-flow"
 bus = ""
 volume = 0.0
@@ -192,16 +287,16 @@ player = NodePath("../PLAYER")
 color_to_tween = Color(0.337255, 0, 0.901961, 1)
 
 [node name="MusicBank" type="Node" parent="CORE/GardenMusicManager"]
-script = ExtResource("9_jkygg")
+script = SubResource("GDScript_yu4uj")
 label = "Music"
 bus = "Music"
-tracks = Array[ExtResource("9_x4ck7")]([ExtResource("5_hdg4c"), ExtResource("6_yq7km"), ExtResource("7_geqx2"), SubResource("Resource_5f0kd")])
+tracks = Array[SubResource("GDScript_ot278")]([ExtResource("5_hdg4c"), ExtResource("6_yq7km"), ExtResource("7_geqx2"), SubResource("Resource_5f0kd")])
 
 [node name="SoundBank" type="Node" parent="CORE/GardenMusicManager"]
-script = ExtResource("3_1m4ba")
+script = SubResource("GDScript_f2f8p")
 label = "player"
 bus = "SFX"
-events = Array[ExtResource("4_t7o6m")]([SubResource("Resource_rxla4"), SubResource("Resource_a88or"), SubResource("Resource_xr3dh"), SubResource("Resource_14tu3"), SubResource("Resource_gvs7c"), SubResource("Resource_rjwjs"), SubResource("Resource_tu8dx")])
+events = Array[SubResource("GDScript_coxpx")]([SubResource("Resource_rxla4"), SubResource("Resource_a88or"), SubResource("Resource_xr3dh"), SubResource("Resource_14tu3"), SubResource("Resource_gvs7c"), SubResource("Resource_rjwjs"), SubResource("Resource_tu8dx")])
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CORE"]
 transform = Transform3D(0.841281, -0.02913, 0.539812, -0.535954, -0.175542, 0.825795, 0.0707043, -0.984041, -0.163293, 0, -206.159, 0)
