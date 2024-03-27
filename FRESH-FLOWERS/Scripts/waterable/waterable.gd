@@ -35,7 +35,7 @@ func _on_watering_timer_timeout():
 
 func _ready():
 	flower_cube_mesh.material_override = my_sad_material
-	on_sound_manager_load()
+	SoundManager.loaded.connect(on_sound_manager_load)
 	setup_watering_timer()
 
 func on_sound_manager_load():

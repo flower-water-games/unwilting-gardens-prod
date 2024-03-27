@@ -15,7 +15,6 @@ func _ready():
 
 func on_sound_manager_load():
 	SoundManager.play("player", "wind")
-	MusicManager.play("Music", "water-flow")
 
 
 func play_stage_1():
