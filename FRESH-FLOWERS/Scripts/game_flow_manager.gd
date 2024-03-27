@@ -25,6 +25,8 @@ class_name GameFlowManager
 
 var stage3_in_progress = false
 var game_over = false
+
+
 # ready
 func _ready():
 	world_node.hide()
