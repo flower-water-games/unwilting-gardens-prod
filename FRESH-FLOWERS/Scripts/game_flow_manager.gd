@@ -45,7 +45,7 @@ func _on_tutorial_end(body):
 	if body.is_in_group("Player"):
 		world_node.show()
 		tutorial_island.queue_free()
-		watering_can.water_capacity = 20
+		watering_can.water_capacity = 40
 
 func _stage_1_entered(body):
 	if body.is_in_group("Player"):

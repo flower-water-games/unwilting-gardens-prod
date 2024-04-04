@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="unwilting-game"
-config/version="v1.0.5"
+config/version="v1.0.6"
 run/main_scene="res://FRESH-FLOWERS/Scenes/main-menu-3d.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.968627, 0.960784, 0.952941, 1)
