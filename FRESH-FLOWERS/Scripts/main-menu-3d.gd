@@ -41,6 +41,6 @@ func exit_fade():
 	button.hide()
 	main_menu_music.stop()
 	main_menu_stinger.play()
-	fade_out(2)
+	fade_out(5)
 
 
