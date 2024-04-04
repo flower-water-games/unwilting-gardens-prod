@@ -7,6 +7,7 @@ class_name MainMenu3D
 @export var main_menu_stinger : AudioStreamPlayer
 @export var camera : Camera3D
 @export var version_label : Label
+var level_path : String = ("res://FRESH-FLOWERS/Scenes/loading_screen.tscn")
 
 func _ready() -> void:
 	button.pressed.connect(exit_fade)
@@ -42,5 +43,7 @@ func exit_fade():
 	main_menu_music.stop()
 	main_menu_stinger.play()
 	fade_out(5)
+	await get_tree().create_timer(5.0).timeout
+	get_tree().change_scene_to_file(level_path)
 
 
